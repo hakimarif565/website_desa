@@ -49,7 +49,7 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about">Tentang Desa Wisata</a></li>
+          <li><a class="nav-link scrollto" href="#about">Tentang Kampung Dinamo</a></li>
           <li><a class="nav-link scrollto" href="#services">Layanan & UMKM</a></li>
           <li><a class="nav-link scrollto" href="#testimoni">Rekomendasi</a></li>
           <li><a class="nav-link scrollto" href="#dokumentasi">Foto & Video</a></li>
@@ -296,56 +296,6 @@
     </section><!-- End Services Section -->
 
 
-
-    <!-- ======= Dokumentasi Section ======= -->
-    <section id="dokumentasi" class="services section-bg">
-        <div class="container" data-aos="fade-up">
-
-          <div class="section-title">
-            <h2>Foto & Video</h2>
-            <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-          </div>
-
-          <div class="row">
-            <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-              <div class="icon-box">
-                <div class="icon"><i class="bx bxl-dribbble"></i></div>
-                <h4><a href="">Servis Dinamo</a></h4>
-                <p>Harga: 100.000 ~ 200.000</p>
-              </div>
-            </div>
-
-            <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
-              <div class="icon-box">
-                <div class="icon"><i class="bx bx-file"></i></div>
-                <h4><a href="">Toko Onderdil Dinamo</a></h4>
-                <p>Harga: 100.000 ~ 200.000</p>
-              </div>
-            </div>
-
-            <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="300">
-              <div class="icon-box">
-                <div class="icon"><i class="bx bx-tachometer"></i></div>
-                <h4><a href="">UMKM Makanan</a></h4>
-                <p>Harga: 100.000 ~ 200.000</p>
-              </div>
-            </div>
-
-            <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="400">
-              <div class="icon-box">
-                <div class="icon"><i class="bx bx-layer"></i></div>
-                <h4><a href="">UMKM Lain-Lain</a></h4>
-                <p>Harga: 100.000 ~ 200.000</p>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-      </section><!-- End Services Section -->
-
-
-
     <!-- ======= Testimoni Section ======= -->
     <section id="testimoni" class="team section-bg">
       <div class="container" data-aos="fade-up">
@@ -429,6 +379,106 @@
 
       </div>
     </section><!-- End Terstimoni Section -->
+
+
+    <!-- ======= Dokumentasi Section ======= -->
+    <section id="dokumentasi" class="services section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Foto & Video</h2>
+          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+        </div>
+
+        <div class="row mt-4">
+          <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bxl-dribbble"></i></div>
+              <h4><a href="">Servis Dinamo</a></h4>
+              <p>Harga: 100.000 ~ 200.000</p>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-file"></i></div>
+              <h4><a href="">Toko Onderdil Dinamo</a></h4>
+              <p>Harga: 100.000 ~ 200.000</p>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="300">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-tachometer"></i></div>
+              <h4><a href="">UMKM Makanan</a></h4>
+              <p>Harga: 100.000 ~ 200.000</p>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-tachometer"></i></div>
+              <h4><a href="">UMKM Lain-Lain</a></h4>
+              <p>Harga: 100.000 ~ 200.000</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+              <div class="icon-box">
+                <div class="icon"><i class="bx bxl-dribbble"></i></div>
+                <h4><a href="">Servis Dinamo</a></h4>
+                <p>Harga: 100.000 ~ 200.000</p>
+              </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
+              <div class="icon-box">
+                <div class="icon"><i class="bx bx-file"></i></div>
+                <h4><a href="">Toko Onderdil Dinamo</a></h4>
+                <p>Harga: 100.000 ~ 200.000</p>
+              </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="300">
+              <div class="icon-box">
+                <div class="icon"><i class="bx bx-tachometer"></i></div>
+                <h4><a href="">UMKM Makanan</a></h4>
+                <p>Harga: 100.000 ~ 200.000</p>
+              </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0">
+              <div class="icon-box">
+                <div class="icon"><i class="bx bx-tachometer"></i></div>
+                <h4><a href="">UMKM Lain-Lain</a></h4>
+                <p>Harga: 100.000 ~ 200.000</p>
+              </div>
+            </div>
+          </div>
+
+        <div class="row mt-4">
+          <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0">
+            {{-- <div class="icon-box">
+              <div class="icon"><i class="bx bx-layer"></i></div>
+              <h4><a href="">UMKM Lain-Lain</a></h4>
+              <p>Harga: 100.000 ~ 200.000</p>
+            </div> --}}
+            <div class="media">
+                <div class="media-body">
+                    <iframe width="1085" height="500" src="https://www.youtube.com/embed/-kk1NamDYzw" frameborder="0" allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Dokumentasi Section -->
+
+
+
 {{--
     <!-- ======= Pricing Section ======= -->
     <section id="pricing" class="pricing">
@@ -558,7 +608,7 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Contact</h2>
+          <h2>Kontak</h2>
           <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
         </div>
 
