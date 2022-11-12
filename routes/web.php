@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\DashboardController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,3 +26,9 @@ Route::get('/admin_login', function () {
 Route::get('/dashboard', function () {
     return view('admin/layout/layout');
 });
+
+//login
+Route::get('/', [AuthController::class, 'index'])->name('index');
+Route::post('/cek_login', [AuthController::class, 'cek_login']);
+Route::get('/logout', [AuthController::class, 'logout']);
+Route::get('/dashboard', [DashboardController::class, 'index']);
