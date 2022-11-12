@@ -130,16 +130,7 @@
                                             <span class="sub-item">Data User</span>
                                         </a>
                                     </li>
-                                    <li>
-                                        <a href="/cargo">
-                                            <span class="sub-item">Cargo</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/petugas">
-                                            <span class="sub-item">Petugas</span>
-                                        </a>
-                                    </li>
+                                   
                                 </ul>
                             </div>
                         </li>
@@ -147,7 +138,7 @@
                         <li class="nav-item">
                             <a data-toggle="collapse" href="#bookmsk">
                                 <i class="fas fa-sign-out-alt"></i>
-                                <p>Booking Container Masuk</p>
+                                <p>Profile</p>
                             </a>
                             <div class="collapse" id="bookmsk">
                                 <ul class="nav nav-collapse">
@@ -163,13 +154,13 @@
                         <li class="nav-item">
                             <a data-toggle="collapse" href="#contmsk">
                                 <i class="fas fa-truck"></i>
-                                <p>Container Masuk</p>
+                                <p>Layanan</p>
                             </a>
                             <div class="collapse" id="contmsk">
                                 <ul class="nav nav-collapse">
                                     <li>
                                         <a href="/cont_masuk">
-                                            <span class="sub-item">Add Container Masuk</span>
+                                            <span class="sub-item">Add Layanan</span>
                                         </a>
                                     </li>
                                 </ul>
@@ -179,13 +170,13 @@
                         <li class="nav-item">
                             <a data-toggle="collapse" href="#book_keluar">
                                 <i class="fas fa-share-square"></i>
-                                <p>Booking Container Keluar</p>
+                                <p>Rekomendasi</p>
                             </a>
                             <div class="collapse" id="book_keluar">
                                 <ul class="nav nav-collapse">
                                     <li>
                                         <a href="/booking_keluar">
-                                            <span class="sub-item">Add Booking Keluar</span>
+                                            <span class="sub-item">Add Rekomendasi</span>
                                         </a>
                                     </li>
                                 </ul>
@@ -195,13 +186,29 @@
                         <li class="nav-item">
                             <a data-toggle="collapse" href="#cont_keluar">
                                 <i class="fas fa-shipping-fast"></i>
-                                <p>Container Keluar</p>
+                                <p>Foto & Video</p>
                             </a>
                             <div class="collapse" id="cont_keluar">
                                 <ul class="nav nav-collapse">
                                     <li>
                                         <a href="/cont_keluar">
-                                            <span class="sub-item">Add Container Keluar</span>
+                                            <span class="sub-item">Add Foto & Video</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li class="nav-item">
+                            <a data-toggle="collapse" href="#cont_keluar">
+                                <i class="fas fa-shipping-fast"></i>
+                                <p>Kontak</p>
+                            </a>
+                            <div class="collapse" id="cont_keluar">
+                                <ul class="nav nav-collapse">
+                                    <li>
+                                        <a href="/cont_keluar">
+                                            <span class="sub-item">Add Kontak</span>
                                         </a>
                                     </li>
                                 </ul>

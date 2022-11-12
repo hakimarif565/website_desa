@@ -32,11 +32,11 @@
 <body class="login">
     <div class="wrapper wrapper-login">
         <div class="container container-login animated fadeIn">
-            <center><img src="/assets/img/itanklogo_1.png" width="80px" height="75px"></center><br>
+            <center><img src="/assets/img/group.png" width="80px" height="75px"></center><br>
 
-            <h3 class="text-center">iTank Login</h3>
+            <h3 class="text-center">Admin Desa Login</h3>
 
-            <form method="POST" action="/cek_login" enctype="multipart/form-data">
+            <form method="GET" action="/dashboard" enctype="multipart/form-data">
                 @csrf
                 <div class="login-form">
                     <div class="form-group form-floating-label">
