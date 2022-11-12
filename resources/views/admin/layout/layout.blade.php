@@ -3,10 +3,10 @@
 
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>iTankDepo</title>
+    <title>Admin Desa</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
-    <link rel="icon" href="/assets/img/icon_itank.ico" type="image/x-icon" />
+    <link rel="icon" href="" type="image/x-icon" />
 
     <!-- Fonts and icons -->
     <script src="/assets/js/plugin/webfont/webfont.min.js"></script>
@@ -42,7 +42,7 @@
             <div class="logo-header">
 
                 <a href="#" class="logo">
-                    <img src="/assets/img/itanklogo.png" width="150px" height="30px" alt="navbar brand" class="navbar-brand">
+                    <img src="" width="150px" height="30px" alt="navbar brand" class="navbar-brand">
                 </a>
                 <button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon">
@@ -130,14 +130,14 @@
                                             <span class="sub-item">Data User</span>
                                         </a>
                                     </li>
-                                   
+
                                 </ul>
                             </div>
                         </li>
 
                         <li class="nav-item">
                             <a data-toggle="collapse" href="#bookmsk">
-                                <i class="fas fa-sign-out-alt"></i>
+                                <i class="fas fa-user-cog"></i>
                                 <p>Profile</p>
                             </a>
                             <div class="collapse" id="bookmsk">
@@ -153,7 +153,7 @@
 
                         <li class="nav-item">
                             <a data-toggle="collapse" href="#contmsk">
-                                <i class="fas fa-truck"></i>
+                                <i class="fas fa-store"></i>
                                 <p>Layanan</p>
                             </a>
                             <div class="collapse" id="contmsk">
@@ -169,7 +169,7 @@
 
                         <li class="nav-item">
                             <a data-toggle="collapse" href="#book_keluar">
-                                <i class="fas fa-share-square"></i>
+                                <i class="fas fa-star"></i>
                                 <p>Rekomendasi</p>
                             </a>
                             <div class="collapse" id="book_keluar">
@@ -185,7 +185,7 @@
 
                         <li class="nav-item">
                             <a data-toggle="collapse" href="#cont_keluar">
-                                <i class="fas fa-shipping-fast"></i>
+                                <i class="fab fa-youtube-square"></i>
                                 <p>Foto & Video</p>
                             </a>
                             <div class="collapse" id="cont_keluar">
@@ -201,7 +201,7 @@
 
                         <li class="nav-item">
                             <a data-toggle="collapse" href="#cont_keluar">
-                                <i class="fas fa-shipping-fast"></i>
+                                <i class="fas fa-book"></i>
                                 <p>Kontak</p>
                             </a>
                             <div class="collapse" id="cont_keluar">
