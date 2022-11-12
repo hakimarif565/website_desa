@@ -3,7 +3,7 @@
 
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>iTankDepo</title>
+    <title>Desa Ngagel Rejo Surabaya</title>
     <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
     <link rel="icon" href="" type="image/x-icon" />
 
@@ -33,7 +33,6 @@
     <div class="wrapper wrapper-login">
         <div class="container container-login animated fadeIn">
             <center><img src="/assets/img/group.png" width="80px" height="75px"></center><br>
-
             <h3 class="text-center">Admin Desa Login</h3>
 
             <form method="GET" action="/dashboard" enctype="multipart/form-data">
@@ -50,8 +49,13 @@
                             <i class="flaticon-interface"></i>
                         </div>
                     </div>
-                    <div class="form-action mb-3">
-                        <button type="submit" class="btn btn-primary btn-rounded btn-login">Sign In</button>
+                    <div class="form-action mb-3 float-left">
+                        <a class="btn btn-warning btn-rounded " href="{{ URL::previous() }}">Kembali</a>
+                        {{-- <button type="submit" class="btn btn-primary btn-rounded">Login</button> --}}
+                    </div>
+                    <div class="form-action mb-3 float-right">
+                        <button type="submit" class="btn btn-primary btn-rounded">Login</button>
+                        <button type="submit" class="btn btn-secondary btn-rounded">Register</button>
                     </div>
                 </div>
             </form>
@@ -67,3 +71,5 @@
 </body>
 
 </html>
+
+
