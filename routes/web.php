@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
+use Illuminate\Auth\AuthenticationException;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,19 +21,23 @@ Route::get('/', function () {
 Route::get('/home', function () {
     return view('index');
 });
+
+Route::get('/admin_login', function () {
+    return view('admin/login_page/login');
+});
+
 //login register
-Route::get('/admin_login', [AuthController::class, 'index'])->name('admin_login');
-Route::post('/admin_login/post', [AuthController::class, 'cek_login'])->name('post_login');
-Route::get('/register', [AuthController::class, 'register']);
-Route::post('/register', [AuthController::class, 'register_process']);
+// Route::get('/', [AuthController::class, 'index']);
+Route::get('/login', [AuthController::class, 'index']);
+Route::post('/login', ['as' => 'login', 'uses' => 'AuthController@index']);
 Route::post('/cek_login', [AuthController::class, 'cek_login']);
 Route::get('/logout', [AuthController::class, 'logout']);
 
-Route::middleware(['IsLogin'])->group(function () {
+Route::get('/register', [AuthController::class, 'register']);
+Route::post('/register', [AuthController::class, 'register_process']);
+
+Route::group(['middleware' => ['auth']], function () {
     Route::get('/dashboard', function () {
         return view('admin/layout/layout');
-    });
-    Route::get('/user', function () {
-        return view('admin/master/user');
     });
 });
