@@ -34,7 +34,7 @@ Route::post('/cek_login', [AuthController::class, 'cek_login']);
 Route::get('/logout', [AuthController::class, 'logout']);
 
 Route::get('/register', [AuthController::class, 'register']);
-Route::post('/register', [AuthController::class, 'register_process']);
+Route::post('/registering', [AuthController::class, 'register_process']);
 
 // Route::group(['middleware' => ['auth']], function () {
 //     Route::get('/dashboard', function () {
