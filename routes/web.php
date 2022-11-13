@@ -36,8 +36,18 @@ Route::get('/logout', [AuthController::class, 'logout']);
 Route::get('/register', [AuthController::class, 'register']);
 Route::post('/register', [AuthController::class, 'register_process']);
 
-Route::group(['middleware' => ['auth']], function () {
-    Route::get('/dashboard', function () {
-        return view('admin/layout/layout');
-    });
+// Route::group(['middleware' => ['auth']], function () {
+//     Route::get('/dashboard', function () {
+//         return view('admin/layout/layout');
+//     });
+// });
+
+Route::get('/dashboard', function () {
+    return view('admin/dashboard/dashboard');
 });
+
+//Data Master User
+Route::get('/user', function () {
+    return view('admin/master/user');
+});
+Route::post('/store_admin', [UserController::class, 'store']);
