@@ -89,6 +89,7 @@ class AuthController extends Controller
             'password' => 'required',
             'desa_id' => 'required',
         ]);
+
         $data = $request->all();
         $check = $this->create($data, $user_id);
 
