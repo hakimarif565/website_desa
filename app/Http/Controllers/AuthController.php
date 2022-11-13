@@ -99,9 +99,10 @@ class AuthController extends Controller
         return User::create([
             'user_id' => $user_id,
             'user_name' => $data['user_name'],
-            'user_email' => $data['user_email'],
+            'email' => $data['email'],
             'desa_id' => $data['desa_id'],
-            'user_password' => Hash::make($data['user_password']),
+            'username' => $data['username'],
+            'password' => Hash::make($data['password']),
         ]);
     }
 }
