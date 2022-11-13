@@ -92,7 +92,6 @@ class AuthController extends Controller
 
         $data = $request->all();
         $check = $this->create($data, $user_id);
-
         return redirect("/admin_login")->withSuccess('Pendaftaran Berhasil');
 
     }
