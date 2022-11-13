@@ -28,8 +28,8 @@ Route::get('/admin_login', function () {
 
 //login register
 // Route::get('/', [AuthController::class, 'index']);
-Route::get('/login', [AuthController::class, 'index']);
-Route::post('/login', ['as' => 'login', 'uses' => 'AuthController@index']);
+// Route::get('/login', [AuthController::class, 'index']);
+// Route::post('/login', ['as' => 'login', 'uses' => 'AuthController@cek_login']);
 Route::post('/cek_login', [AuthController::class, 'cek_login']);
 Route::get('/logout', [AuthController::class, 'logout']);
 

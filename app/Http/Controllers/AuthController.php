@@ -32,19 +32,32 @@ class AuthController extends Controller
     public function cek_login(Request $request)
     {
 
-        $name = $request->input('name');
-        $password = $request->input('password');
-
-        $user = DB::table('users')
-            ->where('user_name', $name)
-            ->where('user_password', $password)
-            ->first();
-
-        if (!$user) {
-            return redirect()->intended('/admin_login')->with('error', 'Login gagal');
-        } else {
-            return redirect()->intended('/dashboard')->with('success', 'Login Berhasil');
+        $request->validate([
+            'username' => 'required',
+            'password' => 'required',
+        ]);
+        $credentials = $request->only('username', 'password');
+        if (Auth::attempt($credentials)) {
+            return redirect()->intended('/dashboard')
+                ->withSuccess('Signed in');
         }
+        return redirect("admin_login")->withSuccess('Login details are not valid');
+
+
+        // $name = $request->input('name');
+        // $password = $request->input('password');
+
+        // $user = DB::table('users')
+        //     ->where('name', $name)
+        //     ->where('password', $password)
+        //     ->first();
+
+        // if($user == NULL){
+        //     return redirect()->intended('/admin_login')->with('error', 'Login gagal');
+        // }else{
+        //     return redirect()->intended('/dashboard')->with('success', 'Login Berhasil');
+        // }
+
     }
 
     public function logout()
@@ -68,11 +81,11 @@ class AuthController extends Controller
         } else {
             $user_id = $id->user_id + 1;
         }
-
         $request->validate([
             'user_name' => 'required',
-            'user_email' => 'required|email|unique:users',
-            'user_password' => 'required',
+            'username' => 'required',
+            'email' => 'required|email|unique:users',
+            'password' => 'required',
             'desa_id' => 'required',
         ]);
         $data = $request->all();
