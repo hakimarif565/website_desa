@@ -20,9 +20,8 @@ Route::get('/', function () {
 Route::get('/home', function () {
     return view('index');
 });
-Route::get('/admin_login', function () {
-    return view('admin/login_page/login');
-});
+Route::get('/admin_login', [AuthController::class, 'index'])->name('admin_login');
+Route::post('/admin_login/post', [AuthController::class, 'cek_login'])->name('post_login');
 Route::get('/dashboard', function () {
     return view('admin/layout/layout');
 });
