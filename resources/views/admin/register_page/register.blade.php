@@ -33,14 +33,22 @@
     <div class="wrapper wrapper-login">
         <div class="container container-login animated fadeIn">
             <center><img src="/assets/img/group.png" width="80px" height="75px"></center><br>
-            <h3 class="text-center">Admin Desa Login</h3>
+            <h3 class="text-center">Register Akun Admin</h3>
 
-            <form method="GET" action="/dashboard" enctype="multipart/form-data">
+            <form method="POST" action="/register" enctype="multipart/form-data">
                 @csrf
-                <div class="login-form">
+                <div class="register-form">
+                    <div class="form-group form-floating-label">
+                        <input id="name" name="name" type="text" class="form-control input-border-bottom" required>
+                        <label for="name" class="placeholder">Desa</label>
+                    </div>
                     <div class="form-group form-floating-label">
                         <input id="name" name="name" type="text" class="form-control input-border-bottom" required>
                         <label for="name" class="placeholder">Username</label>
+                    </div>
+                    <div class="form-group form-floating-label">
+                        <input id="password" name="password" type="password" class="form-control input-border-bottom" required>
+                        <label for="password" class="placeholder">Email</label>
                     </div>
                     <div class="form-group form-floating-label">
                         <input id="password" name="password" type="password" class="form-control input-border-bottom" required>
@@ -50,7 +58,7 @@
                         </div>
                     </div>
                     <div class="form-action mb-3 float-left">
-                        <a class="btn btn-warning btn-rounded " href="/">Kembali</a>
+                        <a class="btn btn-warning btn-rounded " href="{{ URL::previous() }}">Kembali</a>
                         {{-- <button type="submit" class="btn btn-primary btn-rounded">Login</button> --}}
                     </div>
                     <div class="form-action mb-3 float-right">

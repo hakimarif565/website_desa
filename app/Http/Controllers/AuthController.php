@@ -16,7 +16,7 @@ class AuthController extends Controller
      */
     public function index()
     {
-        return view('index');
+        return view('admin/login_page/index');
     }
 
     public function cek_login(Request $request)
@@ -36,5 +36,15 @@ class AuthController extends Controller
     {
         Auth::logout();
         return redirect('/');
+    }
+
+
+    public function register()
+    {
+        return view('admin/register_page/register');
+    }
+    public function register_process()
+    {
+        return view('admin/register_page/register');
     }
 }

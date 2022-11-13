@@ -15,7 +15,7 @@ use App\Http\Controllers\DashboardController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 Route::get('/home', function () {
     return view('index');
@@ -27,8 +27,13 @@ Route::get('/dashboard', function () {
     return view('admin/layout/layout');
 });
 
-//login
-Route::get('/', [AuthController::class, 'index'])->name('index');
+//login register
+// Route::get('/', [AuthController::class, 'index']);
 Route::post('/cek_login', [AuthController::class, 'cek_login']);
 Route::get('/logout', [AuthController::class, 'logout']);
 Route::get('/dashboard', [DashboardController::class, 'index']);
+
+Route::get('/register', [AuthController::class, 'register']);
+Route::post('/register', [AuthController::class, 'register_process']);
+
+
