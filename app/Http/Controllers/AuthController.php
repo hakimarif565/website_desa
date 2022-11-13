@@ -35,17 +35,16 @@ class AuthController extends Controller
         $name = $request->input('name');
         $password = $request->input('password');
 
-        $user = DB::table('admin_users')
+        $user = DB::table('users')
             ->where('user_name', $name)
             ->where('user_password', $password)
             ->first();
 
-        if(!$user){
+        if (!$user) {
             return redirect()->intended('/admin_login')->with('error', 'Login gagal');
-        }else{
+        } else {
             return redirect()->intended('/dashboard')->with('success', 'Login Berhasil');
         }
-
     }
 
     public function logout()
@@ -64,10 +63,9 @@ class AuthController extends Controller
         $id = User::orderByRaw('LENGTH(user_id) DESC')
             ->orderBy('user_id', 'DESC')
             ->first();
-        if ($id == NULL){
+        if ($id == NULL) {
             $user_id = 1;
-        }
-        else{
+        } else {
             $user_id = $id->user_id + 1;
         }
 
@@ -81,18 +79,16 @@ class AuthController extends Controller
         $check = $this->create($data, $user_id);
 
         return redirect("/login")->withSuccess('Pendaftaran Berhasil');
-
     }
 
     public function create(array $data, int $user_id)
     {
-      return User::create([
-        'user_id' => $user_id,
-        'user_name' => $data['user_name'],
-        'user_email' => $data['user_email'],
-        'desa_id' => $data['desa_id'],
-        'user_password' => Hash::make($data['user_password']),
-      ]);
+        return User::create([
+            'user_id' => $user_id,
+            'user_name' => $data['user_name'],
+            'user_email' => $data['user_email'],
+            'desa_id' => $data['desa_id'],
+            'user_password' => Hash::make($data['user_password']),
+        ]);
     }
-
 }
