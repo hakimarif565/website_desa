@@ -1,4 +1,4 @@
-@extends('layout.layout')
+@extends('admin.layout.layout')
 
 @section('content')
 <div class="main-panel">
@@ -8,7 +8,7 @@
                 <h4 class="page-title">Data User</h4>
                 <ul class="breadcrumbs">
                     <li class="nav-home">
-                        <a href="/home">
+                        <a href="/dashboard">
                             <i class="flaticon-home"></i>
                         </a>
                     </li>
@@ -49,7 +49,6 @@
                                             <th>No</th>
                                             <th>Username</th>
                                             <th>Email</th>
-                                            <th>Level</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -60,7 +59,6 @@
                                             <td>{{$no++}}</td>
                                             <td>{{$row->name}}</td>
                                             <td>{{$row->email}}</td>
-                                            <td>{{$row->level}}</td>
                                             <td>
                                                 <a href="#modalEditUser{{$row->id}}" data-toggle="modal" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i>Edit</a>
                                                 <a href="#modalHapusUser{{$row->id}}" data-toggle="modal" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i>Hapus</a>

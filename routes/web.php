@@ -24,7 +24,10 @@ Route::get('/admin_login', function () {
     return view('admin/login_page/login');
 });
 Route::get('/dashboard', function () {
-    return view('admin/layout/layout');
+    return view('admin/dashboard/dashboard');
+});
+Route::get('/user', function () {
+    return view('admin/master/user');
 });
 
 //login

@@ -106,6 +106,12 @@
                     <ul class="nav">
                         <li class="nav-item">
                             <a href="/home">
+                                <i class="fas fa-laptop"></i>
+                                <p>Website</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/dashboard">
                                 <i class="fas fa-home"></i>
                                 <p>Dashboard</p>
                             </a>
