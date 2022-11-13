@@ -44,21 +44,25 @@
                     </div>
                     <div class="form-group form-floating-label">
                         <input id="user_name" name="user_name" type="text" class="form-control input-border-bottom" required>
+                        <label for="name" class="placeholder">Nama Lengkap</label>
+                    </div>
+                    <div class="form-group form-floating-label">
+                        <input id="username" name="username" type="text" class="form-control input-border-bottom" required>
                         <label for="name" class="placeholder">Username</label>
                     </div>
                     <div class="form-group form-floating-label">
-                        <input id="user_email" name="user_email" type="text" class="form-control input-border-bottom" required>
+                        <input id="email" name="email" type="text" class="form-control input-border-bottom" required>
                         <label for="password" class="placeholder">Email</label>
                     </div>
                     <div class="form-group form-floating-label">
-                        <input id="user_password" name="user_password" type="password" class="form-control input-border-bottom" required>
+                        <input id="password" name="password" type="password" class="form-control input-border-bottom" required>
                         <label for="password" class="placeholder">Password</label>
                         <div class="show-password">
                             <i class="flaticon-interface"></i>
                         </div>
                     </div>
                     <div class="form-action mb-3 float-left">
-                        <a class="btn btn-warning btn-rounded " href="/login">Kembali</a>
+                        <a class="btn btn-warning btn-rounded " href="/admin_login">Kembali</a>
                         {{-- <button type="submit" class="btn btn-primary btn-rounded">Login</button> --}}
                     </div>
                     <div class="form-action mb-3 float-right">
