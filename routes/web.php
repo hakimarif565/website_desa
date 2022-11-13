@@ -15,19 +15,25 @@ use App\Http\Controllers\DashboardController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 Route::get('/home', function () {
     return view('index');
 });
+//login register
 Route::get('/admin_login', [AuthController::class, 'index'])->name('admin_login');
 Route::post('/admin_login/post', [AuthController::class, 'cek_login'])->name('post_login');
-Route::get('/dashboard', function () {
-    return view('admin/layout/layout');
-});
-
-//login
-Route::get('/', [AuthController::class, 'index'])->name('index');
+Route::get('/register', [AuthController::class, 'register']);
+Route::post('/register', [AuthController::class, 'register_process']);
 Route::post('/cek_login', [AuthController::class, 'cek_login']);
 Route::get('/logout', [AuthController::class, 'logout']);
-Route::get('/dashboard', [DashboardController::class, 'index']);
+
+Route::middleware(['IsLogin'])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('admin/layout/layout');
+    });
+    
+});
+
+
+

@@ -23,7 +23,7 @@ class IsLogin
 		// dd($_SESSION['is_login']);
         if (!isset($_SESSION['is_login'])) {
 		// if (!Session::get('is_login')) {
-            return redirect()->route('login');
+            return redirect()->route('admin_login');
         }
         return $next($request);
     

@@ -19,8 +19,6 @@ class AuthController extends Controller
      */
     public function index()
     {
-        
-
         if (isset($_SESSION['is_login'])) {
             return redirect('/dashboard');
         }
@@ -40,22 +38,27 @@ class AuthController extends Controller
             ->where('user_password', $password)
             ->first();
 
-        // print_r($dd);exit;
-        dd($user);
-        // if(!$user){
-        //     js_respon(false, 'User Anda belum terdaftar.');
-        // }
+        if(!$user){
+            return redirect()->intended('/admin_login')->with('error', 'Login gagal');
+        }else{
+            return redirect()->intended('/dashboard')->with('success', 'Login Berhasil');
+        }
 
-        // if (Auth::attempt(['name' => $name, 'password' => $password])) {
-        //     return redirect()->intended('/dashboard')->with('success', 'Login Berhasil');
-        // } else {
-        //     return redirect()->intended('/')->with('error', 'Username atau Password salah!');
-        // }
     }
 
     public function logout()
     {
         Auth::logout();
         return redirect('/');
+    }
+
+
+    public function register()
+    {
+        return view('admin/register_page/register');
+    }
+    public function register_process()
+    {
+        return view('admin/register_page/register');
     }
 }
