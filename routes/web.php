@@ -28,21 +28,26 @@ Route::get('/admin_login', function () {
 
 //login register
 // Route::get('/', [AuthController::class, 'index']);
-Route::get('/login', [AuthController::class, 'index']);
-Route::post('/login', [ 'as' => 'login', 'uses' => 'AuthController@index']);
+// Route::get('/login', [AuthController::class, 'index']);
+// Route::post('/login', ['as' => 'login', 'uses' => 'AuthController@cek_login']);
 Route::post('/cek_login', [AuthController::class, 'cek_login']);
 Route::get('/logout', [AuthController::class, 'logout']);
 
 Route::get('/register', [AuthController::class, 'register']);
-Route::post('/register', [AuthController::class, 'register_process']);
+Route::post('/registering', [AuthController::class, 'register_process']);
 
-Route::group(['middleware' => ['auth']], function() {
+// Route::group(['middleware' => ['auth']], function () {
+//     Route::get('/dashboard', function () {
+//         return view('admin/layout/layout');
+//     });
+// });
 
-    Route::get('/dashboard', function () {
-        return view('admin/layout/layout');
-    });
-
+Route::get('/dashboard', function () {
+    return view('admin/dashboard/dashboard');
 });
 
-
-
+//Data Master User
+Route::get('/user', function () {
+    return view('admin/master/user');
+});
+Route::post('/store_admin', [UserController::class, 'store']);

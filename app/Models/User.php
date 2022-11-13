@@ -1,34 +1,51 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Schema;
+namespace App\Models;
 
-return new class extends Migration
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Laravel\Sanctum\HasApiTokens;
+
+
+class User extends Authenticatable
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
-    public function up()
+    use HasApiTokens, HasFactory;
+    protected $table = 'users';
+    protected $primaryKey = 'user_id';
+    public $timestamps = FALSE;
+
+    protected $fillable = [
+        'user_id',
+        'desa_id',
+        'user_name',
+        'username',
+        'email',
+        'password',
+    ];
+
+    protected $hidden = [
+        'user_password',
+        'remember_token',
+    ];
+
+    #One2Many
+    public function AssignedToBerita()
     {
-        Schema::create('users', function (Blueprint $table) {
-            $table->id();
-            $table->string('name')->nullable();
-            $table->string('email')->unique();
-            $table->string('password');
-            $table->timestamps();
-        });
+        return $this->hasMany(Berita::class);
+    }
+    public function assignedToUsaha()
+    {
+        return $this->hasMany(Pelaku_Usaha::class);
+    }
+    #One2Many Reverse
+    public function hasDesa()
+    {
+        return $this->belongsTo(Desa::class);
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
-        Schema::dropIfExists('users');
-    }
-};
+    protected $dateFormat = 'Y-m-d H:i:s';
+    const CREATED_AT = 'user_created';
+    const UPDATED_AT = 'user_updated';
+
+}

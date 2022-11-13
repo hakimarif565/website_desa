@@ -35,19 +35,23 @@
             <center><img src="/assets/img/group.png" width="80px" height="75px"></center><br>
             <h3 class="text-center">Register Akun Admin</h3>
 
-            <form method="POST" action="/register" enctype="multipart/form-data">
+            <form method="POST" action="/registering" enctype="multipart/form-data">
                 @csrf
                 <div class="register-form">
                     <div class="form-group form-floating-label">
-                        <input id="name" name="name" type="text" class="form-control input-border-bottom" required>
+                        <input id="desa_id" name="desa_id" type="text" class="form-control input-border-bottom" required>
                         <label for="name" class="placeholder">Desa</label>
                     </div>
                     <div class="form-group form-floating-label">
-                        <input id="name" name="name" type="text" class="form-control input-border-bottom" required>
+                        <input id="user_name" name="user_name" type="text" class="form-control input-border-bottom" required>
+                        <label for="name" class="placeholder">Nama Lengkap</label>
+                    </div>
+                    <div class="form-group form-floating-label">
+                        <input id="username" name="username" type="text" class="form-control input-border-bottom" required>
                         <label for="name" class="placeholder">Username</label>
                     </div>
                     <div class="form-group form-floating-label">
-                        <input id="password" name="password" type="password" class="form-control input-border-bottom" required>
+                        <input id="email" name="email" type="text" class="form-control input-border-bottom" required>
                         <label for="password" class="placeholder">Email</label>
                     </div>
                     <div class="form-group form-floating-label">
@@ -58,12 +62,11 @@
                         </div>
                     </div>
                     <div class="form-action mb-3 float-left">
-                        <a class="btn btn-warning btn-rounded " href="{{ URL::previous() }}">Kembali</a>
+                        <a class="btn btn-warning btn-rounded " href="/admin_login">Kembali</a>
                         {{-- <button type="submit" class="btn btn-primary btn-rounded">Login</button> --}}
                     </div>
                     <div class="form-action mb-3 float-right">
-                        <button type="submit" class="btn btn-primary btn-rounded">Login</button>
-                        <a href="/register" class="btn btn-secondary btn-rounded">Register</a>
+                        <button type="submit" class="btn btn-primary btn-rounded">Daftar</button>
                     </div>
                 </div>
             </form>
