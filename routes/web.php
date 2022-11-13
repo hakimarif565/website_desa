@@ -32,7 +32,6 @@ Route::get('/login', [AuthController::class, 'index']);
 Route::post('/login', [ 'as' => 'login', 'uses' => 'AuthController@index']);
 Route::post('/cek_login', [AuthController::class, 'cek_login']);
 Route::get('/logout', [AuthController::class, 'logout']);
-Route::get('/dashboard', [DashboardController::class, 'index']);
 
 Route::get('/register', [AuthController::class, 'register']);
 Route::post('/register', [AuthController::class, 'register_process']);
