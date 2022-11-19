@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\FrontController;
 use Illuminate\Auth\AuthenticationException;
 /*
 |--------------------------------------------------------------------------
@@ -15,9 +16,7 @@ use Illuminate\Auth\AuthenticationException;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', [FrontController::class, 'index']);
 Route::get('/home', function () {
     return view('index');
 });
@@ -35,11 +34,13 @@ Route::post('/registering', [AuthController::class, 'register_process']);
 //All Admin Privilege Page and Process
 Route::group(['middleware' => ['auth']], function () {
     //Page Load System
+    /* user admin */
     Route::get('/dashboard', [AdminController::class, 'home']);
     Route::get('/user', [AdminController::class, 'user']);
     Route::post('/user', [AdminController::class, 'store']);
     Route::get('/user_edit/{id}', [AdminController::class, 'edit']);
     Route::post('/user_destroy/{id}', [AdminController::class, 'destroy']);
+    /* a */
 
     //Post Form System
     Route::post('/store_admin', [UserController::class, 'store']);
