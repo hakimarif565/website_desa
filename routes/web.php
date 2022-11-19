@@ -36,7 +36,7 @@ Route::post('/registering', [AuthController::class, 'register_process']);
 Route::group(['middleware' => ['auth']], function () {
     //Page Load System
     Route::get('/dashboard', [AdminController::class, 'home']);
-    Route::get('/dashboard/user', [AdminController::class, 'register']);
+    Route::get('/user', [AdminController::class, 'user']);
 
     //Post Form System
     Route::post('/store_admin', [UserController::class, 'store']);
