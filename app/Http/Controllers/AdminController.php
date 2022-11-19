@@ -54,7 +54,7 @@ class AdminController extends Controller
     {
         // dd($id);
         $user = User::find($id);
-        dd($user);
+        
         return view('admin/master/user',['data_user' => $user]);
     }
 }
