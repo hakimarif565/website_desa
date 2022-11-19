@@ -108,8 +108,8 @@
                             <div class="collapse" id="bookmsk">
                                 <ul class="nav nav-collapse">
                                     <li>
-                                        <a href="/booking_masuk">
-                                            <span class="sub-item">Add Booking Masuk</span>
+                                        <a href="/ecommerce">
+                                            <span class="sub-item">Add content</span>
                                         </a>
                                     </li>
                                 </ul>
@@ -307,4 +307,3 @@
 </body>
 
 </html>
-

@@ -23,7 +23,7 @@ Route::get('/home', function () {
 });
 
 //login register
-Route::get('login',array('as'=>'login',function(){
+Route::get('login', array('as' => 'login', function () {
     return view('admin/login_page/login');
 }));
 Route::post('/check_login', [AuthController::class, 'cek_login']);
@@ -37,7 +37,7 @@ Route::group(['middleware' => ['auth']], function () {
     //Page Load System
     Route::get('/dashboard', [AdminController::class, 'home']);
     Route::get('/user', [AdminController::class, 'user']);
-
+    Route::get('/ecommerce', [AdminController::class, 'eco']);
     //Post Form System
     Route::post('/store_admin', [UserController::class, 'store']);
 });
