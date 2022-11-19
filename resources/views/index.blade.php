@@ -54,7 +54,7 @@
           <li><a class="nav-link scrollto" href="#testimoni">Rekomendasi</a></li>
           <li><a class="nav-link scrollto" href="#dokumentasi">Foto & Video</a></li>
           <li><a class="nav-link scrollto" href="#contact">Kontak</a></li>
-          <li><a class="getstarted" href="/admin_login">Login</a></li>
+          <li><a class="getstarted" href="/login">Login</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->

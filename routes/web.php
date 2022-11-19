@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\AdminController;
 use Illuminate\Auth\AuthenticationException;
 /*
 |--------------------------------------------------------------------------
@@ -22,32 +22,22 @@ Route::get('/home', function () {
     return view('index');
 });
 
-Route::get('/admin_login', function () {
-    return view('admin/login_page/login');
-});
-
 //login register
-// Route::get('/', [AuthController::class, 'index']);
-// Route::get('/login', [AuthController::class, 'index']);
-// Route::post('/login', ['as' => 'login', 'uses' => 'AuthController@cek_login']);
-Route::post('/cek_login', [AuthController::class, 'cek_login']);
+Route::get('login',array('as'=>'login',function(){
+    return view('admin/login_page/login');
+}));
+Route::post('/check_login', [AuthController::class, 'cek_login']);
 Route::get('/logout', [AuthController::class, 'logout']);
-
 Route::get('/register', [AuthController::class, 'register']);
 Route::post('/registering', [AuthController::class, 'register_process']);
 
-// Route::group(['middleware' => ['auth']], function () {
-//     Route::get('/dashboard', function () {
-//         return view('admin/layout/layout');
-//     });
-// });
 
-Route::get('/dashboard', function () {
-    return view('admin/dashboard/dashboard');
-});
+//All Admin Privilege Page and Process
+Route::group(['middleware' => ['auth']], function () {
+    //Page Load System
+    Route::get('/dashboard', [AdminController::class, 'home']);
+    Route::get('/dashboard/user', [AdminController::class, 'register']);
 
-//Data Master User
-Route::get('/user', function () {
-    return view('admin/master/user');
+    //Post Form System
+    Route::post('/store_admin', [UserController::class, 'store']);
 });
-Route::post('/store_admin', [UserController::class, 'store']);

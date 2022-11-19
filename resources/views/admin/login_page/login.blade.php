@@ -35,7 +35,7 @@
             <center><img src="/assets/img/group.png" width="80px" height="75px"></center><br>
             <h3 class="text-center">Admin Desa Login</h3>
 
-            <form method="POST" action="/cek_login" enctype="multipart/form-data">
+            <form method="POST" action="/check_login" enctype="multipart/form-data">
                 @csrf
                 <div class="login-form">
                     <div class="form-group form-floating-label">

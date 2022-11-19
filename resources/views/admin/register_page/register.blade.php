@@ -62,7 +62,7 @@
                         </div>
                     </div>
                     <div class="form-action mb-3 float-left">
-                        <a class="btn btn-warning btn-rounded " href="/admin_login">Kembali</a>
+                        <a class="btn btn-warning btn-rounded " href="/login">Kembali</a>
                         {{-- <button type="submit" class="btn btn-primary btn-rounded">Login</button> --}}
                     </div>
                     <div class="form-action mb-3 float-right">

@@ -28,7 +28,6 @@ class AuthController extends Controller
         return view('admin/login_page/login');
     }
 
-
     public function cek_login(Request $request)
     {
 
@@ -41,23 +40,7 @@ class AuthController extends Controller
             return redirect()->intended('/dashboard')
                 ->withSuccess('Signed in');
         }
-        return redirect("admin_login")->withSuccess('Login details are not valid');
-
-
-        // $name = $request->input('name');
-        // $password = $request->input('password');
-
-        // $user = DB::table('users')
-        //     ->where('name', $name)
-        //     ->where('password', $password)
-        //     ->first();
-
-        // if($user == NULL){
-        //     return redirect()->intended('/admin_login')->with('error', 'Login gagal');
-        // }else{
-        //     return redirect()->intended('/dashboard')->with('success', 'Login Berhasil');
-        // }
-
+        return redirect("login")->withSuccess('Login details are not valid');
     }
 
     public function logout()
@@ -91,7 +74,7 @@ class AuthController extends Controller
 
         $data = $request->all();
         $check = $this->create($data, $user_id);
-        return redirect("/admin_login")->withSuccess('Pendaftaran Berhasil');
+        return redirect("/login")->withSuccess('Pendaftaran Berhasil');
     }
 
     public function create(array $data, int $user_id)
