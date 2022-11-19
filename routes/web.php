@@ -37,14 +37,10 @@ Route::group(['middleware' => ['auth']], function () {
     //Page Load System
     Route::get('/dashboard', [AdminController::class, 'home']);
     Route::get('/user', [AdminController::class, 'user']);
-<<<<<<< HEAD
-    Route::get('/ecommerce', [AdminController::class, 'eco']);
-=======
     Route::post('/user', [AdminController::class, 'store']);
     Route::get('/user_edit/{id}', [AdminController::class, 'edit']);
-    Route::post('/user_destroy/{id}', [AdminController::class, 'destroy']);
+    Route::get('/user_destroy/{id}', [AdminController::class, 'destroy']);
 
->>>>>>> 0d7545d954c896f37f7a17c45daeca15f1df0ec1
     //Post Form System
     Route::post('/store_admin', [UserController::class, 'store']);
 });

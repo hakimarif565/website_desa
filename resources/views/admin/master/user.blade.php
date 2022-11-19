@@ -62,10 +62,10 @@
                                             <td>
                                                 <div>
                                                     <form action="{{ 'user_destroy',$user_data->user_id }}" method="Post">
-                                                        <a class="btn btn-primary" href="user_edit/{{ $user_data->user_id }}">Edit</a>
+                                                        <a class="btn btn-primary btn-xs" href="user_edit/{{ $user_data->user_id }}"><i class="fa fa-edit"></i> Edit</a>
                                                         @csrf
                                                         @method('DELETE')
-                                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                                        <a href="#modalHapusUser{{$user_data->id}}" data-toggle="modal" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i>Hapus</a>
                                                     </form>
                                                 </div>
                                             </td>
@@ -126,5 +126,40 @@
         </div>
     </div>
 </div>
+
+
+//hapus data user
+
+@foreach($data as $g)
+<div class="modal fade" id="modalHapusUser{{$g->id}}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Hapus User</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form method="GET" enctype="multipart/form-data" action="/user_destroy/{id}">
+                @csrf
+                <div class="modal-body">
+
+                    <input type="hidden" value="{{$g->user_id}}" name="id" required>
+
+                    <div class="form-grup">
+                        <h4>Apakah anda ingin menghapus data ini?</h4>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-undo"></i>Close</button>
+                        <button type="submit" class="btn btn-danger"> <i class="fa fa-trash"></i>Hapus Data</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@endforeach
 
 @endsection
