@@ -37,12 +37,11 @@
         <!--
 				Tip 1: You can change the background color of the main header using: data-background-color="blue | purple | light-blue | green | orange | red"
 		-->
-        <div class="main-header" data-background-color="blue">
+        <div class="main-header" data-background-color="light-blue">
             <!-- Logo Header -->
             <div class="logo-header">
-
                 <a href="/dashboard" class="logo">
-                    <img src="{{ asset('img/icon.png') }}" width="" height="" alt="navbar brand" class="navbar-brand">
+                    <img src="{{ asset('img/logo sby.png') }}" width="50" height="50" alt="navbar brand" class="navbar-brand">
                 </a>
                 <button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon">
@@ -251,7 +250,7 @@
 
         @yield('content')
 
-        <!-- <div class="custom-template">
+        {{-- <div class="custom-template">
             <div class="title">Settings</div>
             <div class="custom-content">
                 <div class="switcher">
@@ -279,7 +278,7 @@
             <div class="custom-toggle">
                 <i class="flaticon-settings"></i>
             </div>
-        </div> -->
+        </div> --}}
         <!-- End Custom template -->
     </div>
     <!--   Core JS Files   -->
