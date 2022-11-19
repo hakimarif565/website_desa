@@ -66,7 +66,7 @@ class AdminController extends Controller
         return $this->user();
     }
 
-    public function eco()
+    public function ecommerce()
     {
         return view('admin/content_market/content_market');
     }

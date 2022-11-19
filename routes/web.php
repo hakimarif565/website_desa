@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\FrontController;
+use App\Http\Controllers\EcommerceController;
 use Illuminate\Auth\AuthenticationException;
 /*
 |--------------------------------------------------------------------------
@@ -39,8 +40,14 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/user', [AdminController::class, 'user']);
     Route::post('/user', [AdminController::class, 'store']);
     Route::get('/user_edit/{id}', [AdminController::class, 'edit']);
-    Route::post('/user_destroy/{id}', [AdminController::class, 'destroy']);
+    Route::get('/user_destroy/{id}', [AdminController::class, 'destroy']);
+
     /* a */
+
+    /*Ecommerce*/
+    Route::get('/ecommerce', [EcommerceController::class, 'index']);
+    Route::post('/store_ecommerce', [EcommerceController::class, 'store']);
+    Route::get('/add_ecommerce', [EcommerceController::class, 'add']);
 
     //Post Form System
     Route::post('/store_admin', [UserController::class, 'store']);

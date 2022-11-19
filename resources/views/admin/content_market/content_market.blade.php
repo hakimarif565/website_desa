@@ -5,7 +5,7 @@
     <div class="content">
         <div class="page-inner">
             <div class="page-header">
-                <h4 class="page-title">Data Content Pelaku Usaha</h4>
+                <h4 class="page-title">Data Ecommerce</h4>
                 <ul class="breadcrumbs">
                     <li class="nav-home">
                         <a href="/home">
@@ -22,7 +22,7 @@
                         <i class="flaticon-right-arrow"></i>
                     </li>
                     <li class="nav-item">
-                        <a href="#">Pelaku Usaha</a>
+                        <a href="#">Ecommerce</a>
                     </li>
                 </ul>
             </div>
@@ -32,8 +32,8 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="d-flex align-items-center">
-                                <h4 class="card-title">Data Pelaku Usaha</h4>
-                                <a class="btn btn-primary btn-round ml-auto" href="/booking_masuk/create">
+                                <h4 class="card-title">Data Ecommerce</h4>
+                                <a class="btn btn-primary btn-round ml-auto" href="/add_ecommerce">
                                     <i class="fa fa-plus"></i>
                                     Create
                                 </a>
@@ -47,20 +47,15 @@
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th>Nama Usaha</th>
-                                            <th>Alamat</th>
-                                            <th>Telepon</th>
-
+                                            <th>Ecommerce Name</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-
+                                        @foreach ($data as $ecommerce)
                                         <tr>
-                                            <td>1</td>
-                                            <td>Gulung Dinamo</td>
-                                            <td>Ngagel Rejo</td>
-                                            <td>1212424</td>
+                                            <td>{{$ecommerce->ecommerce_id}}</td>
+                                            <td>{{$ecommerce->ecommerce_name}}</td>
 
                                             <td>
                                                 <a href="#" data-toggle="modal" class="btn btn-primary btn-xs"><i class="fas fa-eye"></i> View</a>
@@ -68,7 +63,7 @@
                                                 <a href="#" data-toggle="modal" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Hapus</a>
                                             </td>
                                         </tr>
-
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>

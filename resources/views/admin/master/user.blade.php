@@ -65,7 +65,7 @@
                                                         <a class="btn btn-primary btn-xs" href="user_edit/{{ $user_data->user_id }}"><i class="fa fa-edit"></i> Edit</a>
                                                         @csrf
                                                         @method('DELETE')
-                                                        <a href="#modalHapusUser{{$user_data->id}}" data-toggle="modal" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i>Hapus</a>
+                                                        <a href="#modalHapusUser{{$user_data->user_id}}" data-toggle="modal" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i>Hapus</a>
                                                     </form>
                                                 </div>
                                             </td>
@@ -131,7 +131,7 @@
 //hapus data user
 
 @foreach($data as $g)
-<div class="modal fade" id="modalHapusUser{{$g->id}}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+<div class="modal fade" id="modalHapusUser{{$g->user_id}}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
