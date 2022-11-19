@@ -79,20 +79,20 @@
                             <span class="sidebar-mini-icon">
                                 <i class="fa fa-ellipsis-h"></i>
                             </span>
-                            <h4 class="text-section">Components</h4>
+                            <h4 class="text-section">Database Master</h4>
                         </li>
 
                         <li class="nav-item">
                             <a data-toggle="collapse" href="#base">
                                 <i class="fas fa-layer-group"></i>
-                                <p>Data Master</p>
+                                <p>Data Desa</p>
 
                             </a>
                             <div class="collapse" id="base">
                                 <ul class="nav nav-collapse">
                                     <li>
                                         <a href="/user">
-                                            <span class="sub-item">Data User</span>
+                                            <span class="sub-item">Ubah Detail Pengguna</span>
                                         </a>
                                     </li>
 
@@ -103,7 +103,7 @@
                         <li class="nav-item">
                             <a data-toggle="collapse" href="#bookmsk">
                                 <i class="fas fa-user-cog"></i>
-                                <p>Profile</p>
+                                <p>Market & E-Commerce</p>
                             </a>
                             <div class="collapse" id="bookmsk">
                                 <ul class="nav nav-collapse">
@@ -239,7 +239,7 @@
                         <li class="nav-item">
                             <a href="/logout">
                                 <i class="fas fa-lock"></i>
-                                Logout
+                                Keluar Akun
                             </a>
                         </li>
 
