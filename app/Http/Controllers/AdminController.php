@@ -45,7 +45,7 @@ class AdminController extends Controller
             'user_name' => $data['full_name'],
             'email' => $data['email'],
             'desa_id' => 1,
-            'username' => $data['username'],    
+            'username' => $data['username'],
             'password' => Hash::make($data['password']),
         ]);
         return $this->user();
@@ -54,7 +54,19 @@ class AdminController extends Controller
     {
         // dd($id);
         $user = User::find($id);
-        
-        return view('admin/master/user',['data_user' => $user]);
+        return view('admin/master/user', ['data_user' => $user]);
+    }
+
+    public function destroy(Request $request, $id)
+    {
+        $user = User::find($request->id);
+        $user->delete();
+
+        return $this->user();
+    }
+
+    public function eco()
+    {
+        return view('admin/content_market/content_market');
     }
 }

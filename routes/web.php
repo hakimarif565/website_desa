@@ -22,7 +22,7 @@ Route::get('/home', function () {
 });
 
 //login register
-Route::get('login',array('as'=>'login',function(){
+Route::get('login', array('as' => 'login', function () {
     return view('admin/login_page/login');
 }));
 Route::post('/check_login', [AuthController::class, 'cek_login']);
