@@ -53,17 +53,24 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-
+                                        <?php $i = 1 ?>
+                                        @foreach ($data as $user_data)
                                         <tr>
-                                            <td>1</td>
-                                            <td>a</td>
-                                            <td>b</td>
+                                            <td>{{ $i++ }}</td>
+                                            <td>{{ $user_data->user_name }}</td>
+                                            <td>{{ $user_data->email }}</td>
                                             <td>
-                                                <a href="" data-toggle="modal" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i>Edit</a>
-                                                <a href="" data-toggle="modal" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i>Hapus</a>
+                                                <div>
+                                                    <form action="{{ 'user_destroy',$user_data->user_id }}" method="Post">
+                                                        <a class="btn btn-primary" href="user_edit/{{ $user_data->user_id }}">Edit</a>
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                                    </form>
+                                                </div>
                                             </td>
                                         </tr>
-
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>
@@ -88,13 +95,16 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="/store_admin" method="POST" enctype="multipart/form-data">
+            <form action="/user" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="modal-body">
-
+                    <div class="form-grup">
+                        <label>Nama Lengkap</label>
+                        <input type="text" class="form-control" name="full_name" placeholder="Nama Lengkap ..." required>
+                    </div>
                     <div class="form-grup">
                         <label>Username</label>
-                        <input type="text" class="form-control" name="name" placeholder="Username ..." required>
+                        <input type="text" class="form-control" name="username" placeholder="Username ..." required>
                     </div>
 
                     <div class="form-grup">
