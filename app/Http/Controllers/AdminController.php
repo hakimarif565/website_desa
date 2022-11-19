@@ -52,10 +52,22 @@ class AdminController extends Controller
     }
     public function edit(Request $request, $id)
     {
-        // dd($id);
-        $user = User::find($id);
-        dd($user);
-        return view('admin/master/user', ['data_user' => $user]);
+        $data = $request->all();
+        // dd($data);
+        $user_update = User::find($data['id']);
+
+        if ($user_update) {
+            User::where('user_id', $data['id'])
+                ->update([
+                    'user_name' => $data['full_name'],
+                    'email' => $data['email'],
+                    'desa_id' => 1,
+                    'username' => $data['username'],
+                    'password' => isset($data['password']) ? Hash::make($data['password']) : $user_update->password,
+                ]);
+        }
+        return $this->user();
+        // return view('admin/master/user', ['data_user' => $user]);
     }
 
     public function destroy(Request $request, $id)
