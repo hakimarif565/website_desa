@@ -38,8 +38,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/dashboard', [AdminController::class, 'home']);
     Route::get('/user', [AdminController::class, 'user']);
     Route::post('/user', [AdminController::class, 'store']);
-    Route::get('/user_edit/{id}', [AdminController::class, 'edit']);
-    Route::post('/user_destroy/{id}', [AdminController::class, 'destroy']);
+    Route::post('/user_edit/{id}', [AdminController::class, 'edit']);
+    Route::get('/user_destroy/{id}', [AdminController::class, 'destroy']);
     /* a */
 
     //Post Form System

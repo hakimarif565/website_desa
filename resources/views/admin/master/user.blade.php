@@ -61,12 +61,13 @@
                                             <td>{{ $user_data->email }}</td>
                                             <td>
                                                 <div>
-                                                    <form action="{{ 'user_destroy',$user_data->user_id }}" method="Post">
-                                                        <a class="btn btn-primary btn-xs" href="user_edit/{{ $user_data->user_id }}"><i class="fa fa-edit"></i> Edit</a>
+                                                    <!-- <form action="{{ 'user_destroy',$user_data->user_id }}" method="Post"> -->
                                                         @csrf
                                                         @method('DELETE')
-                                                        <a href="#modalHapusUser{{$user_data->id}}" data-toggle="modal" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i>Hapus</a>
-                                                    </form>
+                                                        <!-- <a href="#modalEditUser{{$user_data->user_id}}"  data-toggle="modal" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i>Edit</a> -->
+                                                        <a href="#modalEditUser{{$user_data->user_id}}"  data-toggle="modal" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i>Edit</a>
+                                                        <a href="#modalHapusUser{{$user_data->user_id}}" data-toggle="modal" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i>Hapus</a>
+                                                    <!-- </form> -->
                                                 </div>
                                             </td>
                                         </tr>
@@ -131,7 +132,7 @@
 //hapus data user
 
 @foreach($data as $g)
-<div class="modal fade" id="modalHapusUser{{$g->id}}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+<div class="modal fade" id="modalHapusUser{{$g->user_id}}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
@@ -153,6 +154,53 @@
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-undo"></i>Close</button>
                         <button type="submit" class="btn btn-danger"> <i class="fa fa-trash"></i>Hapus Data</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@endforeach
+
+//edit user 
+
+@foreach($data as $g)
+<div class="modal fade" id="modalEditUser{{$g->user_id}}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Hapus User</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="/user_edit/{id}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <input type="hidden" value="{{$g->user_id}}" name="id" required>
+                <div class="modal-body">
+                    <div class="form-grup">
+                        <label>Nama Lengkap</label>
+                        <input type="text" value="{{$g->user_name}}" class="form-control" name="full_name" placeholder="Nama Lengkap ..." required>
+                    </div>
+                    <div class="form-grup">
+                        <label>Username</label>
+                        <input type="text" class="form-control" value="{{$g->username}}" name="username" placeholder="Username ..." required>
+                    </div>
+
+                    <div class="form-grup">
+                        <label>Email</label>
+                        <input type="email" class="form-control" value="{{$g->email}}" name="email" placeholder="Email ..." required>
+                    </div>
+
+                    <div class="form-grup">
+                        <label>Password</label>
+                        <input type="password" class="form-control" value="" name="password" placeholder="isi jika ganti password ...">
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-undo"></i>Close</button>
+                        <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Save changes</button>
                     </div>
                 </div>
             </form>
