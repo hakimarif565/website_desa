@@ -37,7 +37,7 @@
         <!--
 			Tip 1: You can change the background color of the main header using: data-background-color="blue | purple | light-blue | green | orange | red"
 		-->
-        <div class="main-header" data-background-color="purple">
+        <div class="main-header" data-background-color="red">
             <!-- Logo Header -->
             <div class="logo-header">
 
@@ -212,18 +212,18 @@
                             <div class="collapse" id="base">
                                 <ul class="nav nav-collapse">
                                     <li>
+                                        <a href="#">
+                                            <span class="sub-item">Detail Desa</span>
+                                        </a>
+                                    </li>
+                                    <li>
                                         <a href="/user">
-                                            <span class="sub-item">User</span>
+                                            <span class="sub-item">Detail Pengguna</span>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#">
                                             <span class="sub-item">Tambah Berita Desa</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <span class="sub-item">Detail Pengguna</span>
                                         </a>
                                     </li>
                                 </ul>
