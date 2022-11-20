@@ -66,7 +66,7 @@
                         <li class="nav-item dropdown hidden-caret">
                             <a class="nav-link dropdown-toggle" href="#" id="notifDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fa fa-bell"></i>
-                                <span class="notification">4</span>
+                                <span class="notification">+</span>
                             </a>
                             <ul class="dropdown-menu notif-box animated fadeIn" aria-labelledby="notifDropdown">
                                 <li>
@@ -129,18 +129,12 @@
                                     <div class="user-box">
                                         <div class="avatar-lg"><img src="../assets/img/profile.jpg" alt="image profile" class="avatar-img rounded"></div>
                                         <div class="u-text">
-                                            <h4>Hizrian</h4>
-                                            <p class="text-muted">hello@example.com</p><a href="profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a>
+                                            <h4>{{{ isset(Auth::user()->user_name) ? Auth::user()->user_name : Auth::user()->user_name }}}</h4>
+                                            <p class="text-muted"></p><a href="#" class=" btn-rounded btn-danger btn-sm">Admin</a>
                                         </div>
                                     </div>
                                 </li>
                                 <li>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">My Profile</a>
-                                    <a class="dropdown-item" href="#">My Balance</a>
-                                    <a class="dropdown-item" href="#">Inbox</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">Account Setting</a>
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="#">Logout</a>
                                 </li>
