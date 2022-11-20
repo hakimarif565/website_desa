@@ -239,9 +239,6 @@
                                 <ul class="nav nav-collapse">
                                     <li>
                                         <a href="/ecommerce">
-<<<<<<< HEAD
-                                            <span class="sub-item">Add Content</span>
-=======
                                             <span class="sub-item">Daftar E-Commerce</span>
                                         </a>
                                         <a href="#">
@@ -252,7 +249,6 @@
                                         </a>
                                         <a href="#">
                                             <span class="sub-item">Marketplace Produk Layanan / UMKM</span>
->>>>>>> 3756d6652809b78df64f78de495f99ce67b64515
                                         </a>
                                     </li>
                                 </ul>
