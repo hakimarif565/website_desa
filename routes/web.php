@@ -39,7 +39,7 @@ Route::group(['middleware' => ['auth']], function () {
 
     /*Ecommerce*/
     Route::get('/ecommerce', [AdminController::class, 'ecommerce']);
-    Route::get('/add_ecommerce', [AdminController::class, 'ecommerce_add']);
+    // Route::get('/add_ecommerce', [AdminController::class, 'ecommerce_add']);
     Route::get('/delete_ecommerce/{id}', [AdminController::class, 'ecommerce_destroy']);
 
     //Post Form System
