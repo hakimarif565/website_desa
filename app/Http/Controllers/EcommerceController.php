@@ -17,8 +17,17 @@ class EcommerceController extends Controller
 
     public function store(Request $request)
     {
+        $id = Ecommerce::orderByRaw('LENGTH(ecommerce_id) DESC')
+            ->orderBy('ecommerce_id', 'DESC')
+            ->first();
+        if ($id == NULL) {
+            $id = 1;
+        } else {
+            $id = $id->ecommerce_id + 1;
+        }
         Ecommerce::create([
-            'ecommerce_name' => $request->ecommerce_name,
+            'ecommerce_id'       => $id,
+            'ecommerce_name'      => $request->ecommerce_name,
         ]);
 
         return redirect('/ecommerce')->with('success', 'Data Berhasil disimpan');

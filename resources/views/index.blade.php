@@ -151,31 +151,31 @@
             <div class="content">
               <h3><strong>Visi dan Misi</strong> Perangkat Desa</h3>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
+              Website ini kami hadirkan sebagai media informasi Pemerintah Desa kepada masyarakat. Juga sebagai sarana interaksi, komunikasi dan transparansi publik untuk keterbukaan informasi.
               </p>
             </div>
             @foreach ($data as $datas)
             <div class="accordion-list">
               <ul>
                 <li>
-                  <a data-bs-toggle="collapse" class="collapse" data-bs-target="#accordion-list-1"><span>01</span> {{$datas->desa_visi}} <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                  <a data-bs-toggle="collapse" class="collapse" data-bs-target="#accordion-list-1"> VISI<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
                   <div id="accordion-list-1" class="collapse show" data-bs-parent=".accordion-list">
                     <p>
-                      Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
-                    </p>
-                  </div>
-                </li>
-
-                <!-- <li>
-                  <a data-bs-toggle="collapse" data-bs-target="#accordion-list-2" class="collapsed"><span>02</span> Feugiat scelerisque varius morbi enim nunc? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-                  <div id="accordion-list-2" class="collapse" data-bs-parent=".accordion-list">
-                    <p>
-                      Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
+                    {{$datas->desa_visi}}
                     </p>
                   </div>
                 </li>
 
                 <li>
+                  <a data-bs-toggle="collapse" data-bs-target="#accordion-list-2" class="collapsed">MISI <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                  <div id="accordion-list-2" class="collapse" data-bs-parent=".accordion-list">
+                    <p>
+                    {{$datas->desa_misi}}
+                    </p>
+                  </div>
+                </li>
+
+                <!--<li>
                   <a data-bs-toggle="collapse" data-bs-target="#accordion-list-3" class="collapsed"><span>03</span> Dolor sit amet consectetur adipiscing elit? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
                   <div id="accordion-list-3" class="collapse" data-bs-parent=".accordion-list">
                     <p>
@@ -190,7 +190,7 @@
 
           </div>
 
-          <div class="col-lg-5 align-items-stretch order-1 order-lg-2 img" style='background-image: url("img/why-us.png");' data-aos="zoom-in" data-aos-delay="150">&nbsp;</div>
+          <div class="col-lg-5 align-items-stretch order-1 order-lg-2 img" data-aos="zoom-in" data-aos-delay="150"><img src="https://dummyimage.com/500x400/" /> </div>
         </div>
 
       </div>
@@ -202,13 +202,12 @@
 
         <div class="row">
           <div class="col-lg-6 d-flex align-items-center" data-aos="fade-right" data-aos-delay="100">
-            <img src="{{ asset('img/skills.png') }}" class="img-fluid" alt="">
+          <img src="https://dummyimage.com/500x400/" /> 
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left" data-aos-delay="100">
             <h3>Produk & Layanan UMKM Desa Kampung Dinamo</h3>
             <p class="fst-italic">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua.
+               Jumlah pelaku usaha UMKM pada desa kampung dinamo
             </p>
 
             <div class="skills-content">
@@ -255,13 +254,13 @@
 
         <div class="section-title">
           <h2>Layanan & UMKM</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <p>layanan service dinamo dan umkm pada desa ngagel rejo</p>
         </div>
 
         <div class="row">
           <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
             <div class="icon-box">
-              <div class="icon"><i class="bx bxl-dribbble"></i></div>
+              <div class="icon"><img src="https://dummyimage.com/200x200/" /></div>
               <h4><a href="">Servis Dinamo</a></h4>
               <p>Harga: 100.000 ~ 200.000</p>
             </div>
@@ -269,15 +268,15 @@
 
           <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
             <div class="icon-box">
-              <div class="icon"><i class="bx bx-file"></i></div>
-              <h4><a href="">Toko Onderdil Dinamo</a></h4>
+            <div class="icon"> <img src="https://dummyimage.com/200x200/" />  </div>
+              <h4><a href="">UMKM Makanan</a></h4>
               <p>Harga: 100.000 ~ 200.000</p>
             </div>
           </div>
 
           <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="300">
             <div class="icon-box">
-              <div class="icon"><i class="bx bx-tachometer"></i></div>
+              <div class="icon"><img src="https://dummyimage.com/200x200/" /> </div>
               <h4><a href="">UMKM Makanan</a></h4>
               <p>Harga: 100.000 ~ 200.000</p>
             </div>
@@ -285,7 +284,7 @@
 
           <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="400">
             <div class="icon-box">
-              <div class="icon"><i class="bx bx-layer"></i></div>
+              <div class="icon"><img src="https://dummyimage.com/200x200/" /></div>
               <h4><a href="">UMKM Lain-Lain</a></h4>
               <p>Harga: 100.000 ~ 200.000</p>
             </div>
@@ -303,14 +302,14 @@
 
         <div class="section-title">
           <h2>Rekomendasi</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <p>Dibawah ini adalah rekomendasi dari user</p>
         </div>
 
         <div class="row">
 
           <div class="col-lg-6">
             <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="100">
-              <div class="pic"><img src="{{ asset('img/team/team-1.jpg') }}" class="img-fluid" alt=""></div>
+              <div class="pic"><img src="https://dummyimage.com/200x200/" class="img-fluid" alt=""></div>
               <div class="member-info">
                 <h4>PT. X</h4>
                 <span>Chief Executive Officer</span>
@@ -327,7 +326,7 @@
 
           <div class="col-lg-6 mt-4 mt-lg-0">
             <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="200">
-              <div class="pic"><img src="{{ asset('img/team/team-2.jpg') }}" class="img-fluid" alt=""></div>
+              <div class="pic"><img src="https://dummyimage.com/200x200/" class="img-fluid" alt=""></div>
               <div class="member-info">
                 <h4>PT. Y</h4>
                 <span>Product Manager</span>
@@ -344,7 +343,7 @@
 
           <div class="col-lg-6 mt-4">
             <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="300">
-              <div class="pic"><img src="{{ asset('img/team/team-3.jpg') }}" class="img-fluid" alt=""></div>
+              <div class="pic"><img src="https://dummyimage.com/200x200/" class="img-fluid" alt=""></div>
               <div class="member-info">
                 <h4>PT. Z</h4>
                 <span>CTO</span>
@@ -361,7 +360,8 @@
 
           <div class="col-lg-6 mt-4">
             <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="400">
-              <div class="pic"><img src="{{ asset('img/team/team-4.jpg') }}" class="img-fluid" alt=""></div>
+              <!-- <div class="pic"><img src="{{ asset('img/team/team-4.jpg') }}" class="img-fluid" alt=""></div> -->
+              <div class="pic"><img src="https://dummyimage.com/200x200/" class="img-fluid" alt=""></div>
               <div class="member-info">
                 <h4>Amanda Jepson</h4>
                 <span>Accountant</span>
@@ -388,39 +388,39 @@
 
         <div class="section-title">
           <h2>Foto & Video</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <p>kegiatan dan event pada desa ngagel rejo RW 6</p>
         </div>
 
         <div class="row mt-4">
           <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
             <div class="icon-box">
-              <div class="icon"><i class="bx bxl-dribbble"></i></div>
-              <h4><a href="">Servis Dinamo</a></h4>
-              <p>Harga: 100.000 ~ 200.000</p>
+              <div class="icon"><img src="https://dummyimage.com/200x200/" /></i></div>
+              <h4><a href="">Kegiatan & Event</a></h4>
+              
             </div>
           </div>
 
           <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
             <div class="icon-box">
-              <div class="icon"><i class="bx bx-file"></i></div>
-              <h4><a href="">Toko Onderdil Dinamo</a></h4>
-              <p>Harga: 100.000 ~ 200.000</p>
+              <div class="icon"><img src="https://dummyimage.com/200x200/" /></i></div>
+              <h4><a href="">Kegiatan & Event</a></h4>
+              
             </div>
           </div>
 
           <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="300">
             <div class="icon-box">
-              <div class="icon"><i class="bx bx-tachometer"></i></div>
-              <h4><a href="">UMKM Makanan</a></h4>
-              <p>Harga: 100.000 ~ 200.000</p>
+              <div class="icon"><img src="https://dummyimage.com/200x200/" /></div>
+              <h4><a href="">Kegiatan & Event</a></h4>
+              
             </div>
           </div>
 
           <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0">
             <div class="icon-box">
-              <div class="icon"><i class="bx bx-tachometer"></i></div>
-              <h4><a href="">UMKM Lain-Lain</a></h4>
-              <p>Harga: 100.000 ~ 200.000</p>
+              <div class="icon"><img src="https://dummyimage.com/200x200/" /></div>
+              <h4><a href="">Kegiatan & Event</a></h4>
+              
             </div>
           </div>
         </div>
@@ -428,33 +428,33 @@
         <div class="row mt-4">
             <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
               <div class="icon-box">
-                <div class="icon"><i class="bx bxl-dribbble"></i></div>
-                <h4><a href="">Servis Dinamo</a></h4>
-                <p>Harga: 100.000 ~ 200.000</p>
+                <div class="icon"><img src="https://dummyimage.com/200x200/" /></i></div>
+                <h4><a href="">Kegiatan & Event</a></h4>
+                
               </div>
             </div>
 
             <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
               <div class="icon-box">
-                <div class="icon"><i class="bx bx-file"></i></div>
-                <h4><a href="">Toko Onderdil Dinamo</a></h4>
-                <p>Harga: 100.000 ~ 200.000</p>
+                <div class="icon"><img src="https://dummyimage.com/200x200/" /></i></div>
+                <h4><a href="">Kegiatan & Event</a></h4>
+                
               </div>
             </div>
 
             <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="300">
               <div class="icon-box">
-                <div class="icon"><i class="bx bx-tachometer"></i></div>
-                <h4><a href="">UMKM Makanan</a></h4>
-                <p>Harga: 100.000 ~ 200.000</p>
+                <div class="icon"><img src="https://dummyimage.com/200x200/" /></i></div>
+                <h4><a href="">Kegiatan & Event</a></h4>
+                
               </div>
             </div>
 
             <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0">
               <div class="icon-box">
-                <div class="icon"><i class="bx bx-tachometer"></i></div>
-                <h4><a href="">UMKM Lain-Lain</a></h4>
-                <p>Harga: 100.000 ~ 200.000</p>
+                <div class="icon"><img src="https://dummyimage.com/200x200/" /></i></div>
+                <h4><a href="">Kegiatan & Event</a></h4>
+                
               </div>
             </div>
           </div>
@@ -463,8 +463,8 @@
           <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0">
             {{-- <div class="icon-box">
               <div class="icon"><i class="bx bx-layer"></i></div>
-              <h4><a href="">UMKM Lain-Lain</a></h4>
-              <p>Harga: 100.000 ~ 200.000</p>
+              <h4><a href="">Kegiatan & Event</a></h4>
+              
             </div> --}}
             <div class="media">
                 <div class="media-body">
