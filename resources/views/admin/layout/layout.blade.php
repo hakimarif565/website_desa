@@ -213,7 +213,7 @@
                                 <ul class="nav nav-collapse">
                                     <li>
                                         <a href="/user">
-                                            <span class="sub-item">Detail Desa</span>
+                                            <span class="sub-item">User</span>
                                         </a>
                                     </li>
                                     <li>
