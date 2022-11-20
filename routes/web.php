@@ -18,7 +18,7 @@ use Illuminate\Auth\AuthenticationException;
 */
 
 Route::get('/', [FrontController::class, 'index']);
-Route::get('/home',[FrontController::class, 'index']);
+Route::get('/home', [FrontController::class, 'index']);
 
 //login register
 Route::get('login', array('as' => 'login', function () {
@@ -45,7 +45,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/ecommerce', [EcommerceController::class, 'index']);
     Route::post('/store_ecommerce', [EcommerceController::class, 'store']);
     Route::get('/add_ecommerce', [EcommerceController::class, 'add']);
-
+    Route::get('/delete_ecommerce/{id}', [EcommerceController::class, 'destroy']);
     //Post Form System
     Route::post('/store_admin', [UserController::class, 'store']);
 });
