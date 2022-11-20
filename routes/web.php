@@ -39,13 +39,13 @@ Route::group(['middleware' => ['auth']], function () {
 
     /*Ecommerce*/
     Route::get('/ecommerce', [EcommerceController::class, 'index']);
+    Route::post('/store_ecommerce', [EcommerceController::class, 'store']);
     Route::get('/add_ecommerce', [EcommerceController::class, 'add']);
     Route::get('/delete_ecommerce/{id}', [EcommerceController::class, 'destroy']);
+    Route::post('/edit_ecommerce/{id}', [EcommerceController::class, 'edit']);
 
     //Post Form System
     Route::post('/store_admin', [UserController::class, 'store']);
     Route::post('/user', [AdminController::class, 'store']);
     Route::post('/user_edit/{id}', [AdminController::class, 'edit']);
-
-    Route::post('/store_ecommerce', [EcommerceController::class, 'store']);
 });
