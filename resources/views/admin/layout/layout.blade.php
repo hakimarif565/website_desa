@@ -212,18 +212,18 @@
                             <div class="collapse" id="base">
                                 <ul class="nav nav-collapse">
                                     <li>
+                                        <a href="#">
+                                            <span class="sub-item">Detail Desa</span>
+                                        </a>
+                                    </li>
+                                    <li>
                                         <a href="/user">
-                                            <span class="sub-item">User</span>
+                                            <span class="sub-item">Detail Pengguna</span>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#">
                                             <span class="sub-item">Tambah Berita Desa</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <span class="sub-item">Detail Pengguna</span>
                                         </a>
                                     </li>
                                 </ul>
