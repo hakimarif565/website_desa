@@ -192,7 +192,7 @@
                             <h4 class="text-section">Admin Dashboard</h4>
                         </li>
                         <li class="nav-item">
-                            <a href="/home" target="_blank">
+                            <a href="/" target="_blank">
                                 <i class="fas fa-laptop"></i>
                                 <p>Website</p>
                             </a>
@@ -236,7 +236,7 @@
                                 <ul class="nav nav-collapse">
                                     <li>
                                         <a href="/ecommerce">
-                                            <span class="sub-item">Add Contentk</span>
+                                            <span class="sub-item">Add Content</span>
                                         </a>
                                     </li>
                                 </ul>

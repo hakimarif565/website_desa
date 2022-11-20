@@ -43,6 +43,19 @@ class EcommerceController extends Controller
         $ecommerce = Ecommerce::find($request->id);
         $ecommerce->delete();
 
-        return $this->ecommerce();
+        return redirect('/ecommerce')->with('success', 'Data Berhasil diubah');
+    }
+
+    public function edit(Request $request, $id)
+    {
+        $data = $request->all();
+        $ecommerce = Ecommerce::find($data['id']);
+        if ($ecommerce) {
+            Ecommerce::where('ecommerce_id', $data['id'])
+                ->update([
+                    "ecommerce_name" => $data['ecommerce_name'],
+                ]);
+        }
+        return $this->index();
     }
 }

@@ -63,7 +63,7 @@
                                                     @csrf
                                                     @method('DELETE')
 
-                                                    <a href="#" data-toggle="modal" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i>Edit</a>
+                                                    <a href="#modalEditEcommerce{{$ecommerce->ecommerce_id}}" data-toggle="modal" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i>Edit</a>
                                                     <a href="#modalHapusEcommerce{{$ecommerce->ecommerce_id}}" data-toggle="modal" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i>Hapus</a>
                                                     <!-- </form> -->
                                                 </div>
@@ -80,6 +80,40 @@
         </div>
     </div>
 </div>
+
+
+//edit
+
+@foreach($data as $g)
+<div class="modal fade" id="modalEditEcommerce{{$g->ecommerce_id}}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Edit Data</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="/edit_ecommerce/{id}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <input type="hidden" value="{{$g->ecommerce_id}}" name="id" required>
+                <div class="modal-body">
+                    <div class="form-grup">
+                        <label>Nama Ecommerce</label>
+                        <input type="text" value="{{$g->ecommerce_name}}" class="form-control" name="ecommerce_name" placeholder="Nama Ecommerce ..." required>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-undo"></i>Close</button>
+                        <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Save changes</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@endforeach
 
 //hapus data
 
