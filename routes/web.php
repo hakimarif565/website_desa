@@ -31,9 +31,12 @@ Route::post('/registering', [AuthController::class, 'register_process']);
 
 //All Admin Privilege Page and Process
 Route::group(['middleware' => ['auth']], function () {
-    //Page Load System
-    /* user admin */
     Route::get('/dashboard', [AdminController::class, 'home']);
+    //Page Load System
+    /* Desa */
+    Route::get('/berita', [AdminController::class, 'home']);
+
+    /* user admin */
     Route::get('/user', [AdminController::class, 'user']);
     Route::get('/user_destroy/{id}', [AdminController::class, 'user_destroy']);
 

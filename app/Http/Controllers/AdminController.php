@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Berita;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Ecommerce;
@@ -129,5 +130,12 @@ class AdminController extends Controller
                 ]);
         }
         return $this->ecommerce();
+    }
+
+    public function berita()
+    {
+        $beritas = Berita::all();
+        // return view('admin.content_market.content_market', compact('content_market'));
+        return view('admin/content_market/content_market', ['data' => $beritas]);
     }
 }
