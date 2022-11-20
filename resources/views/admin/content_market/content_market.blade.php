@@ -58,8 +58,15 @@
                                             <td>{{$ecommerce->ecommerce_name}}</td>
 
                                             <td>
-                                                <a href="#" data-toggle="modal" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i> Edit</a>
-                                                <a href="#modalHapusEcommerce{{$ecommerce->ecommerce_id}}" data-toggle="modal" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Hapus</a>
+                                                <div>
+
+                                                    @csrf
+                                                    @method('DELETE')
+
+                                                    <a href="#" data-toggle="modal" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i>Edit</a>
+                                                    <a href="#modalHapusEcommerce{{$ecommerce->ecommerce_id}}" data-toggle="modal" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i>Hapus</a>
+                                                    <!-- </form> -->
+                                                </div>
                                             </td>
                                         </tr>
                                         @endforeach
@@ -76,8 +83,8 @@
 
 //hapus data
 
-@foreach($ecommerce as $g)
-<div class="modal fade" id="modalHapusEcommerce{{$g->ecommerce_id}}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+@foreach($data as $e)
+<div class="modal fade" id="modalHapusEcommerce{{$e->ecommerce_id}}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
@@ -90,7 +97,7 @@
                 @csrf
                 <div class="modal-body">
 
-                    <input type="hidden" value="{{$g->ecommerce_id}}" name="id" required>
+                    <input type="hidden" value="{{$e->ecommerce_id}}" name="id" required>
 
                     <div class="form-grup">
                         <h4>Apakah anda ingin menghapus data ini?</h4>
