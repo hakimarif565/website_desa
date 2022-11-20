@@ -58,7 +58,6 @@
                                             <td>{{$ecommerce->ecommerce_name}}</td>
 
                                             <td>
-                                                <a href="#" data-toggle="modal" class="btn btn-primary btn-xs"><i class="fas fa-eye"></i> View</a>
                                                 <a href="#" data-toggle="modal" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i> Edit</a>
                                                 <a href="#" data-toggle="modal" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Hapus</a>
                                             </td>

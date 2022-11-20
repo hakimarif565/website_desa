@@ -92,7 +92,12 @@
                                 <ul class="nav nav-collapse">
                                     <li>
                                         <a href="/user">
-                                            <span class="sub-item">Ubah Detail Pengguna</span>
+                                            <span class="sub-item">Data User</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="sub-item">Profil Desa</span>
                                         </a>
                                     </li>
 
