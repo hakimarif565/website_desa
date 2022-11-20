@@ -33,10 +33,10 @@
                         <div class="card-header">
                             <div class="d-flex align-items-center">
                                 <h4 class="card-title">Data Ecommerce</h4>
-                                <a class="btn btn-primary btn-round ml-auto" href="/add_ecommerce">
+                                <button class="btn btn-primary btn-round ml-auto" data-toggle="modal" data-target="#modalAddEcommerce">
                                     <i class="fa fa-plus"></i>
                                     Create
-                                </a>
+                                </button>
                             </div>
                         </div>
                         <div class="card-body">
@@ -80,6 +80,37 @@
         </div>
     </div>
 </div>
+
+// add data
+
+<div class="modal fade" id="modalAddEcommerce" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Add Ecommerce</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="/store_ecommerce" method="POST" enctype="multipart/form-data">
+                @csrf
+                <div class="modal-body">
+                    <div class="form-grup">
+                        <label>Nama Ecommerce</label>
+                        <input type="text" class="form-control" name="ecommerce_name" placeholder="Nama Ecommerce ..." required>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-undo"></i>Close</button>
+                        <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Save changes</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
 
 
 //edit
