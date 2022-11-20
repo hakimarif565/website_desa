@@ -270,11 +270,11 @@
                         </li>
 
                         <li class="nav-item">
-                            <a data-toggle="collapse" href="#cont_keluar">
+                            <a data-toggle="collapse" href="#photo_video">
                                 <i class="fab fa-youtube-square"></i>
                                 <p>Foto & Video</p>
                             </a>
-                            <div class="collapse" id="cont_keluar">
+                            <div class="collapse" id="photo_video">
                                 <ul class="nav nav-collapse">
                                     <li>
                                         <a href="/cont_keluar">
@@ -286,11 +286,11 @@
                         </li>
 
                         <li class="nav-item">
-                            <a data-toggle="collapse" href="#cont_keluar">
+                            <a data-toggle="collapse" href="#contact">
                                 <i class="fas fa-book"></i>
                                 <p>Kontak</p>
                             </a>
-                            <div class="collapse" id="cont_keluar">
+                            <div class="collapse" id="contact">
                                 <ul class="nav nav-collapse">
                                     <li>
                                         <a href="/cont_keluar">
