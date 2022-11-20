@@ -381,15 +381,15 @@
                         </li>
 
                         <li class="nav-item">
-                            <a data-toggle="collapse" href="#bookmsk">
+                            <a data-toggle="collapse" href="#eco">
                                 <i class="fas fa-user-cog"></i>
                                 <p>Market & E-Commerce</p>
                             </a>
-                            <div class="collapse" id="bookmsk">
+                            <div class="collapse" id="eco">
                                 <ul class="nav nav-collapse">
                                     <li>
                                         <a href="/ecommerce">
-                                            <span class="sub-item">Add Booking Masuk</span>
+                                            <span class="sub-item">Add Contentk</span>
                                         </a>
                                     </li>
                                 </ul>
