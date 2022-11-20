@@ -8,7 +8,7 @@ use Hash;
 
 class AdminController extends Controller
 {
-    public function home()
+    public function home(User $user)
     {
         return view('admin/layout/layout');
     }
