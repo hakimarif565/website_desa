@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Ecommerce;
+use App\Models\Pelaku_Usaha;
 use Hash;
 
 
@@ -129,5 +130,56 @@ class AdminController extends Controller
                 ]);
         }
         return $this->ecommerce();
+    }
+
+    public function pelaku_usaha()
+    {
+        $pelaku_usaha = Pelaku_Usaha::all();
+        // return view('admin.content_market.content_market', compact('content_market'));
+        return view('admin/layanan_umkm/index', ['data' => $pelaku_usaha]);
+    }
+
+    public function pelaku_usaha_store(Request $request)
+    {
+        $id = Pelaku_Usaha::orderByRaw('LENGTH(ecommerce_id) DESC')
+            ->orderBy('ecommerce_id', 'DESC')
+            ->first();
+        if ($id == NULL) {
+            $id = 1;
+        } else {
+            $id = $id->ecommerce_id + 1;
+        }
+        Ecommerce::create([
+            'ecommerce_id'       => $id,
+            'ecommerce_name'      => $request->ecommerce_name,
+        ]);
+
+        return redirect('/pelaku_usaha')->with('success', 'Data Berhasil disimpan');
+    }
+
+    public function pelaku_usaha_add()
+    {
+        return view('admin/layanan_umkm/add_content');
+    }
+
+    public function pelaku_usaha_destroy(Request $request, $id)
+    {
+        $ecommerce = Pelaku_Usaha::find($request->id);
+        $ecommerce->delete();
+
+        return redirect('/pelaku_usaha')->with('success', 'Data Berhasil diubah');
+    }
+
+    public function pelaku_usaha_edit(Request $request, $id)
+    {
+        $data = $request->all();
+        $ecommerce = Pelaku_Usaha::find($data['id']);
+        if ($ecommerce) {
+            Pelaku_Usaha::where('ecommerce_id', $data['id'])
+                ->update([
+                    "ecommerce_name" => $data['ecommerce_name'],
+                ]);
+        }
+        return $this->pelaku_usaha();
     }
 }

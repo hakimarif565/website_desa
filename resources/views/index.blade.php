@@ -114,26 +114,13 @@
         <div class="section-title">
           <h2>Sejarah</h2>
         </div>
-
+        @foreach ($data as $datas)
         <div class="row content">
-          <div class="col-lg-6">
+          <div class="col-lg-12">
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua.
+             {{$datas->desa_sejarah}}
             </p>
-            <ul>
-              <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
-              <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit</li>
-              <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
-            </ul>
-          </div>
-          <div class="col-lg-6 pt-4 pt-lg-0">
-            <p>
-              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-            <a href="#" class="btn-learn-more">Learn More</a>
+            <a href="#" class="btn-learn-more"></a>
           </div>
         </div>
 
@@ -154,7 +141,7 @@
               Website ini kami hadirkan sebagai media informasi Pemerintah Desa kepada masyarakat. Juga sebagai sarana interaksi, komunikasi dan transparansi publik untuk keterbukaan informasi.
               </p>
             </div>
-            @foreach ($data as $datas)
+            
             <div class="accordion-list">
               <ul>
                 <li>
@@ -190,7 +177,7 @@
 
           </div>
 
-          <div class="col-lg-5 align-items-stretch order-1 order-lg-2 img" data-aos="zoom-in" data-aos-delay="150"><img src="https://dummyimage.com/500x400/" /> </div>
+          <div class="col-lg-5 align-items-stretch order-1 order-lg-2 img" data-aos="zoom-in" data-aos-delay="150"><img src="{{ asset('img/visi_misi.png')}}" /> </div>
         </div>
 
       </div>
@@ -311,7 +298,7 @@
             <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="100">
               <div class="pic"><img src="https://dummyimage.com/200x200/" class="img-fluid" alt=""></div>
               <div class="member-info">
-                <h4>PT. X</h4>
+                <h4>Ferdi Sambo</h4>
                 <span>Chief Executive Officer</span>
                 <p>Explicabo voluptatem mollitia et repellat qui dolorum quasi</p>
                 <div class="social">
@@ -328,7 +315,7 @@
             <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="200">
               <div class="pic"><img src="https://dummyimage.com/200x200/" class="img-fluid" alt=""></div>
               <div class="member-info">
-                <h4>PT. Y</h4>
+                <h4>Brigadir J</h4>
                 <span>Product Manager</span>
                 <p>Aut maiores voluptates amet et quis praesentium qui senda para</p>
                 <div class="social">
@@ -345,7 +332,7 @@
             <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="300">
               <div class="pic"><img src="https://dummyimage.com/200x200/" class="img-fluid" alt=""></div>
               <div class="member-info">
-                <h4>PT. Z</h4>
+                <h4>Vio</h4>
                 <span>CTO</span>
                 <p>Quisquam facilis cum velit laborum corrupti fuga rerum quia</p>
                 <div class="social">
@@ -363,7 +350,7 @@
               <!-- <div class="pic"><img src="{{ asset('img/team/team-4.jpg') }}" class="img-fluid" alt=""></div> -->
               <div class="pic"><img src="https://dummyimage.com/200x200/" class="img-fluid" alt=""></div>
               <div class="member-info">
-                <h4>Amanda Jepson</h4>
+                <h4>Mbah</h4>
                 <span>Accountant</span>
                 <p>Dolorum tempora officiis odit laborum officiis et et accusamus</p>
                 <div class="social">
