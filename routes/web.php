@@ -31,19 +31,21 @@ Route::post('/registering', [AuthController::class, 'register_process']);
 
 //All Admin Privilege Page and Process
 Route::group(['middleware' => ['auth']], function () {
-    Route::get('/dashboard', [AdminController::class, 'home']);
     //Page Load System
-    /* Desa */
-    Route::get('/berita', [AdminController::class, 'home']);
-
     /* user admin */
+    Route::get('/dashboard', [AdminController::class, 'home']);
     Route::get('/user', [AdminController::class, 'user']);
     Route::get('/user_destroy/{id}', [AdminController::class, 'user_destroy']);
 
     /*Ecommerce*/
     Route::get('/ecommerce', [AdminController::class, 'ecommerce']);
-    // Route::get('/add_ecommerce', [AdminController::class, 'ecommerce_add']);
+    Route::get('/add_ecommerce', [AdminController::class, 'ecommerce_add']);
     Route::get('/delete_ecommerce/{id}', [AdminController::class, 'ecommerce_destroy']);
+
+    /* Pelaku Usaha */
+    Route::get('/pelaku_usaha', [AdminController::class, 'pelaku_usaha']);
+    Route::get('/add_pelaku_usaha', [AdminController::class, 'pelaku_usaha_add']);
+    Route::get('/delete_pelaku_usaha/{id}', [AdminController::class, 'pelaku_usaha_destroy']);
 
     //Post Form System
     Route::post('/user', [AdminController::class, 'user_store']);
