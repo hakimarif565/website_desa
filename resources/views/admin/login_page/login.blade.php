@@ -32,8 +32,8 @@
 <body class="login">
     <div class="wrapper wrapper-login">
         <div class="container container-login animated fadeIn">
-            <center><img src="/assets/img/group.png" width="80px" height="75px"></center><br>
-            <h3 class="text-center">Admin Desa Login</h3>
+            <center><img src="{{ asset('img/logo sby.png') }}" width="80px" height="75px"></center><br>
+            <h3 class="text-center">Admin Login</h3>
 
             <form method="POST" action="/check_login" enctype="multipart/form-data">
                 @csrf
