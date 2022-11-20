@@ -232,7 +232,7 @@
 
                         <li class="nav-item">
                             <a data-toggle="collapse" href="#eco">
-                                <i class="fas fa-user-cog"></i>
+                                <i class="fas fa-store-alt"></i>
                                 <p>Market & E-Commerce</p>
                             </a>
                             <div class="collapse" id="eco">
