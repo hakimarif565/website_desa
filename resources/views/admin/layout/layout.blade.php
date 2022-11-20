@@ -213,10 +213,19 @@
                                 <ul class="nav nav-collapse">
                                     <li>
                                         <a href="/user">
-                                            <span class="sub-item">Ubah Detail Pengguna</span>
+                                            <span class="sub-item">Detail Desa</span>
                                         </a>
                                     </li>
-
+                                    <li>
+                                        <a href="#">
+                                            <span class="sub-item">Tambah Berita Desa</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="sub-item">Detail Pengguna</span>
+                                        </a>
+                                    </li>
                                 </ul>
                             </div>
                         </li>
@@ -230,29 +239,41 @@
                                 <ul class="nav nav-collapse">
                                     <li>
                                         <a href="/ecommerce">
-                                            <span class="sub-item">Add Booking Masuk</span>
+                                            <span class="sub-item">Daftar E-Commerce</span>
+                                        </a>
+                                        <a href="#">
+                                            <span class="sub-item">Daftar UMKM</span>
+                                        </a>
+                                        <a href="#">
+                                            <span class="sub-item">Daftar Produk dan Layanan</span>
+                                        </a>
+                                        <a href="#">
+                                            <span class="sub-item">Marketplace Produk Layanan / UMKM</span>
                                         </a>
                                     </li>
                                 </ul>
                             </div>
                         </li>
-
                         <li class="nav-item">
-                            <a data-toggle="collapse" href="#contmsk">
+                            <a data-toggle="collapse" href="#dinamo">
                                 <i class="fas fa-store"></i>
-                                <p>Layanan</p>
+                                <p>Service Dinamo</p>
                             </a>
-                            <div class="collapse" id="contmsk">
+                            <div class="collapse" id="dinamo">
                                 <ul class="nav nav-collapse">
                                     <li>
-                                        <a href="/cont_masuk">
-                                            <span class="sub-item">Add Layanan</span>
+                                        <a href="#">
+                                            <span class="sub-item">Daftar Service</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="sub-item">Tabel Order</span>
                                         </a>
                                     </li>
                                 </ul>
                             </div>
                         </li>
-
                         <li class="nav-item">
                             <a data-toggle="collapse" href="#book_keluar">
                                 <i class="fas fa-star"></i>
@@ -268,23 +289,21 @@
                                 </ul>
                             </div>
                         </li>
-
                         <li class="nav-item">
                             <a data-toggle="collapse" href="#photo_video">
                                 <i class="fab fa-youtube-square"></i>
-                                <p>Foto & Video</p>
+                                <p>Foto & Video Desa</p>
                             </a>
                             <div class="collapse" id="photo_video">
                                 <ul class="nav nav-collapse">
                                     <li>
                                         <a href="/cont_keluar">
-                                            <span class="sub-item">Add Foto & Video</span>
+                                            <span class="sub-item">Detail Foto & Video</span>
                                         </a>
                                     </li>
                                 </ul>
                             </div>
                         </li>
-
                         <li class="nav-item">
                             <a data-toggle="collapse" href="#contact">
                                 <i class="fas fa-book"></i>
@@ -294,13 +313,12 @@
                                 <ul class="nav nav-collapse">
                                     <li>
                                         <a href="/cont_keluar">
-                                            <span class="sub-item">Add Kontak</span>
+                                            <span class="sub-item">Detail Kontak</span>
                                         </a>
                                     </li>
                                 </ul>
                             </div>
                         </li>
-
                         <li class="nav-section">
                             <span class="sidebar-mini-icon">
                                 <i class="fa fa-ellipsis-h"></i>
@@ -311,38 +329,28 @@
                         <li class="nav-item">
                             <a data-toggle="collapse" href="#laporan">
                                 <i class="fas fa-file-alt"></i>
-                                <p>Cetak Laporan</p>
+                                <p>Administrasi & Laporan</p>
                             </a>
-
                             <div class="collapse" id="laporan">
                                 <ul class="nav nav-collapse">
                                     <li>
-                                        <a href="/lap_user">
-                                            <span class="sub-item">Laporan Data User</span>
+                                        <a href="#">
+                                            <span class="sub-item">Laporan Berita Desa</span>
                                         </a>
                                     </li>
-
                                     <li>
-                                        <a href="/lap_book_masuk">
-                                            <span class="sub-item">Laporan Booking Masuk</span>
+                                        <a href="#">
+                                            <span class="sub-item">Laporan Order Dinamo</span>
                                         </a>
                                     </li>
-
                                     <li>
-                                        <a href="/lap_cont_masuk">
-                                            <span class="sub-item">Laporan Container Masuk</span>
+                                        <a href="#">
+                                            <span class="sub-item">Laporan Keuangan Desa</span>
                                         </a>
                                     </li>
-
                                     <li>
-                                        <a href="/lap_book_keluar">
-                                            <span class="sub-item">Laporan Booking Keluar</span>
-                                        </a>
-                                    </li>
-
-                                    <li>
-                                        <a href="/lap_cont_keluar">
-                                            <span class="sub-item">Laporan Container Keluar</span>
+                                        <a href="#">
+                                            <span class="sub-item">Laporan Pengguna Website</span>
                                         </a>
                                     </li>
                                 </ul>
