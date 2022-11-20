@@ -10,7 +10,7 @@ class AdminController extends Controller
 {
     public function home(User $user)
     {
-        return view('admin/layout/layout');
+        return view('admin/dashboard/dashboard');
     }
     public function user()
     {
