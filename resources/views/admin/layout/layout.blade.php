@@ -239,13 +239,13 @@
                                 <ul class="nav nav-collapse">
                                     <li>
                                         <a href="/ecommerce">
-                                            <span class="sub-item">Daftar E-Commerce</span>
+                                            <span class="sub-item">Detail E-Commerce</span>
                                         </a>
                                         <a href="#">
-                                            <span class="sub-item">Daftar UMKM</span>
+                                            <span class="sub-item">Detail UMKM</span>
                                         </a>
                                         <a href="#">
-                                            <span class="sub-item">Daftar Produk dan Layanan</span>
+                                            <span class="sub-item">Detail Produk dan Layanan</span>
                                         </a>
                                         <a href="#">
                                             <span class="sub-item">Marketplace Produk Layanan / UMKM</span>
@@ -263,7 +263,7 @@
                                 <ul class="nav nav-collapse">
                                     <li>
                                         <a href="#">
-                                            <span class="sub-item">Daftar Service</span>
+                                            <span class="sub-item">Detail Service</span>
                                         </a>
                                     </li>
                                     <li>
@@ -283,7 +283,7 @@
                                 <ul class="nav nav-collapse">
                                     <li>
                                         <a href="/booking_keluar">
-                                            <span class="sub-item">Add Rekomendasi</span>
+                                            <span class="sub-item">Detail Rekomendasi</span>
                                         </a>
                                     </li>
                                 </ul>
