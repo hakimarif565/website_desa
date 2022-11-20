@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Ecommerce;
 use Hash;
+
 
 class AdminController extends Controller
 {
@@ -17,7 +19,7 @@ class AdminController extends Controller
         $data = User::all();
         return view('admin/master/user', ['data' => $data]);
     }
-    public function store(Request $request)
+    public function user_store(Request $request)
     {
         $id = User::orderByRaw('LENGTH(user_id) DESC')
             ->orderBy('user_id', 'DESC')
@@ -50,7 +52,7 @@ class AdminController extends Controller
         ]);
         return $this->user();
     }
-    public function edit(Request $request, $id)
+    public function user_edit(Request $request, $id)
     {
         $data = $request->all();
         // dd($data);
@@ -70,7 +72,7 @@ class AdminController extends Controller
         // return view('admin/master/user', ['data_user' => $user]);
     }
 
-    public function destroy(Request $request, $id)
+    public function user_destroy(Request $request, $id)
     {
         $user = User::find($request->id);
         $user->delete();
@@ -80,6 +82,52 @@ class AdminController extends Controller
 
     public function ecommerce()
     {
-        return view('admin/content_market/content_market');
+        $ecommerce = Ecommerce::all();
+        // return view('admin.content_market.content_market', compact('content_market'));
+        return view('admin/content_market/content_market', ['data' => $ecommerce]);
+    }
+
+    public function ecommerce_store(Request $request)
+    {
+        $id = Ecommerce::orderByRaw('LENGTH(ecommerce_id) DESC')
+            ->orderBy('ecommerce_id', 'DESC')
+            ->first();
+        if ($id == NULL) {
+            $id = 1;
+        } else {
+            $id = $id->ecommerce_id + 1;
+        }
+        Ecommerce::create([
+            'ecommerce_id'       => $id,
+            'ecommerce_name'      => $request->ecommerce_name,
+        ]);
+
+        return redirect('/ecommerce')->with('success', 'Data Berhasil disimpan');
+    }
+
+    public function ecommerce_add()
+    {
+        return view('admin/content_market/add_content');
+    }
+
+    public function ecommerce_destroy(Request $request, $id)
+    {
+        $ecommerce = Ecommerce::find($request->id);
+        $ecommerce->delete();
+
+        return redirect('/ecommerce')->with('success', 'Data Berhasil diubah');
+    }
+
+    public function ecommerce_edit(Request $request, $id)
+    {
+        $data = $request->all();
+        $ecommerce = Ecommerce::find($data['id']);
+        if ($ecommerce) {
+            Ecommerce::where('ecommerce_id', $data['id'])
+                ->update([
+                    "ecommerce_name" => $data['ecommerce_name'],
+                ]);
+        }
+        return $this->ecommerce();
     }
 }

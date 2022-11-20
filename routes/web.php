@@ -35,17 +35,16 @@ Route::group(['middleware' => ['auth']], function () {
     /* user admin */
     Route::get('/dashboard', [AdminController::class, 'home']);
     Route::get('/user', [AdminController::class, 'user']);
-    Route::get('/user_destroy/{id}', [AdminController::class, 'destroy']);
+    Route::get('/user_destroy/{id}', [AdminController::class, 'user_destroy']);
 
     /*Ecommerce*/
-    Route::get('/ecommerce', [EcommerceController::class, 'index']);
-    Route::post('/store_ecommerce', [EcommerceController::class, 'store']);
-    Route::get('/add_ecommerce', [EcommerceController::class, 'add']);
-    Route::get('/delete_ecommerce/{id}', [EcommerceController::class, 'destroy']);
-    Route::post('/edit_ecommerce/{id}', [EcommerceController::class, 'edit']);
+    Route::get('/ecommerce', [AdminController::class, 'ecommerce']);
+    Route::get('/add_ecommerce', [AdminController::class, 'ecommerce_add']);
+    Route::get('/delete_ecommerce/{id}', [AdminController::class, 'ecommerce_destroy']);
 
     //Post Form System
-    Route::post('/store_admin', [UserController::class, 'store']);
-    Route::post('/user', [AdminController::class, 'store']);
-    Route::post('/user_edit/{id}', [AdminController::class, 'edit']);
+    Route::post('/user', [AdminController::class, 'user_store']);
+    Route::post('/user_edit/{id}', [AdminController::class, 'user_edit']);
+    Route::post('/store_ecommerce', [AdminController::class, 'ecommerce_store']);
+    Route::post('/edit_ecommerce/{id}', [AdminController::class, 'ecommerce_edit']);
 });

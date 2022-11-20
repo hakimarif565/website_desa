@@ -8,14 +8,14 @@ use Illuminate\Support\Facades\DB;
 
 class EcommerceController extends Controller
 {
-    public function index()
+    public function ecommerce()
     {
         $ecommerce = Ecommerce::all();
         // return view('admin.content_market.content_market', compact('content_market'));
         return view('admin/content_market/content_market', ['data' => $ecommerce]);
     }
 
-    public function store(Request $request)
+    public function ecommerce_store(Request $request)
     {
         $id = Ecommerce::orderByRaw('LENGTH(ecommerce_id) DESC')
             ->orderBy('ecommerce_id', 'DESC')
@@ -33,12 +33,12 @@ class EcommerceController extends Controller
         return redirect('/ecommerce')->with('success', 'Data Berhasil disimpan');
     }
 
-    public function add()
+    public function ecommerce_add()
     {
         return view('admin/content_market/add_content');
     }
 
-    public function destroy(Request $request, $id)
+    public function ecommerce_destroy(Request $request, $id)
     {
         $ecommerce = Ecommerce::find($request->id);
         $ecommerce->delete();
@@ -46,7 +46,7 @@ class EcommerceController extends Controller
         return redirect('/ecommerce')->with('success', 'Data Berhasil diubah');
     }
 
-    public function edit(Request $request, $id)
+    public function ecommerce_edit(Request $request, $id)
     {
         $data = $request->all();
         $ecommerce = Ecommerce::find($data['id']);
