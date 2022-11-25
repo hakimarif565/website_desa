@@ -58,16 +58,16 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($data as $ecommerce)
+                                        @foreach ($data as $layanan_umkm)
                                         <tr>
-                                            <td>{{$ecommerce->ecommerce_id}}</td>
-                                            <td>{{$ecommerce->usaha_nama}}</td>
-                                            <td>{{$ecommerce->usaha_alamat}}</td>
-                                            <td>{{$ecommerce->usaha_telp}}</td>
-                                            <td>{{$ecommerce->usaha_deskripsi}}</td>
-                                            <td>{{$ecommerce->usaha_sejarah}}</td>
-                                            <td>{{$ecommerce->usaha_keahlian}}</td>
-                                            <td>{{$ecommerce->usaha_img}}</td>
+                                            <td>{{$layanan_umkm->usaha_id}}</td>
+                                            <td>{{$layanan_umkm->usaha_nama}}</td>
+                                            <td>{{$layanan_umkm->usaha_alamat}}</td>
+                                            <td>{{$layanan_umkm->usaha_telp}}</td>
+                                            <td>{{$layanan_umkm->usaha_deskripsi}}</td>
+                                            <td>{{$layanan_umkm->usaha_sejarah}}</td>
+                                            <td>{{$layanan_umkm->usaha_keahlian}}</td>
+                                            <td><img width="150px" src="{{ url('/data_file/'.$layanan_umkm->usaha_img) }}"></td>
 
                                             <td>
                                                 <div>
@@ -75,8 +75,8 @@
                                                     @csrf
                                                     @method('DELETE')
 
-                                                    <a href="#modalEditEcommerce{{$ecommerce->ecommerce_id}}" data-toggle="modal" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i>Edit</a>
-                                                    <a href="#modalHapusEcommerce{{$ecommerce->ecommerce_id}}" data-toggle="modal" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i>Hapus</a>
+                                                    <a href="#modalEditlayanan_umkm{{$layanan_umkm->usaha_id}}" data-toggle="modal" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i>Edit</a>
+                                                    <a href="#modalHapuslayanan_umkm{{$layanan_umkm->usaha_id}}" data-toggle="modal" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i>Hapus</a>
                                                     <!-- </form> -->
                                                 </div>
                                             </td>
@@ -104,28 +104,42 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="/user" method="POST" enctype="multipart/form-data">
+            <form action="/add_pelaku_usaha" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="modal-body">
                     <div class="form-grup">
                         <label>Nama Pelaku Usaha</label>
-                        <input type="text" class="form-control" name="usaha_nama" placeholder="Nama Lengkap ..." required>
+                        <input type="text" class="form-control" name="usaha_nama" placeholder="Nama Pelaku Usaha ..." required>
                     </div>
                     <div class="form-grup">
                         <label>Alamat Pelaku Usaha</label>
-                        <input type="text" class="form-control" name="usaha_alamat" placeholder="Username ..." required>
+                        <input type="text" class="form-control" name="usaha_alamat" placeholder="Alamat Pelaku Usaha ..." required>
                     </div>
 
                     <div class="form-grup">
-                        <label>Email</label>
-                        <input type="email" class="form-control" name="email" placeholder="Email ..." required>
+                        <label>Telp Pelaku Usaha</label>
+                        <input type="text" class="form-control" name="usaha_telp" placeholder="Telp Pelaku Usaha ..." required>
                     </div>
 
                     <div class="form-grup">
-                        <label>Password</label>
-                        <input type="password" class="form-control" name="password" placeholder="Password ..." required>
+                        <label>Desk Pelaku Usaha</label>
+                        <textarea class="form-control" name="usaha_deskripsi" placeholder="Desk Pelaku Usaha ..." ></textarea>
                     </div>
 
+                    <div class="form-grup">
+                        <label>Sejarah Pelaku Usaha</label>
+                        <textarea class="form-control" name="usaha_sejarah" placeholder="Sejarah Pelaku Usaha ..."></textarea>
+                    </div>
+
+                    <div class="form-grup">
+                        <label>Keahlian Pelaku Usaha</label>
+                        <input type="text" class="form-control" name="usaha_keahlian" placeholder="Keahlian Pelaku Usaha ..." required>
+                    </div>
+                    <div class="form-grup">
+                        <label>Foto</label><br>
+                        <input type="file" name="usaha_img">
+                    </div>
+                    
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-undo"></i>Close</button>
                         <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Save changes</button>
@@ -141,7 +155,7 @@
 //edit
 
 @foreach($data as $g)
-<div class="modal fade" id="modalEditEcommerce{{$g->ecommerce_id}}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+<div class="modal fade" id="modalEditlayanan_umkm{{$g->layanan_umkm_id}}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
@@ -150,13 +164,13 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="/edit_ecommerce/{id}" method="POST" enctype="multipart/form-data">
+            <form action="/edit_layanan_umkm/{id}" method="POST" enctype="multipart/form-data">
                 @csrf
-                <input type="hidden" value="{{$g->ecommerce_id}}" name="id" required>
+                <input type="hidden" value="{{$g->layanan_umkm_id}}" name="id" required>
                 <div class="modal-body">
                     <div class="form-grup">
-                        <label>Nama Ecommerce</label>
-                        <input type="text" value="{{$g->ecommerce_name}}" class="form-control" name="ecommerce_name" placeholder="Nama Ecommerce ..." required>
+                        <label>Nama layanan_umkm</label>
+                        <input type="text" value="{{$g->layanan_umkm_name}}" class="form-control" name="layanan_umkm_name" placeholder="Nama layanan_umkm ..." required>
                     </div>
 
                     <div class="modal-footer">
@@ -174,7 +188,7 @@
 //hapus data
 
 @foreach($data as $e)
-<div class="modal fade" id="modalHapusEcommerce{{$e->ecommerce_id}}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+<div class="modal fade" id="modalHapuslayanan_umkm{{$e->layanan_umkm_id}}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
@@ -183,11 +197,11 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form method="GET" enctype="multipart/form-data" action="/delete_ecommerce/{id}">
+            <form method="GET" enctype="multipart/form-data" action="/delete_layanan_umkm/{id}">
                 @csrf
                 <div class="modal-body">
 
-                    <input type="hidden" value="{{$e->ecommerce_id}}" name="id" required>
+                    <input type="hidden" value="{{$e->layanan_umkm_id}}" name="id" required>
 
                     <div class="form-grup">
                         <h4>Apakah anda ingin menghapus data ini?</h4>
