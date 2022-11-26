@@ -241,7 +241,7 @@
                                         <a href="/ecommerce">
                                             <span class="sub-item">Detail E-Commerce</span>
                                         </a>
-                                        <a href="#">
+                                        <a href="/pelaku_usaha">
                                             <span class="sub-item">Detail UMKM</span>
                                         </a>
                                         <a href="#">

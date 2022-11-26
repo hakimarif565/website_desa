@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Berita;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Ecommerce;
+use App\Models\Pelaku_Usaha;
 use Hash;
-
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redis;
 
 class AdminController extends Controller
 {
@@ -129,5 +132,95 @@ class AdminController extends Controller
                 ]);
         }
         return $this->ecommerce();
+    }
+
+    public function berita()
+    {
+        $beritas = Berita::all();
+        // return view('admin.content_market.content_market', compact('content_market'));
+        return view('admin/content_market/content_market', ['data' => $beritas]);
+    }
+
+    public function pelaku_usaha()
+    {
+        $pelaku_usaha = Pelaku_Usaha::all();
+        // return view('admin.content_market.content_market', compact('content_market'));
+        return view('admin/layanan_umkm/index', ['data' => $pelaku_usaha]);
+    }
+
+    public function pelaku_usaha_add(Request $request)
+    {
+        // dd();
+        $id = Pelaku_Usaha::orderByRaw('LENGTH(usaha_id) DESC')
+            ->orderBy('usaha_id', 'DESC')
+            ->first();
+        if ($id == NULL) {
+            $id = 1;
+        } else {
+            $id = $id->usaha_id + 1;
+        }
+
+        $validate = $request->validate([
+            'usaha_nama' => 'required',
+            'usaha_alamat' => 'required',
+            'usaha_telp' => 'required',
+            'usaha_deskripsi' => 'required',
+            'usaha_sejarah' => 'required',
+            'usaha_keahlian' => 'required',
+            'usaha_img' => 'required',
+        ]);
+
+
+        $file = $request->file('usaha_img');
+
+        /* ganti nama file */
+        $nama_file = time()."_".$file->getClientOriginalName();
+
+        /* isi dengan nama folder tempat kemana file diupload */
+        $tujuan_upload = 'data_file';
+
+        /* upload file */
+        $file->move($tujuan_upload, $nama_file);
+       
+
+        if (!$validate) {
+            return redirect('/pelaku_usaha')->with('error', 'Data Gagal disimpan');
+        }
+
+        $data = $request->all();
+        // dd($data);
+        Pelaku_Usaha::create([
+            'usaha_id' => $id,
+            'usaha_nama' => $data['usaha_nama'],
+            'usaha_alamat' => $data['usaha_alamat'],
+            'user_id' => Auth::id(),
+            'usaha_telp' => $data['usaha_telp'],
+            'usaha_deskripsi' => $data['usaha_deskripsi'],
+            'usaha_sejarah' => $data['usaha_sejarah'],
+            'usaha_keahlian' => $data['usaha_keahlian'],
+            'usaha_img' => $nama_file,
+        ]);
+        return redirect('/pelaku_usaha')->with('success', 'Data Berhasil disimpan');
+    }
+
+    public function pelaku_usaha_destroy(Request $request, $id)
+    {
+        $ecommerce = Pelaku_Usaha::find($request->id);
+        $ecommerce->delete();
+
+        return redirect('/pelaku_usaha')->with('success', 'Data Berhasil diubah');
+    }
+
+    public function pelaku_usaha_edit(Request $request, $id)
+    {
+        $data = $request->all();
+        $ecommerce = Pelaku_Usaha::find($data['id']);
+        if ($ecommerce) {
+            Pelaku_Usaha::where('ecommerce_id', $data['id'])
+                ->update([
+                    "ecommerce_name" => $data['ecommerce_name'],
+                ]);
+        }
+        return $this->pelaku_usaha();
     }
 }
