@@ -141,7 +141,7 @@
               Website ini kami hadirkan sebagai media informasi Pemerintah Desa kepada masyarakat. Juga sebagai sarana interaksi, komunikasi dan transparansi publik untuk keterbukaan informasi.
               </p>
             </div>
-            
+
             <div class="accordion-list">
               <ul>
                 <li>
@@ -170,7 +170,7 @@
                     </p>
                   </div>
                 </li> -->
-                
+
               </ul>
             </div>
             @endforeach
@@ -189,7 +189,7 @@
 
         <div class="row">
           <div class="col-lg-6 d-flex align-items-center" data-aos="fade-right" data-aos-delay="100">
-          <img src="https://dummyimage.com/500x400/" /> 
+          <img src="https://dummyimage.com/500x400/" />
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left" data-aos-delay="100">
             <h3>Produk & Layanan UMKM Desa Kampung Dinamo</h3>
@@ -249,31 +249,31 @@
             <div class="icon-box">
               <div class="icon"><img src="https://dummyimage.com/200x200/" /></div>
               <h4><a href="">Servis Dinamo</a></h4>
-              <p>Harga: 100.000 ~ 200.000</p>
+              <p>Jasa Pelayanan Servis Dinamo Kampung Wisata Ngagel Rejo Surabaya</p>
             </div>
           </div>
 
           <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
             <div class="icon-box">
             <div class="icon"> <img src="https://dummyimage.com/200x200/" />  </div>
-              <h4><a href="">UMKM Makanan</a></h4>
-              <p>Harga: 100.000 ~ 200.000</p>
+              <h4><a href="">Layanan Masyarakat</a></h4>
+              <p>Layanan Ke-Masyarakatan Sekitar</p>
             </div>
           </div>
 
           <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="300">
             <div class="icon-box">
               <div class="icon"><img src="https://dummyimage.com/200x200/" /> </div>
-              <h4><a href="">UMKM Makanan</a></h4>
-              <p>Harga: 100.000 ~ 200.000</p>
+              <h4><a href="">UMKM</a></h4>
+              <p>UMKM Berkembang Oleh Organisasi dan Individu Terbaik</p>
             </div>
           </div>
 
           <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="400">
             <div class="icon-box">
               <div class="icon"><img src="https://dummyimage.com/200x200/" /></div>
-              <h4><a href="">UMKM Lain-Lain</a></h4>
-              <p>Harga: 100.000 ~ 200.000</p>
+              <h4><a href="">Bratang Market</a></h4>
+              <p>Market Barang Unik dan Menarik Hanya di Kampung Wisata Dinamo</p>
             </div>
           </div>
 
@@ -284,7 +284,7 @@
 
 
     <!-- ======= Testimoni Section ======= -->
-    <section id="testimoni" class="team section-bg">
+    <section id="testimoni" class="team">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
@@ -382,32 +382,32 @@
           <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
             <div class="icon-box">
               <div class="icon"><img src="https://dummyimage.com/200x200/" /></i></div>
-              <h4><a href="">Kegiatan & Event</a></h4>
-              
+              <h4><a href="#">Kegiatan & Event</a></h4>
+
             </div>
           </div>
 
           <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
             <div class="icon-box">
               <div class="icon"><img src="https://dummyimage.com/200x200/" /></i></div>
-              <h4><a href="">Kegiatan & Event</a></h4>
-              
+              <h4><a href="#">Kegiatan & Event</a></h4>
+
             </div>
           </div>
 
           <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="300">
             <div class="icon-box">
               <div class="icon"><img src="https://dummyimage.com/200x200/" /></div>
-              <h4><a href="">Kegiatan & Event</a></h4>
-              
+              <h4><a href="#">Kegiatan & Event</a></h4>
+
             </div>
           </div>
 
           <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0">
             <div class="icon-box">
               <div class="icon"><img src="https://dummyimage.com/200x200/" /></div>
-              <h4><a href="">Kegiatan & Event</a></h4>
-              
+              <h4><a href="#">Kegiatan & Event</a></h4>
+
             </div>
           </div>
         </div>
@@ -416,50 +416,43 @@
             <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
               <div class="icon-box">
                 <div class="icon"><img src="https://dummyimage.com/200x200/" /></i></div>
-                <h4><a href="">Kegiatan & Event</a></h4>
-                
+                <h4><a href="#">Kegiatan & Event</a></h4>
+
               </div>
             </div>
 
             <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
               <div class="icon-box">
                 <div class="icon"><img src="https://dummyimage.com/200x200/" /></i></div>
-                <h4><a href="">Kegiatan & Event</a></h4>
-                
+                <h4><a href="#">Kegiatan & Event</a></h4>
+
               </div>
             </div>
 
             <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="300">
               <div class="icon-box">
                 <div class="icon"><img src="https://dummyimage.com/200x200/" /></i></div>
-                <h4><a href="">Kegiatan & Event</a></h4>
-                
+                <h4><a href="#">Kegiatan & Event</a></h4>
+
               </div>
             </div>
 
             <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0">
               <div class="icon-box">
                 <div class="icon"><img src="https://dummyimage.com/200x200/" /></i></div>
-                <h4><a href="">Kegiatan & Event</a></h4>
-                
+                <h4><a href="#">Kegiatan & Event</a></h4>
+
               </div>
             </div>
           </div>
 
-        <div class="row mt-4">
-          <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0">
-            {{-- <div class="icon-box">
-              <div class="icon"><i class="bx bx-layer"></i></div>
-              <h4><a href="">Kegiatan & Event</a></h4>
-              
-            </div> --}}
-            <div class="media">
-                <div class="media-body">
-                    <iframe width="1085" height="500" src="https://www.youtube.com/embed/-kk1NamDYzw" frameborder="0" allowfullscreen>
+        <div class="row mt-4 col-12">
+            <div class="media container-fluid">
+                <div class="media-body col-12">
+                    <iframe width="1115" height="500" src="https://www.youtube.com/embed/-kk1NamDYzw" frameborder="0" allowfullscreen>
                     </iframe>
                 </div>
             </div>
-          </div>
         </div>
 
       </div>

@@ -189,4 +189,5 @@ class AdminController extends Controller
                 ]);
         }
         return $this->pelaku_usaha();
+    }
 }
