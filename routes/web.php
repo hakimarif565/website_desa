@@ -42,9 +42,12 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/add_ecommerce', [AdminController::class, 'ecommerce_add']);
     Route::get('/delete_ecommerce/{id}', [AdminController::class, 'ecommerce_destroy']);
 
+    /* Berita */
+    Route::get('/berita', [AdminController::class, 'home']);
+
     /* Pelaku Usaha */
     Route::get('/pelaku_usaha', [AdminController::class, 'pelaku_usaha']);
-    Route::get('/add_pelaku_usaha', [AdminController::class, 'pelaku_usaha_add']);
+    Route::post('/add_pelaku_usaha', [AdminController::class, 'pelaku_usaha_add']);
     Route::get('/delete_pelaku_usaha/{id}', [AdminController::class, 'pelaku_usaha_destroy']);
 
     //Post Form System

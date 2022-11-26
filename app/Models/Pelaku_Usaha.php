@@ -14,10 +14,13 @@ class Pelaku_Usaha extends Model
 
     protected $fillable = [
         'usaha_id',
+        'user_id',
         'usaha_nama',
         'usaha_alamat',
-        'ecommerce_name',
-        'ecommerce_name',
-        'ecommerce_name',
+        'usaha_deskripsi',
+        'usaha_telp',
+        'usaha_sejarah',
+        'usaha_keahlian',
+        'usaha_img',
     ];
 }
