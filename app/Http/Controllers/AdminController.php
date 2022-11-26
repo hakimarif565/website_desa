@@ -174,14 +174,14 @@ class AdminController extends Controller
         $file = $request->file('usaha_img');
 
         /* ganti nama file */
-        $nama_file = time()."_".$file->getClientOriginalName();
+        $nama_file = time() . "_" . $file->getClientOriginalName();
 
         /* isi dengan nama folder tempat kemana file diupload */
         $tujuan_upload = 'data_file';
 
         /* upload file */
         $file->move($tujuan_upload, $nama_file);
-       
+
 
         if (!$validate) {
             return redirect('/pelaku_usaha')->with('error', 'Data Gagal disimpan');
@@ -214,11 +214,33 @@ class AdminController extends Controller
     public function pelaku_usaha_edit(Request $request, $id)
     {
         $data = $request->all();
-        $ecommerce = Pelaku_Usaha::find($data['id']);
-        if ($ecommerce) {
-            Pelaku_Usaha::where('ecommerce_id', $data['id'])
+        $pelaku_usaha = Pelaku_Usaha::find($data['id']);
+        // dd($data);
+        if ($pelaku_usaha) {
+            if (isset($data['usaha_img'])) {
+                $file = $request->file('usaha_img');
+
+                /* ganti nama file */
+                $nama_file = time() . "_" . $file->getClientOriginalName();
+
+                /* isi dengan nama folder tempat kemana file diupload */
+                $tujuan_upload = 'data_file';
+
+                /* upload file */
+                $file->move($tujuan_upload, $nama_file);
+            }
+
+
+            Pelaku_Usaha::where('usaha_id', $data['id'])
                 ->update([
-                    "ecommerce_name" => $data['ecommerce_name'],
+                    'usaha_nama' => $data['usaha_nama'],
+                    'usaha_alamat' => $data['usaha_alamat'],
+                    'user_id' => Auth::id(),
+                    'usaha_telp' => $data['usaha_telp'],
+                    'usaha_deskripsi' => $data['usaha_deskripsi'],
+                    'usaha_sejarah' => $data['usaha_sejarah'],
+                    'usaha_keahlian' => $data['usaha_keahlian'],
+                    'usaha_img' => isset($data['usaha_img']) ? $nama_file : $pelaku_usaha->usaha_img,
                 ]);
         }
         return $this->pelaku_usaha();

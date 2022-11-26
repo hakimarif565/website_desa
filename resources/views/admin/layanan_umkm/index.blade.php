@@ -123,7 +123,7 @@
 
                     <div class="form-grup">
                         <label>Desk Pelaku Usaha</label>
-                        <textarea class="form-control" name="usaha_deskripsi" placeholder="Desk Pelaku Usaha ..." ></textarea>
+                        <textarea class="form-control" name="usaha_deskripsi" placeholder="Desk Pelaku Usaha ..."></textarea>
                     </div>
 
                     <div class="form-grup">
@@ -139,7 +139,7 @@
                         <label>Foto</label><br>
                         <input type="file" name="usaha_img">
                     </div>
-                    
+
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-undo"></i>Close</button>
                         <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Save changes</button>
@@ -155,7 +155,7 @@
 //edit
 
 @foreach($data as $g)
-<div class="modal fade" id="modalEditlayanan_umkm{{$g->layanan_umkm_id}}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+<div class="modal fade" id="modalEditlayanan_umkm{{$g->usaha_id}}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
@@ -164,13 +164,42 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="/edit_layanan_umkm/{id}" method="POST" enctype="multipart/form-data">
+            <form action="/edit_pelaku_usaha/{{$g->usaha_id}}" method="POST" enctype="multipart/form-data">
                 @csrf
-                <input type="hidden" value="{{$g->layanan_umkm_id}}" name="id" required>
+                <input type="hidden" value="{{$g->usaha_id}}" name="id" required>
                 <div class="modal-body">
                     <div class="form-grup">
-                        <label>Nama layanan_umkm</label>
-                        <input type="text" value="{{$g->layanan_umkm_name}}" class="form-control" name="layanan_umkm_name" placeholder="Nama layanan_umkm ..." required>
+                        <label>Nama Pelaku Usaha</label>
+                        <input type="text" class="form-control" name="usaha_nama" value="{{$g->usaha_nama}}" placeholder="Nama Pelaku Usaha ..." required>
+                    </div>
+                    <div class="form-grup">
+                        <label>Alamat Pelaku Usaha</label>
+                        <input type="text" class="form-control" name="usaha_alamat" value="{{$g->usaha_alamat}}" placeholder="Alamat Pelaku Usaha ..." required>
+                    </div>
+
+                    <div class="form-grup">
+                        <label>Telp Pelaku Usaha</label>
+                        <input type="text" class="form-control" name="usaha_telp" value="{{$g->usaha_telp}}" placeholder="Telp Pelaku Usaha ..." required>
+                    </div>
+
+                    <div class="form-grup">
+                        <label>Desk Pelaku Usaha</label>
+                        <textarea class="form-control" name="usaha_deskripsi" placeholder="Desk Pelaku Usaha ...">{{$g->usaha_deskripsi}}</textarea>
+                    </div>
+
+                    <div class="form-grup">
+                        <label>Sejarah Pelaku Usaha</label>
+                        <textarea class="form-control" name="usaha_sejarah" placeholder="Sejarah Pelaku Usaha ...">{{$g->usaha_sejarah}}</textarea>
+                    </div>
+
+                    <div class="form-grup">
+                        <label>Keahlian Pelaku Usaha</label>
+                        <input type="text" class="form-control" name="usaha_keahlian" value="{{$g->usaha_keahlian}}" placeholder="Keahlian Pelaku Usaha ..." required>
+                    </div>
+                    <div class="form-grup">
+                        <label>Foto</label><br>
+                        <img src="{{ url('/data_file/'.$g->usaha_img) }}" width="200px" height="200px" alt="">
+                        <input type="file" name="usaha_img" src="{{ url('/data_file/'.$g->usaha_img) }}">
                     </div>
 
                     <div class="modal-footer">
@@ -187,8 +216,8 @@
 
 //hapus data
 
-@foreach($data as $e)
-<div class="modal fade" id="modalHapuslayanan_umkm{{$e->layanan_umkm_id}}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+@foreach($data as $la)
+<div class="modal fade" id="modalHapuslayanan_umkm{{$la->usaha_id}}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
@@ -197,11 +226,11 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form method="GET" enctype="multipart/form-data" action="/delete_layanan_umkm/{id}">
+            <form method="GET" enctype="multipart/form-data" action="/delete_pelaku_usaha/{id}">
                 @csrf
                 <div class="modal-body">
 
-                    <input type="hidden" value="{{$e->layanan_umkm_id}}" name="id" required>
+                    <input type="hidden" value="{{$la->usaha_id}}" name="id" required>
 
                     <div class="form-grup">
                         <h4>Apakah anda ingin menghapus data ini?</h4>

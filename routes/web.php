@@ -48,6 +48,7 @@ Route::group(['middleware' => ['auth']], function () {
     /* Pelaku Usaha */
     Route::get('/pelaku_usaha', [AdminController::class, 'pelaku_usaha']);
     Route::post('/add_pelaku_usaha', [AdminController::class, 'pelaku_usaha_add']);
+    Route::post('/edit_pelaku_usaha/{id}', [AdminController::class, 'pelaku_usaha_edit']);
     Route::get('/delete_pelaku_usaha/{id}', [AdminController::class, 'pelaku_usaha_destroy']);
 
     //Post Form System
