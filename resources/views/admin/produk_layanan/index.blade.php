@@ -5,7 +5,7 @@
     <div class="content">
         <div class="page-inner">
             <div class="page-header">
-                <h4 class="page-title">Data Ecommerce</h4>
+                <h4 class="page-title">Data Produk</h4>
                 <ul class="breadcrumbs">
                     <li class="nav-home">
                         <a href="/dashboard">
@@ -22,7 +22,7 @@
                         <i class="flaticon-right-arrow"></i>
                     </li>
                     <li class="nav-item">
-                        <a href="#">Ecommerce</a>
+                        <a href="#">Produk</a>
                     </li>
                 </ul>
             </div>
@@ -32,8 +32,8 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="d-flex align-items-center">
-                                <h4 class="card-title">Data Ecommerce</h4>
-                                <button class="btn btn-primary btn-round ml-auto" data-toggle="modal" data-target="#modalAddEcommerce">
+                                <h4 class="card-title">Data Produk</h4>
+                                <button class="btn btn-primary btn-round ml-auto" data-toggle="modal" data-target="#modalAddProduk">
                                     <i class="fa fa-plus"></i>
                                     Create
                                 </button>
@@ -47,24 +47,28 @@
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th>Ecommerce Name</th>
+                                            <th>Nama Produk</th>
+                                            <th>Deskripsi</th>
+                                            <th>Harga</th>
+                                            <th>Etc</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($data as $ecommerce)
+                                        <?php $i = 1 ?>
+                                        @foreach ($data as $produk)
                                         <tr>
-                                            <td>{{$ecommerce->ecommerce_id}}</td>
-                                            <td>{{$ecommerce->ecommerce_name}}</td>
-
+                                            <td>{{$i++}}</td>
+                                            <td>{{$produk->item_name}}</td>
+                                            <td>{{$produk->item_deskripsi}}</td>
+                                            <td>{{$produk->item_harga}}</td>
+                                            <td>{{$produk->item_dll}}</td>
                                             <td>
                                                 <div>
-
                                                     @csrf
                                                     @method('DELETE')
-
-                                                    <a href="#modalEditEcommerce{{$ecommerce->ecommerce_id}}" data-toggle="modal" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i>Edit</a>
-                                                    <a href="#modalHapusEcommerce{{$ecommerce->ecommerce_id}}" data-toggle="modal" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i>Hapus</a>
+                                                    <a href="#modalEditProduk{{$produk->item_id}}" data-toggle="modal" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i>Edit</a>
+                                                    <a href="#modalHapusProduk{{$produk->item_id}}" data-toggle="modal" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i>Hapus</a>
                                                     <!-- </form> -->
                                                 </div>
                                             </td>
@@ -83,22 +87,37 @@
 
 // add data
 
-<div class="modal fade" id="modalAddEcommerce" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+<div class="modal fade" id="modalAddProduk" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
 
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Add Ecommerce</h5>
+                <h5 class="modal-title" id="exampleModalLongTitle">Add Produk</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="/store_ecommerce" method="POST" enctype="multipart/form-data">
+            <form action="/add_produk" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="modal-body">
                     <div class="form-grup">
-                        <label>Nama Ecommerce</label>
-                        <input type="text" class="form-control" name="ecommerce_name" placeholder="Nama Ecommerce ..." required>
+                        <label>Nama Produk</label>
+                        <input type="text" class="form-control" name="item_name" placeholder="Nama Produk ..." required>
+                    </div>
+
+                    <div class="form-grup">
+                        <label>Deskripsi</label>
+                        <input type="text" class="form-control" name="item_deskripsi" placeholder="Deskripsi ..." required>
+                    </div>
+
+                    <div class="form-grup">
+                        <label>Harga</label>
+                        <input type="text" class="form-control" name="item_harga" placeholder="Harga ..." required>
+                    </div>
+
+                    <div class="form-grup">
+                        <label>Etc</label>
+                        <input type="text" class="form-control" name="item_dll" placeholder="Etc ..." required>
                     </div>
 
                     <div class="modal-footer">
@@ -112,11 +131,9 @@
 </div>
 
 
-
-//edit
-
 @foreach($data as $g)
-<div class="modal fade" id="modalEditEcommerce{{$g->ecommerce_id}}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+
+<div class="modal fade" id="modalEditProduk{{$g->item_id}}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
@@ -125,13 +142,27 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="/edit_ecommerce/{id}" method="POST" enctype="multipart/form-data">
+            <form action="/edit_produk/{{$g->item_id}}" method="POST" enctype="multipart/form-data">
                 @csrf
-                <input type="hidden" value="{{$g->ecommerce_id}}" name="id" required>
+                <input type="hidden" value="{{$g->item_id}}" name="id" required>
                 <div class="modal-body">
                     <div class="form-grup">
-                        <label>Nama Ecommerce</label>
-                        <input type="text" value="{{$g->ecommerce_name}}" class="form-control" name="ecommerce_name" placeholder="Nama Ecommerce ..." required>
+                        <label>Nama Produk</label>
+                        <input type="text" class="form-control" name="item_name" value="{{$g->item_name}}" placeholder="Nama Produk ..." required>
+                    </div>
+                    <div class="form-grup">
+                        <label>Deskripsi</label>
+                        <input type="text" class="form-control" name="item_deskripsi" value="{{$g->item_deskripsi}}" placeholder="Deskripsi ..." required>
+                    </div>
+
+                    <div class="form-grup">
+                        <label>Harga</label>
+                        <input type="text" class="form-control" name="item_harga" value="{{$g->item_harga}}" placeholder="Harga ..." required>
+                    </div>
+
+                    <div class="form-grup">
+                        <label>Etc</label>
+                        <input type="text" class="form-control" name="item_dll" value="{{$g->item_dll}}" placeholder="Etc ..." required>
                     </div>
 
                     <div class="modal-footer">
@@ -146,10 +177,8 @@
 
 @endforeach
 
-//hapus data
-
-@foreach($data as $e)
-<div class="modal fade" id="modalHapusEcommerce{{$e->ecommerce_id}}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+@foreach($data as $p)
+<div class="modal fade" id="modalHapusProduk{{$p->item_id}}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
@@ -158,11 +187,11 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form method="GET" enctype="multipart/form-data" action="/delete_ecommerce/{id}">
+            <form method="GET" enctype="multipart/form-data" action="/delete_produk/{id}">
                 @csrf
                 <div class="modal-body">
 
-                    <input type="hidden" value="{{$e->ecommerce_id}}" name="id" required>
+                    <input type="hidden" value="{{$p->item_id}}" name="id" required>
 
                     <div class="form-grup">
                         <h4>Apakah anda ingin menghapus data ini?</h4>
