@@ -139,7 +139,59 @@ class AdminController extends Controller
     {
         $beritas = Berita::all();
         // return view('admin.content_market.content_market', compact('content_market'));
-        return view('admin/content_market/content_market', ['data' => $beritas]);
+        return view('admin/master/desa_berita', ['data' => $beritas]);
+    }
+    public function berita_add(Request $request)
+    {
+        $beritas = Berita::all();
+        $data = $request->all();
+        $id = Berita::orderByRaw('berita_id DESC')
+            ->orderBy('berita_id', 'DESC')
+            ->first();
+        if ($id == NULL) {
+            $id = 1;
+        } else {
+            $id = $id->berita_id + 1;
+        }
+
+        $data = $request->all();
+        // dd($data);
+        Berita::create([
+            'berita_id' => $id,
+            'berita_name' => $data['berita_name'],
+            'berita_deskripsi' => $data['berita_deskripsi'],
+            'user_id' => Auth::id(),
+            'berita_lokasi' => $data['berita_lokasi'],
+            'berita_jam' => $data['berita_jam'],
+            'berita_dll' => $data['berita_dll'],
+        ]);
+        return redirect('/berita')->with('success', 'Data Berhasil disimpan');
+    }
+    public function berita_edit(Request $request)
+    {
+        $data = $request->all();
+        $berita = Berita::find($data['id']);
+        // dd($data);
+        if ($berita) {
+            Berita::where('berita_id', $berita->berita_id)
+                ->update([
+                    'berita_name' => $data['berita_name'],
+                    'berita_deskripsi' => $data['berita_deskripsi'],
+                    'user_id' => Auth::id(),
+                    'berita_lokasi' => $data['berita_lokasi'],
+                    'berita_jam' => $data['berita_jam'],
+                    'berita_dll' => $data['berita_dll'],
+                ]);
+        }
+        return redirect('/berita')->with('success', 'Data Berhasil diubah');
+    }
+
+    public function berita_destroy(Request $request)
+    {
+        $berita = Berita::find($request->id);
+        $berita->delete();
+
+        return redirect('/berita')->with('success', 'Data Berhasil dihapus');
     }
 
     public function pelaku_usaha()

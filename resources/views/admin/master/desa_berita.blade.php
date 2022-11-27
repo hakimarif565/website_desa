@@ -46,7 +46,7 @@
                                 <table id="add-row" class="display table table-striped table-hover">
                                     <thead>
                                         <tr>
-                                            <th>ID Berita</th>
+                                            <th>No</th>
                                             <th>Judul Berita</th>
                                             <th>Isi Berita</th>
                                             <th>Lokasi</th>
@@ -59,7 +59,7 @@
                                         <?php $i = 1 ?>
                                         @foreach ($data as $berita)
                                         <tr>
-                                            <td>{{ $berita->berita_id }}</td>
+                                            <td>{{ $i++ }}</td>
                                             <td>{{ $berita->berita_name }}</td>
                                             <td>{{ $berita->berita_deskripsi }}</td>
                                             <td>{{ $berita->berita_lokasi }}</td>
@@ -67,12 +67,10 @@
                                             <td>{{ $berita->berita_dll }}</td>
                                             <td>
                                                 <div>
-                                                    {{-- <!-- <form action="{{ 'ecommerce_destroy',$user_data->user_id }}" method="Post"> --> --}}
                                                     @csrf
                                                     @method('DELETE')
-                                                    <!-- <a href="#modalEdit{{$ecommerce->user_id}}"  data-toggle="modal" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i>Edit</a> -->
-                                                    <a href="#modalEdit{{$ecommerce->user_id}}" data-toggle="modal" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i>Edit</a>
-                                                    <a href="#modalHapus{{$ecommerce->user_id}}" data-toggle="modal" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i>Hapus</a>
+                                                    <a href="#modalEdit{{$berita->berita_id}}" data-toggle="modal" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i>Edit</a>
+                                                    <a href="#modalHapus{{$berita->berita_id}}" data-toggle="modal" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i>Hapus</a>
                                                     <!-- </form> -->
                                                 </div>
                                             </td>
@@ -102,7 +100,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="/user" method="POST" enctype="multipart/form-data">
+            <form action="/berita_add" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="modal-body">
                     <div class="form-grup">
@@ -143,7 +141,7 @@
 {{-- //hapus data user --}}
 
 @foreach($data as $g)
-<div class="modal fade" id="modalHapus{{$g->user_id}}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+<div class="modal fade" id="modalHapus{{$g->berita_id}}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
@@ -152,11 +150,11 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form method="GET" enctype="multipart/form-data" action="/user_destroy/{id}">
+            <form method="GET" enctype="multipart/form-data" action="/delete_berita/{id}">
                 @csrf
                 <div class="modal-body">
 
-                    <input type="hidden" value="{{$g->user_id}}" name="id" required>
+                    <input type="hidden" value="{{$g->berita_id}}" name="id" required>
 
                     <div class="form-grup">
                         <h4>Apakah anda ingin menghapus data ini?</h4>
@@ -176,7 +174,7 @@
 
 
 @foreach($data as $g)
-<div class="modal fade" id="modalEdit{{$g->user_id}}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+<div class="modal fade" id="modalEdit{{$g->berita_id}}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
@@ -187,25 +185,30 @@
             </div>
             <form action="/berita_edit/{id}" method="POST" enctype="multipart/form-data">
                 @csrf
-                <input type="hidden" value="{{$g->user_id}}" name="id" required>
+                <input type="hidden" value="{{$g->berita_id}}" name="id" required>
                 <div class="modal-body">
-                    <div class="form-grup">
-                        <label>Nama Lengkap</label>
-                        <input type="text" value="{{$g->user_name}}" class="form-control" name="full_name" placeholder="Nama Lengkap ..." required>
+                <div class="form-grup">
+                        <label>Nama Berita</label>
+                        <input type="text" class="form-control" name="berita_name" value="{{ $g->berita_name }}" placeholder="Nama Lengkap ..." required>
                     </div>
                     <div class="form-grup">
-                        <label>Username</label>
-                        <input type="text" class="form-control" value="{{$g->username}}" name="username" placeholder="Username ..." required>
-                    </div>
-
-                    <div class="form-grup">
-                        <label>Email</label>
-                        <input type="email" class="form-control" value="{{$g->email}}" name="email" placeholder="Email ..." required>
+                        <label>Berita Deskripsi</label>
+                        <textarea type="text" class="form-control" name="berita_deskripsi" placeholder="Deskripsi Berita ...">{{$g->berita_deskripsi}}</textarea>
                     </div>
 
                     <div class="form-grup">
-                        <label>Password</label>
-                        <input type="password" class="form-control" value="" name="password" placeholder="isi jika ganti password ...">
+                        <label>Berita Lokasi</label>
+                        <input type="text" class="form-control" name="berita_lokasi" value="{{$g->berita_lokasi}}" placeholder="Lokasi ..." required>
+                    </div>
+
+                    <div class="form-grup">
+                        <label>Berita Jam</label>
+                        <input type="text" class="form-control" name="berita_jam" value="{{$g->berita_jam}}" placeholder="Jam ..." required>
+                    </div>
+
+                    <div class="form-grup">
+                        <label>Catatan</label>
+                        <input type="text" class="form-control" name="berita_dll" value="{{$g->berita_dll}}" placeholder="Catatan ..." required>
                     </div>
 
                     <div class="modal-footer">

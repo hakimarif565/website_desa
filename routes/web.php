@@ -43,7 +43,10 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/delete_ecommerce/{id}', [AdminController::class, 'ecommerce_destroy']);
 
     /* Berita */
-    Route::get('/berita', [AdminController::class, 'home']);
+    Route::get('/berita', [AdminController::class, 'berita']);
+    Route::post('/berita_add', [AdminController::class, 'berita_add']);
+    Route::post('/berita_edit/{id}', [AdminController::class, 'berita_edit']);
+    Route::get('/delete_berita/{id}', [AdminController::class, 'berita_destroy']);
 
     /* Pelaku Usaha */
     Route::get('/pelaku_usaha', [AdminController::class, 'pelaku_usaha']);
