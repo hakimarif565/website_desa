@@ -126,10 +126,10 @@
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Produk dan Layanan</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="/dinamo">Servis Dinamo</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="/layanan">Layanan Masyarakat</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="/umkm">UMKM</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="/bratang_market">Bratang Market</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Servis Dinamo</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Layanan Masyarakat</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">UMKM</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Bratang Market</a></li>
             </ul>
           </div>
 

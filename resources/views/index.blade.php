@@ -36,7 +36,7 @@
   <header id="header" class="fixed-top ">
     <div class="container d-flex align-items-center">
 
-      <h1 class="logo me-auto"><a href="index.html">Kampung Dinamo</a></h1>
+      <h1 class="logo me-auto"><a href="/">Kampung Dinamo</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
@@ -250,7 +250,7 @@
           <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
             <div class="icon-box">
             <div class="icon"> <img height="200" width="200" src="{{ asset('img/layanan/layanan_masyarakat_logo.jpg') }}" />  </div>
-              <h4><a href="">Layanan Masyarakat</a></h4>
+              <h4><a href="/layanan">Layanan Masyarakat</a></h4>
               <p>Layanan Ke-Masyarakatan Sekitar</p>
             </div>
           </div>
@@ -258,7 +258,7 @@
           <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="300">
             <div class="icon-box">
               <div class="icon"><img height="200" width="200" src="{{ asset('img/umkm/umkm_logo.jpg') }}" /> </div>
-              <h4><a href="">UMKM</a></h4>
+              <h4><a href="/umkm">UMKM</a></h4>
               <p>UMKM Berkembang Oleh Organisasi dan Individu Terbaik</p>
             </div>
           </div>
@@ -266,7 +266,7 @@
           <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="400">
             <div class="icon-box">
               <div class="icon"><img height="200" width="200" src="{{ asset('img/market/bratang_market_logo.jpg') }}" /></div>
-              <h4><a href="">Bratang Market</a></h4>
+              <h4><a href="/bratang_market">Bratang Market</a></h4>
               <p>Market Barang Unik dan Menarik Hanya di Kampung Wisata Dinamo</p>
             </div>
           </div>
@@ -646,10 +646,10 @@
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Produk dan Layanan</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Servis Dinamo</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Layanan Masyarakat</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">UMKM</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Bratang Market</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/dinamo">Servis Dinamo</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/layanan">Layanan Masyarakat</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/umkm">UMKM</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/bratang_market">Bratang Market</a></li>
             </ul>
           </div>
 

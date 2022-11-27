@@ -20,4 +20,22 @@ class FrontController extends Controller
         $dinamos  = Pelaku_Usaha::all();
         return view('katalog_dinamo', ['data' => $dinamos]);
     }
+    public function katalog_layanan()
+    {
+        // dd('a');
+        $dinamos  = Pelaku_Usaha::all();
+        return view('katalog_layanan', ['data' => $dinamos]);
+    }
+    public function katalog_umkm()
+    {
+        // dd('a');
+        $dinamos  = Pelaku_Usaha::all();
+        return view('katalog_umkm', ['data' => $dinamos]);
+    }
+    public function katalog_market()
+    {
+        // dd('a');
+        $dinamos  = Pelaku_Usaha::all();
+        return view('katalog_bratang_market', ['data' => $dinamos]);
+    }
 }
