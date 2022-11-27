@@ -247,7 +247,7 @@
                                         <a href="/produk">
                                             <span class="sub-item">Detail Produk dan Layanan</span>
                                         </a>
-                                        <a href="#">
+                                        <a href="/produk_ecommerce">
                                             <span class="sub-item">Marketplace Produk Layanan / UMKM</span>
                                         </a>
                                     </li>

@@ -60,9 +60,16 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/store_ecommerce', [AdminController::class, 'ecommerce_store']);
     Route::post('/edit_ecommerce/{id}', [AdminController::class, 'ecommerce_edit']);
 
-    /*Produk */
+    /*Produk Layanan*/
     Route::get('/produk', [AdminController::class, 'produk']);
     Route::post('/add_produk', [AdminController::class, 'produk_add']);
     Route::post('/edit_produk/{id}', [AdminController::class, 'produk_edit']);
     Route::get('/delete_produk/{id}', [AdminController::class, 'produk_destroy']);
+
+    /*Produk Ecommerce*/
+    Route::get('/produk_ecommerce', [AdminController::class, 'produk_ecommerce']);
+    Route::get('/produk_ecommerce/ajax', [AdminController::class, 'ajax']);
+    Route::post('/add_produk_ecommerce', [AdminController::class, 'add_produk_ecommerce']);
+    Route::post('/edit_produk_ecommerce/{id}', [AdminController::class, 'edit_produk_ecommerce']);
+    Route::get('/delete_produk_ecommerce/{id}', [AdminController::class, 'produk_ecommerce_destroy']);
 });

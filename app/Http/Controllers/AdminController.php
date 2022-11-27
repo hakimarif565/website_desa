@@ -8,6 +8,7 @@ use App\Models\User;
 use App\Models\Ecommerce;
 use App\Models\Pelaku_Usaha;
 use App\Models\Produk_Layanan;
+use App\Models\ProdukEcommerce;
 use Hash;
 use Illuminate\Support\Facades\Auth;
 
@@ -299,6 +300,8 @@ class AdminController extends Controller
         return $this->pelaku_usaha();
     }
 
+    /* Produk Layanan */
+
     public function produk()
     {
         $produk = Produk_Layanan::all();
@@ -367,5 +370,57 @@ class AdminController extends Controller
         $produk->delete();
 
         return redirect('/produk')->with('success', 'Data Berhasil diubah');
+    }
+
+    /* Produk Ecommerce */
+
+    public function produk_ecommerce()
+    {
+        $produk_ecommerce = ProdukEcommerce::all();
+        return view('admin/produk_ecommerce/index', ['data' => $produk_ecommerce]);
+    }
+
+    public function add_produk_ecommerces(Request $request)
+    {
+        // dd();
+        $id = ProdukEcommerce::orderByRaw('item_id DESC')
+            ->orderBy('item_id', 'DESC')
+            ->first();
+        if ($id == NULL) {
+            $id = 1;
+        } else {
+            $id = $id->item_id + 1;
+        }
+
+        $validate = $request->validate([
+            'produk_ecommerce_link1' => 'required',
+            'produk_ecommerce_link2' => 'required',
+            'produk_ecommerce_link3' => 'required',
+        ]);
+
+
+        if (!$validate) {
+            return redirect('/produk_ecommerce')->with('error', 'Data Gagal disimpan');
+        }
+
+        $data = $request->all();
+        // dd($data);
+        // ProdukEcommerce::create([
+        //     'item_id' => $id,
+        //     'ecommerce_id' => $id,
+        //     'produk_ecommerce_link1' => $data['produk_ecommerce_link1'],
+        //     'produk_ecommerce_link2' => $data['produk_ecommerce_link2'],
+        //     'produk_ecommerce_link3' => $data['produk_ecommerce_link3'],
+        // ]);
+
+        ProdukEcommerce::join('produk_layanan', 'produk_layanan.id', '=', 'produk_ecommerce.item_id')
+            ->select(
+                'produk_layanan.*',
+                'produk_ecommerce.item_name'
+            )
+            ->get();
+        $produk = Produk_Layanan::all();
+
+        return redirect('/produk_ecommerce')->with('success', 'Data Berhasil disimpan');
     }
 }
