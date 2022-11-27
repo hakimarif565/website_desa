@@ -382,17 +382,15 @@ class AdminController extends Controller
         // dd($produk_ecommerce);
 
         $produk = Produk_Layanan::all();
-        return view('admin/produk_ecommerce/index', ['data' => $produk_ecommerce, 'produk_layanan' => $produk]);
+        $ecommerce = Ecommerce::all();
+        return view('admin/produk_ecommerce/index', ['data' => $produk_ecommerce, 'produk_layanan' => $produk, 'ecommerce' => $ecommerce]);
     }
 
     public function add_produk_ecommerce(Request $request)
     {
         // dd();
         $data = $request->all();
-        $data_ = ProdukEcommerce::orderBy('ecommerce_id', 'DESC')
-            ->first();
 
-        $id = isset($data_) ?  $data_->ecommerce_id + 1 : 1;
         // dd($id);
         $validate = $request->validate([
             'produk_ecommerce_link1' => 'required',
@@ -407,8 +405,8 @@ class AdminController extends Controller
 
 
         ProdukEcommerce::create([
-            'item_id' => $id,
-            'ecommerce_id' =>  $data['item_id'],
+            'item_id' => $data['item_id'],
+            'ecommerce_id' =>  $data['ecommerce_id'],
             'produk_ecommerce_link1' => $data['produk_ecommerce_link1'],
             'produk_ecommerce_link2' => $data['produk_ecommerce_link2'],
             'produk_ecommerce_link3' => $data['produk_ecommerce_link3'],

@@ -52,9 +52,10 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        <?php $i = 1 ?>
                                         @foreach ($data as $ecommerce)
                                         <tr>
-                                            <td>{{$ecommerce->ecommerce_id}}</td>
+                                            <td>{{$i++}}</td>
                                             <td>{{$ecommerce->ecommerce_name}}</td>
 
                                             <td>
