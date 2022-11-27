@@ -242,7 +242,7 @@
           <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
             <div class="icon-box">
               <div class="icon"><img height="200" width="200" src="{{ asset('img/dinamo/dinamo_logo.jpg') }}" /></div>
-              <h4><a href="">Servis Dinamo</a></h4>
+              <h4><a href="/dinamo">Servis Dinamo</a></h4>
               <p>Jasa Pelayanan Servis Dinamo Kampung Wisata Ngagel Rejo Surabaya</p>
             </div>
           </div>
@@ -687,10 +687,10 @@
   <script src="{{ asset('vendor/aos/aos.js') }}"></script>
   <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
   <script src="{{ asset('vendor/glightbox/js/glightbox.min.js') }}"></script>
-  {{-- <script src="{{ asset('vendor/isotope-layout/isotope.pkgd.min.js') }}"></script> --}}
   <script src="{{ asset('vendor/swiper/swiper-bundle.min.js') }}"></script>
   <script src="{{ asset('vendor/waypoints/noframework.waypoints.js') }}"></script>
   {{-- <script src="{{ asset('vendor/php-email-form/validate.js') }}"></script> --}}
+  {{-- <script src="{{ asset('vendor/isotope-layout/isotope.pkgd.min.js') }}"></script> --}}
 
   <!-- Template Main JS File -->
   <script src="{{ asset('js/main.js') }}"></script>

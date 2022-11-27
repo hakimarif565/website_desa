@@ -18,6 +18,7 @@ use Illuminate\Auth\AuthenticationException;
 */
 
 Route::get('/', [FrontController::class, 'index']);
+Route::get('/dinamo', [FrontController::class, 'katalog_dinamo']);
 
 //login register
 Route::get('login', array('as' => 'login', function () {
