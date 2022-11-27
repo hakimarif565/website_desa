@@ -9,7 +9,7 @@ class ProdukEcommerce extends Model
 {
     use HasFactory;
     protected $table = 'produk_ecommerce';
-    protected $primaryKey = ['item_id', 'ecommerce_id'];
+    protected $primaryKey = 'item_id';
     public $timestamps = FALSE;
 
     protected $fillable = [

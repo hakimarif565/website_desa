@@ -106,7 +106,7 @@
                         <select class="form-control" name="item_id" id="item_id" required>
                             <option value="" hidden="">--Pilih Produk--</option>
                             @foreach($produk_layanan as $d)
-                            <option value="{{ $d->id }}">{{ $d->item_name }}</option>
+                            <option value="{{ $d->item_id }}">{{ $d->item_name }}</option>
                             @endforeach
                         </select>
                     </div>
