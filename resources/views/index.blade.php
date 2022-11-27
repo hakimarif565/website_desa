@@ -43,11 +43,11 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about">Tentang Kampung Dinamo</a></li>
-          <li><a class="nav-link scrollto" href="#services">Layanan & UMKM</a></li>
-          <li><a class="nav-link scrollto" href="#testimoni">Rekomendasi</a></li>
+          <li><a class="nav-link scrollto" href="#tentang">Tentang Kampung Dinamo</a></li>
+          <li><a class="nav-link scrollto" href="#layanan">Layanan & UMKM</a></li>
+          <li><a class="nav-link scrollto" href="#rekomendasi">Rekomendasi</a></li>
           <li><a class="nav-link scrollto" href="#dokumentasi">Foto & Video</a></li>
-          <li><a class="nav-link scrollto" href="#contact">Kontak</a></li>
+          <li><a class="nav-link scrollto" href="#kontak">Kontak</a></li>
           <li><a class="getstarted" href="/login">Login</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -102,7 +102,7 @@
     </section><!-- End Cliens Section -->
 
     <!-- ======= About Us Section ======= -->
-    <section id="about" class="about">
+    <section id="tentang" class="about">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
@@ -230,7 +230,7 @@
     </section><!-- End Skills Section -->
 
     <!-- ======= Services Section ======= -->
-    <section id="services" class="services section-bg">
+    <section id="layanan" class="services section-bg">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
@@ -242,7 +242,7 @@
           <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
             <div class="icon-box">
               <div class="icon"><img height="200" width="200" src="{{ asset('img/dinamo/dinamo_logo.jpg') }}" /></div>
-              <h4><a href="">Servis Dinamo</a></h4>
+              <h4><a href="/dinamo">Servis Dinamo</a></h4>
               <p>Jasa Pelayanan Servis Dinamo Kampung Wisata Ngagel Rejo Surabaya</p>
             </div>
           </div>
@@ -278,7 +278,7 @@
 
 
     <!-- ======= Testimoni Section ======= -->
-    <section id="testimoni" class="team">
+    <section id="rekomendasi" class="team">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
@@ -407,7 +407,7 @@
           </div>
         <div class="row mt-4 col-12">
             <div class="media container-fluid">
-                <div class="media-body col-12">
+                <div class="media-body col-12 form-group">
                     <iframe width="1115" height="500" src="https://www.youtube.com/embed/-kk1NamDYzw" frameborder="0" allowfullscreen>
                     </iframe>
                 </div>
@@ -543,7 +543,7 @@
     </section><!-- End Frequently Asked Questions Section --> --}}
 
     <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact">
+    <section id="kontak" class="contact">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
@@ -636,10 +636,10 @@
             <h4>Tentang Kami</h4>
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Sejarah</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Layanan & UMKM</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Foto & Video</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Kontak</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#tentang">Sejarah</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#layanan">Layanan & UMKM</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#dokumentasi">Foto & Video</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#kontak">Kontak</a></li>
             </ul>
           </div>
 
@@ -687,10 +687,10 @@
   <script src="{{ asset('vendor/aos/aos.js') }}"></script>
   <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
   <script src="{{ asset('vendor/glightbox/js/glightbox.min.js') }}"></script>
-  {{-- <script src="{{ asset('vendor/isotope-layout/isotope.pkgd.min.js') }}"></script> --}}
   <script src="{{ asset('vendor/swiper/swiper-bundle.min.js') }}"></script>
   <script src="{{ asset('vendor/waypoints/noframework.waypoints.js') }}"></script>
   {{-- <script src="{{ asset('vendor/php-email-form/validate.js') }}"></script> --}}
+  {{-- <script src="{{ asset('vendor/isotope-layout/isotope.pkgd.min.js') }}"></script> --}}
 
   <!-- Template Main JS File -->
   <script src="{{ asset('js/main.js') }}"></script>
