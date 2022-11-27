@@ -377,8 +377,8 @@ class AdminController extends Controller
     public function produk_ecommerce()
     {
         $produk_ecommerce = ProdukEcommerce::join('produk_layanan', 'produk_layanan.item_id', '=', 'produk_ecommerce.item_id')
-        ->join('ecommerce', 'ecommerce.ecommerce_id', '=' ,'produk_ecommerce.ecommerce_id')
-        ->get();
+            ->join('ecommerce', 'ecommerce.ecommerce_id', '=', 'produk_ecommerce.ecommerce_id')
+            ->get();
         // dd($produk_ecommerce);
 
         $produk = Produk_Layanan::all();
@@ -390,7 +390,7 @@ class AdminController extends Controller
         // dd();
         $data = $request->all();
         $data_ = ProdukEcommerce::orderBy('ecommerce_id', 'DESC')
-        ->first();
+            ->first();
 
         $id = isset($data_) ?  $data_->ecommerce_id + 1 : 1;
         // dd($id);
