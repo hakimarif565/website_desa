@@ -52,7 +52,7 @@
                                             <th>Telp Pelaku Usaha</th>
                                             <th>Deskripsi Pelaku Usaha</th>
                                             <th>Sejarah Pelaku Usaha</th>
-                                            <th>Keahlian Pelaku Usaha</th>
+                                            <th>Tipe Usaha</th>
                                             <th>Image Pelaku Usaha</th>
                                             <th>Action</th>
                                         </tr>
@@ -67,7 +67,7 @@
                                             <td>{{$layanan_umkm->usaha_telp}}</td>
                                             <td>{{$layanan_umkm->usaha_deskripsi}}</td>
                                             <td>{{$layanan_umkm->usaha_sejarah}}</td>
-                                            <td>{{$layanan_umkm->usaha_keahlian}}</td>
+                                            <td>{{$layanan_umkm->usaha_tipe}}</td>
                                             <td><img width="150px" src="{{ url('/data_file/'.$layanan_umkm->usaha_img) }}"></td>
 
                                             <td>
@@ -132,9 +132,15 @@
                         <textarea class="form-control" name="usaha_sejarah" placeholder="Sejarah Pelaku Usaha ..."></textarea>
                     </div>
 
-                    <div class="form-grup">
-                        <label>Keahlian Pelaku Usaha</label>
-                        <input type="text" class="form-control" name="usaha_keahlian" placeholder="Keahlian Pelaku Usaha ..." required>
+                    <div class="form-group">
+                        <label>Tipe Usahak</label>
+                        <select class="form-control" name="usaha_tipe" id="item_id" required>
+                            <option value="" hidden="">--Pilih Usaha--</option>
+                            <option>Dinamo</option>
+                            <option>UMKM</option>
+                            <option>Layanan Masyarakat</option>
+                            <option>Bratang Market</option>
+                        </select>
                     </div>
                     <div class="form-grup">
                         <label>Foto</label><br>

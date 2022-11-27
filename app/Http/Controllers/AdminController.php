@@ -220,7 +220,7 @@ class AdminController extends Controller
             'usaha_telp' => 'required',
             'usaha_deskripsi' => 'required',
             'usaha_sejarah' => 'required',
-            'usaha_keahlian' => 'required',
+            'usaha_tipe' => 'required',
             'usaha_img' => 'required',
         ]);
 
@@ -251,7 +251,7 @@ class AdminController extends Controller
             'usaha_telp' => $data['usaha_telp'],
             'usaha_deskripsi' => $data['usaha_deskripsi'],
             'usaha_sejarah' => $data['usaha_sejarah'],
-            'usaha_keahlian' => $data['usaha_keahlian'],
+            'usaha_tipe' => $data['usaha_tipe'],
             'usaha_img' => $nama_file,
         ]);
         return redirect('/pelaku_usaha')->with('success', 'Data Berhasil disimpan');
@@ -293,7 +293,7 @@ class AdminController extends Controller
                     'usaha_telp' => $data['usaha_telp'],
                     'usaha_deskripsi' => $data['usaha_deskripsi'],
                     'usaha_sejarah' => $data['usaha_sejarah'],
-                    'usaha_keahlian' => $data['usaha_keahlian'],
+                    'usaha_tipe' => $data['usaha_tipe'],
                     'usaha_img' => isset($data['usaha_img']) ? $nama_file : $pelaku_usaha->usaha_img,
                 ]);
         }
