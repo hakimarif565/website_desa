@@ -8,7 +8,7 @@
                 <h4 class="page-title">Data Layanan UMKM</h4>
                 <ul class="breadcrumbs">
                     <li class="nav-home">
-                        <a href="/home">
+                        <a href="/dashboard">
                             <i class="flaticon-home"></i>
                         </a>
                     </li>
@@ -58,9 +58,10 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        <?php $i = 1 ?>
                                         @foreach ($data as $layanan_umkm)
                                         <tr>
-                                            <td>{{$layanan_umkm->usaha_id}}</td>
+                                            <td>{{$i++}}</td>
                                             <td>{{$layanan_umkm->usaha_nama}}</td>
                                             <td>{{$layanan_umkm->usaha_alamat}}</td>
                                             <td>{{$layanan_umkm->usaha_telp}}</td>

@@ -53,7 +53,6 @@
                                 <a href="/ecommerce" class="btn btn-danger"><i class="fa fa-undo"></i>Close</a>
                             </div>
 
-
                         </form>
                     </div>
 
@@ -64,8 +63,6 @@
     </div>
 
 </div>
-
-
 
 
 @endsection

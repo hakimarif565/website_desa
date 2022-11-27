@@ -244,7 +244,7 @@
                                         <a href="/pelaku_usaha">
                                             <span class="sub-item">Detail UMKM</span>
                                         </a>
-                                        <a href="#">
+                                        <a href="/produk">
                                             <span class="sub-item">Detail Produk dan Layanan</span>
                                         </a>
                                         <a href="#">

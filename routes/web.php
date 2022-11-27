@@ -56,4 +56,10 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/user_edit/{id}', [AdminController::class, 'user_edit']);
     Route::post('/store_ecommerce', [AdminController::class, 'ecommerce_store']);
     Route::post('/edit_ecommerce/{id}', [AdminController::class, 'ecommerce_edit']);
+
+    /*Produk */
+    Route::get('/produk', [AdminController::class, 'produk']);
+    Route::post('/add_produk', [AdminController::class, 'produk_add']);
+    Route::post('/edit_produk/{id}', [AdminController::class, 'produk_edit']);
+    Route::get('/delete_produk/{id}', [AdminController::class, 'produk_destroy']);
 });

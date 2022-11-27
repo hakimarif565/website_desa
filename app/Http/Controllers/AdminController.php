@@ -7,9 +7,10 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Ecommerce;
 use App\Models\Pelaku_Usaha;
+use App\Models\Produk_Layanan;
 use Hash;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Redis;
+
 
 class AdminController extends Controller
 {
@@ -151,7 +152,7 @@ class AdminController extends Controller
     public function pelaku_usaha_add(Request $request)
     {
         // dd();
-        $id = Pelaku_Usaha::orderByRaw('LENGTH(usaha_id) DESC')
+        $id = Pelaku_Usaha::orderByRaw('usaha_id DESC')
             ->orderBy('usaha_id', 'DESC')
             ->first();
         if ($id == NULL) {
@@ -244,5 +245,75 @@ class AdminController extends Controller
                 ]);
         }
         return $this->pelaku_usaha();
+    }
+
+    public function produk()
+    {
+        $produk = Produk_Layanan::all();
+        // return view('admin.content_market.content_market', compact('content_market'));
+        return view('admin/produk_layanan/index', ['data' => $produk]);
+    }
+
+    public function produk_add(Request $request)
+    {
+        // dd();
+        $id = Produk_Layanan::orderByRaw('item_id DESC')
+            ->orderBy('item_id', 'DESC')
+            ->first();
+        if ($id == NULL) {
+            $id = 1;
+        } else {
+            $id = $id->item_id + 1;
+        }
+
+        $validate = $request->validate([
+            'item_name' => 'required',
+            'item_deskripsi' => 'required',
+            'item_harga' => 'required',
+            'item_dll' => 'required',
+        ]);
+
+
+        if (!$validate) {
+            return redirect('/produk')->with('error', 'Data Gagal disimpan');
+        }
+
+        $data = $request->all();
+        // dd($data);
+        Produk_Layanan::create([
+            'item_id' => $id,
+            'item_name' => $data['item_name'],
+            'item_deskripsi' => $data['item_deskripsi'],
+            'item_harga' => $data['item_harga'],
+            'item_dll' => $data['item_dll'],
+            'usaha_id' => 1,
+        ]);
+        return redirect('/produk')->with('success', 'Data Berhasil disimpan');
+    }
+
+    public function produk_edit(Request $request, $id)
+    {
+        $data = $request->all();
+        $produk = Produk_Layanan::find($data['id']);
+
+        Produk_Layanan::where('item_id', $data['id'])
+            ->update([
+                'item_id' => $id,
+                'item_name' => $data['item_name'],
+                'item_deskripsi' => $data['item_deskripsi'],
+                'item_harga' => $data['item_harga'],
+                'item_dll' => $data['item_dll'],
+                'usaha_id' => 1,
+            ]);
+
+        return $this->produk();
+    }
+
+    public function produk_destroy(Request $request, $id)
+    {
+        $produk = Produk_Layanan::find($request->id);
+        $produk->delete();
+
+        return redirect('/produk')->with('success', 'Data Berhasil diubah');
     }
 }
