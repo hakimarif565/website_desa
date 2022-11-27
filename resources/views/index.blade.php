@@ -76,7 +76,7 @@
           </div>
         </div>
         <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
-          <img src="{{ asset('img/dinamo vector.png') }}" class="img-fluid animated" alt="">
+          <img src="{{ asset('img/desa/icon_desa.png') }}" class="img-fluid animated" alt="">
         </div>
       </div>
     </div>
@@ -92,15 +92,15 @@
         <div class="row justify-content-center" data-aos="zoom-in">
 
           <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-            <img src="{{ asset('img/untag sby.png') }}" class="img-fluid" alt="">
+            <img src="{{ asset('img/untag/untag sby.png') }}" class="img-fluid" alt="">
           </div>
 
           <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-            <img src="{{ asset('img/lppm sby.png') }}" class="img-fluid" alt="">
+            <img src="{{ asset('img/untag/lppm sby.png') }}" class="img-fluid" alt="">
           </div>
 
           <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-            <img src="{{ asset('img/logo sby.png') }}" class="img-fluid" alt="">
+            <img src="{{ asset('img/sby/logo sby.png') }}" class="img-fluid" alt="">
           </div>
 
         </div>
@@ -120,7 +120,7 @@
             <p>
              {{$datas->desa_sejarah}}
             </p>
-            <a href="#" class="btn-learn-more"></a>
+            <a href="#" class="btn-learn-more">Baca Selengkapnya</a>
           </div>
         </div>
 
@@ -177,7 +177,7 @@
 
           </div>
 
-          <div class="col-lg-5 align-items-stretch order-1 order-lg-2 img" data-aos="zoom-in" data-aos-delay="150"><img src="{{ asset('img/visi_misi.png')}}" /> </div>
+          <div class="col-lg-5 align-items-stretch order-1 order-lg-2 img" data-aos="zoom-in" data-aos-delay="150"><img src="{{ asset('img/desa/tugu.png')}}" /> </div>
         </div>
 
       </div>
@@ -189,7 +189,7 @@
 
         <div class="row">
           <div class="col-lg-6 d-flex align-items-center" data-aos="fade-right" data-aos-delay="100">
-          <img src="https://dummyimage.com/500x400/" />
+          <img width="500" height="400" src="{{ asset('img/desa/produk_layanan.jpg')}}" />
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left" data-aos-delay="100">
             <h3>Produk & Layanan UMKM Desa Kampung Dinamo</h3>
@@ -200,30 +200,30 @@
             <div class="skills-content">
 
               <div class="progress">
-                <span class="skill">Servis Dinamo <i class="val">30+</i></span>
+                <span class="skill">Servis Dinamo <i class="val">30+ Pelaku Usaha</i></span>
                 <div class="progress-bar-wrap">
                   <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
               </div>
 
               <div class="progress">
-                <span class="skill">Toko Onderdil Dinamo<i class="val">90%</i></span>
+                <span class="skill">UMKM<i class="val">10+ UMKM Berkembang</i></span>
                 <div class="progress-bar-wrap">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
               </div>
 
               <div class="progress">
-                <span class="skill">UMKM<i class="val">75%</i></span>
+                <span class="skill">Bratang Market<i class="val">100% Produk Khas Surabaya</i></span>
                 <div class="progress-bar-wrap">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
               </div>
 
               <div class="progress">
-                <span class="skill">Dll<i class="val">55%</i></span>
+                <span class="skill">Pelayanan Masyarakat Terpadu<i class="val">100% Pelayanan Terpadu</i></span>
                 <div class="progress-bar-wrap">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
               </div>
 
@@ -247,7 +247,7 @@
         <div class="row">
           <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
             <div class="icon-box">
-              <div class="icon"><img src="https://dummyimage.com/200x200/" /></div>
+              <div class="icon"><img height="200" width="200" src="{{ asset('img/dinamo/dinamo_logo.jpg') }}" /></div>
               <h4><a href="">Servis Dinamo</a></h4>
               <p>Jasa Pelayanan Servis Dinamo Kampung Wisata Ngagel Rejo Surabaya</p>
             </div>
@@ -255,7 +255,7 @@
 
           <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
             <div class="icon-box">
-            <div class="icon"> <img src="https://dummyimage.com/200x200/" />  </div>
+            <div class="icon"> <img height="200" width="200" src="{{ asset('img/layanan/layanan_masyarakat_logo.jpg') }}" />  </div>
               <h4><a href="">Layanan Masyarakat</a></h4>
               <p>Layanan Ke-Masyarakatan Sekitar</p>
             </div>
@@ -263,7 +263,7 @@
 
           <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="300">
             <div class="icon-box">
-              <div class="icon"><img src="https://dummyimage.com/200x200/" /> </div>
+              <div class="icon"><img height="200" width="200" src="{{ asset('img/umkm/umkm_logo.jpg') }}" /> </div>
               <h4><a href="">UMKM</a></h4>
               <p>UMKM Berkembang Oleh Organisasi dan Individu Terbaik</p>
             </div>
@@ -271,7 +271,7 @@
 
           <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="400">
             <div class="icon-box">
-              <div class="icon"><img src="https://dummyimage.com/200x200/" /></div>
+              <div class="icon"><img height="200" width="200" src="{{ asset('img/market/bratang_market_logo.jpg') }}" /></div>
               <h4><a href="">Bratang Market</a></h4>
               <p>Market Barang Unik dan Menarik Hanya di Kampung Wisata Dinamo</p>
             </div>
@@ -296,69 +296,50 @@
 
           <div class="col-lg-6">
             <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="100">
-              <div class="pic"><img src="https://dummyimage.com/200x200/" class="img-fluid" alt=""></div>
+              <div class="pic"><img height="200" width="200" src="{{ asset('img/rekomendasi/data1.jpg') }}" class="img-fluid" alt=""></div>
               <div class="member-info">
                 <h4>Ferdi Sambo</h4>
                 <span>Chief Executive Officer</span>
                 <p>Explicabo voluptatem mollitia et repellat qui dolorum quasi</p>
-                <div class="social">
+                {{-- <div class="social">
                   <a href=""><i class="ri-twitter-fill"></i></a>
                   <a href=""><i class="ri-facebook-fill"></i></a>
                   <a href=""><i class="ri-instagram-fill"></i></a>
                   <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
-                </div>
+                </div> --}}
               </div>
             </div>
           </div>
 
           <div class="col-lg-6 mt-4 mt-lg-0">
             <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="200">
-              <div class="pic"><img src="https://dummyimage.com/200x200/" class="img-fluid" alt=""></div>
+              <div class="pic"><img height="200" width="200" src="{{ asset('img/rekomendasi/data2.jpg') }}" class="img-fluid" alt=""></div>
               <div class="member-info">
                 <h4>Brigadir J</h4>
                 <span>Product Manager</span>
                 <p>Aut maiores voluptates amet et quis praesentium qui senda para</p>
-                <div class="social">
-                  <a href=""><i class="ri-twitter-fill"></i></a>
-                  <a href=""><i class="ri-facebook-fill"></i></a>
-                  <a href=""><i class="ri-instagram-fill"></i></a>
-                  <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
-                </div>
               </div>
             </div>
           </div>
 
           <div class="col-lg-6 mt-4">
             <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="300">
-              <div class="pic"><img src="https://dummyimage.com/200x200/" class="img-fluid" alt=""></div>
+              <div class="pic"><img height="200" width="200" src="{{ asset('img/rekomendasi/data3.jpg') }}" class="img-fluid" alt=""></div>
               <div class="member-info">
                 <h4>Vio</h4>
                 <span>CTO</span>
                 <p>Quisquam facilis cum velit laborum corrupti fuga rerum quia</p>
-                <div class="social">
-                  <a href=""><i class="ri-twitter-fill"></i></a>
-                  <a href=""><i class="ri-facebook-fill"></i></a>
-                  <a href=""><i class="ri-instagram-fill"></i></a>
-                  <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
-                </div>
               </div>
             </div>
           </div>
 
           <div class="col-lg-6 mt-4">
             <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="400">
-              <!-- <div class="pic"><img src="{{ asset('img/team/team-4.jpg') }}" class="img-fluid" alt=""></div> -->
-              <div class="pic"><img src="https://dummyimage.com/200x200/" class="img-fluid" alt=""></div>
+              <div class="pic"><img height="200" width="200" src="{{ asset('img/rekomendasi/data4.jpg') }}" class="img-fluid" alt=""></div>
               <div class="member-info">
                 <h4>Mbah</h4>
                 <span>Accountant</span>
                 <p>Dolorum tempora officiis odit laborum officiis et et accusamus</p>
-                <div class="social">
-                  <a href=""><i class="ri-twitter-fill"></i></a>
-                  <a href=""><i class="ri-facebook-fill"></i></a>
-                  <a href=""><i class="ri-instagram-fill"></i></a>
-                  <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
-                </div>
               </div>
             </div>
           </div>
@@ -375,43 +356,35 @@
 
         <div class="section-title">
           <h2>Foto & Video</h2>
-          <p>kegiatan dan event pada desa ngagel rejo RW 6</p>
+          <p>Kegiatan dan Event Kampung Dinamo Ngagel Rejo RW.6</p>
         </div>
 
         <div class="row mt-4">
           <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
             <div class="icon-box">
               <div class="icon"><img src="https://dummyimage.com/200x200/" /></i></div>
-              <h4><a href="#">Kegiatan & Event</a></h4>
-
+              <h4><a>Kegiatan & Event</a></h4>
             </div>
           </div>
-
           <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
             <div class="icon-box">
               <div class="icon"><img src="https://dummyimage.com/200x200/" /></i></div>
-              <h4><a href="#">Kegiatan & Event</a></h4>
-
+              <h4><a>Kegiatan & Event</a></h4>
             </div>
           </div>
-
           <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="300">
             <div class="icon-box">
               <div class="icon"><img src="https://dummyimage.com/200x200/" /></div>
-              <h4><a href="#">Kegiatan & Event</a></h4>
-
+              <h4><a>Kegiatan & Event</a></h4>
             </div>
           </div>
-
           <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0">
             <div class="icon-box">
               <div class="icon"><img src="https://dummyimage.com/200x200/" /></div>
-              <h4><a href="#">Kegiatan & Event</a></h4>
-
+              <h4><a>Kegiatan & Event</a></h4>
             </div>
           </div>
         </div>
-
         <div class="row mt-4">
             <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
               <div class="icon-box">
@@ -726,7 +699,7 @@
   </footer><!-- End Footer -->
 
   <div id="preloader"></div>
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
   <script src="{{ asset('vendor/aos/aos.js') }}"></script>
