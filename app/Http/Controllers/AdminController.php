@@ -377,7 +377,8 @@ class AdminController extends Controller
     public function produk_ecommerce()
     {
         $produk_ecommerce = ProdukEcommerce::all();
-        return view('admin/produk_ecommerce/index', ['data' => $produk_ecommerce]);
+        $produk = Produk_Layanan::all();
+        return view('admin/produk_ecommerce/index', ['data' => $produk_ecommerce, 'produk_layanan' => $produk]);
     }
 
     public function add_produk_ecommerces(Request $request)

@@ -103,7 +103,7 @@
                         <label>Nama Produk</label>
                         <select class="form-control" name="item_id" id="item_id" required>
                             <option value="" hidden="">--Pilih Produk--</option>
-                            @foreach($produk as $d)
+                            @foreach($produk_layanan as $d)
                             <option value="{{ $d->id }}">{{ $d->item_name }}</option>
                             @endforeach
                         </select>
