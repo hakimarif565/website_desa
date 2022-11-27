@@ -11,7 +11,7 @@ class FrontController extends Controller
     public function index()
     {
         // dd('a');
-        $data_desa  = Desa::all();
+        $data_desa  = Desa::first();
         return view('index', ['data' => $data_desa]);
     }
     public function katalog_dinamo()
