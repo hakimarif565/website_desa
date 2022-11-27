@@ -104,20 +104,15 @@
     <!-- ======= About Us Section ======= -->
     <section id="tentang" class="about">
       <div class="container" data-aos="fade-up">
-
         <div class="section-title">
           <h2>Sejarah</h2>
         </div>
-        @foreach ($data as $datas)
         <div class="row content">
-          <div class="col-lg-12">
-            <p>
-             {{$datas->desa_sejarah}}
-            </p>
-            <a href="#" class="btn-learn-more">Baca Selengkapnya</a>
-          </div>
+            <div class="col-lg-12">
+                <p>{{$data->desa_sejarah}}</p>
+                <a href="#" class="btn-learn-more">Baca Selengkapnya</a>
+            </div>
         </div>
-
       </div>
     </section><!-- End About Us Section -->
 
@@ -142,7 +137,7 @@
                   <a data-bs-toggle="collapse" class="collapse" data-bs-target="#accordion-list-1"> VISI<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
                   <div id="accordion-list-1" class="collapse show" data-bs-parent=".accordion-list">
                     <p>
-                    {{$datas->desa_visi}}
+                    {{$data->desa_visi}}
                     </p>
                   </div>
                 </li>
@@ -151,24 +146,12 @@
                   <a data-bs-toggle="collapse" data-bs-target="#accordion-list-2" class="collapsed">MISI <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
                   <div id="accordion-list-2" class="collapse" data-bs-parent=".accordion-list">
                     <p>
-                    {{$datas->desa_misi}}
+                    {{$data->desa_misi}}
                     </p>
                   </div>
                 </li>
-
-                <!--<li>
-                  <a data-bs-toggle="collapse" data-bs-target="#accordion-list-3" class="collapsed"><span>03</span> Dolor sit amet consectetur adipiscing elit? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-                  <div id="accordion-list-3" class="collapse" data-bs-parent=".accordion-list">
-                    <p>
-                      Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis
-                    </p>
-                  </div>
-                </li> -->
-
               </ul>
             </div>
-            @endforeach
-
           </div>
 
           <div class="col-lg-5 align-items-stretch order-1 order-lg-2 img" data-aos="zoom-in" data-aos-delay="150"><img src="{{ asset('img/desa/tugu.png')}}" /> </div>
@@ -681,7 +664,7 @@
   </footer><!-- End Footer -->
 
   <div id="preloader"></div>
-  <a class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
   <script src="{{ asset('vendor/aos/aos.js') }}"></script>

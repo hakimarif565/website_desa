@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Pelaku_Usaha extends Model
 {
     use HasFactory;
-    protected $table = 'pelaku_usaha';
+    protected $table = 'usaha_layanan';
     protected $primaryKey = 'usaha_id';
     public $timestamps = FALSE;
 
@@ -20,7 +20,7 @@ class Pelaku_Usaha extends Model
         'usaha_deskripsi',
         'usaha_telp',
         'usaha_sejarah',
-        'usaha_keahlian',
+        'usaha_tipe',
         'usaha_img',
     ];
 }
