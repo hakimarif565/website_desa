@@ -47,6 +47,7 @@
                                     <thead>
                                         <tr>
                                             <th>No</th>
+                                            <th>Nama Produk</th>
                                             <th>Produk 1</th>
                                             <th>Produk 2</th>
                                             <th>Produk 3</th>
@@ -58,6 +59,7 @@
                                         @foreach ($data as $produk_ecommerce)
                                         <tr>
                                             <td>{{$i++}}</td>
+                                            <td>{{$produk_ecommerce->item_name}}</td>
                                             <td>{{$produk_ecommerce->produk_ecommerce_link1}}</td>
                                             <td>{{$produk_ecommerce->produk_ecommerce_link2}}</td>
                                             <td>{{$produk_ecommerce->produk_ecommerce_link3}}</td>
@@ -95,7 +97,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="/add_produk" method="POST" enctype="multipart/form-data">
+            <form action="/add_produk_ecommerce" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="modal-body">
 

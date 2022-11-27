@@ -381,9 +381,10 @@ class AdminController extends Controller
         return view('admin/produk_ecommerce/index', ['data' => $produk_ecommerce, 'produk_layanan' => $produk]);
     }
 
-    public function add_produk_ecommerces(Request $request)
+    public function add_produk_ecommerce(Request $request)
     {
         // dd();
+        $data = $request->all();
         $id = ProdukEcommerce::orderByRaw('item_id DESC')
             ->orderBy('item_id', 'DESC')
             ->first();
@@ -404,23 +405,14 @@ class AdminController extends Controller
             return redirect('/produk_ecommerce')->with('error', 'Data Gagal disimpan');
         }
 
-        $data = $request->all();
-        // dd($data);
-        // ProdukEcommerce::create([
-        //     'item_id' => $id,
-        //     'ecommerce_id' => $id,
-        //     'produk_ecommerce_link1' => $data['produk_ecommerce_link1'],
-        //     'produk_ecommerce_link2' => $data['produk_ecommerce_link2'],
-        //     'produk_ecommerce_link3' => $data['produk_ecommerce_link3'],
-        // ]);
 
-        ProdukEcommerce::join('produk_layanan', 'produk_layanan.id', '=', 'produk_ecommerce.item_id')
-            ->select(
-                'produk_layanan.*',
-                'produk_ecommerce.item_name'
-            )
-            ->get();
-        $produk = Produk_Layanan::all();
+        ProdukEcommerce::create([
+            'item_id' => $id,
+            'ecommerce_id' =>  $data['item_id'],
+            'produk_ecommerce_link1' => $data['produk_ecommerce_link1'],
+            'produk_ecommerce_link2' => $data['produk_ecommerce_link2'],
+            'produk_ecommerce_link3' => $data['produk_ecommerce_link3'],
+        ]);
 
         return redirect('/produk_ecommerce')->with('success', 'Data Berhasil disimpan');
     }
