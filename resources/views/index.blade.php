@@ -43,11 +43,11 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about">Tentang Kampung Dinamo</a></li>
-          <li><a class="nav-link scrollto" href="#services">Layanan & UMKM</a></li>
-          <li><a class="nav-link scrollto" href="#testimoni">Rekomendasi</a></li>
+          <li><a class="nav-link scrollto" href="#tentang">Tentang Kampung Dinamo</a></li>
+          <li><a class="nav-link scrollto" href="#layanan">Layanan & UMKM</a></li>
+          <li><a class="nav-link scrollto" href="#rekomendasi">Rekomendasi</a></li>
           <li><a class="nav-link scrollto" href="#dokumentasi">Foto & Video</a></li>
-          <li><a class="nav-link scrollto" href="#contact">Kontak</a></li>
+          <li><a class="nav-link scrollto" href="#kontak">Kontak</a></li>
           <li><a class="getstarted" href="/login">Login</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -102,7 +102,7 @@
     </section><!-- End Cliens Section -->
 
     <!-- ======= About Us Section ======= -->
-    <section id="about" class="about">
+    <section id="tentang" class="about">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
@@ -230,7 +230,7 @@
     </section><!-- End Skills Section -->
 
     <!-- ======= Services Section ======= -->
-    <section id="services" class="services section-bg">
+    <section id="layanan" class="services section-bg">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
@@ -278,7 +278,7 @@
 
 
     <!-- ======= Testimoni Section ======= -->
-    <section id="testimoni" class="team">
+    <section id="rekomendasi" class="team">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
@@ -407,7 +407,7 @@
           </div>
         <div class="row mt-4 col-12">
             <div class="media container-fluid">
-                <div class="media-body col-12">
+                <div class="media-body col-12 form-group">
                     <iframe width="1115" height="500" src="https://www.youtube.com/embed/-kk1NamDYzw" frameborder="0" allowfullscreen>
                     </iframe>
                 </div>
@@ -543,7 +543,7 @@
     </section><!-- End Frequently Asked Questions Section --> --}}
 
     <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact">
+    <section id="kontak" class="contact">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
@@ -636,10 +636,10 @@
             <h4>Tentang Kami</h4>
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Sejarah</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Layanan & UMKM</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Foto & Video</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Kontak</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#tentang">Sejarah</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#layanan">Layanan & UMKM</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#dokumentasi">Foto & Video</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#kontak">Kontak</a></li>
             </ul>
           </div>
 
