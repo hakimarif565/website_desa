@@ -37,7 +37,7 @@
         <!--
 			Tip 1: You can change the background color of the main header using: data-background-color="blue | purple | light-blue | green | orange | red"
 		-->
-        <div class="main-header" data-background-color="blue">
+        <div class="main-header" data-background-color="red">
             <!-- Logo Header -->
             <div class="logo-header">
 
@@ -222,7 +222,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#">
+                                        <a href="/berita">
                                             <span class="sub-item">Tambah Berita Desa</span>
                                         </a>
                                     </li>
@@ -244,7 +244,7 @@
                                         <a href="/pelaku_usaha">
                                             <span class="sub-item">Detail UMKM</span>
                                         </a>
-                                        <a href="#">
+                                        <a href="/">
                                             <span class="sub-item">Detail Produk dan Layanan</span>
                                         </a>
                                         <a href="#">

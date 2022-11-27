@@ -33,7 +33,7 @@
                         <div class="card-header">
                             <div class="d-flex align-items-center">
                                 <h4 class="card-title">Data User</h4>
-                                <button class="btn btn-primary btn-round ml-auto" data-toggle="modal" data-target="#modalAddUser">
+                                <button class="btn btn-primary btn-round ml-auto" data-toggle="modal" data-target="#modalAddBerita">
                                     <i class="fa fa-plus"></i>
                                     Tambah
                                 </button>
@@ -57,7 +57,7 @@
                                     </thead>
                                     <tbody>
                                         <?php $i = 1 ?>
-                                        @foreach ($beritas as $berita)
+                                        @foreach ($data as $berita)
                                         <tr>
                                             <td>{{ $berita->berita_id }}</td>
                                             <td>{{ $berita->berita_name }}</td>
@@ -92,7 +92,7 @@
 
 {{-- add data user --}}
 
-<div class="modal fade" id="modalAdd" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+<div class="modal fade" id="modalAddBerita" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
 
@@ -106,22 +106,27 @@
                 @csrf
                 <div class="modal-body">
                     <div class="form-grup">
-                        <label>Nama Lengkap</label>
-                        <input type="text" class="form-control" name="full_name" placeholder="Nama Lengkap ..." required>
+                        <label>Nama Berita</label>
+                        <input type="text" class="form-control" name="berita_name" placeholder="Nama Lengkap ..." required>
                     </div>
                     <div class="form-grup">
-                        <label>Username</label>
-                        <input type="text" class="form-control" name="username" placeholder="Username ..." required>
-                    </div>
-
-                    <div class="form-grup">
-                        <label>Email</label>
-                        <input type="email" class="form-control" name="email" placeholder="Email ..." required>
+                        <label>Berita Deskripsi</label>
+                        <textarea type="text" class="form-control" name="berita_deskripsi" placeholder="Deskripsi Berita ..."></textarea>
                     </div>
 
                     <div class="form-grup">
-                        <label>Password</label>
-                        <input type="password" class="form-control" name="password" placeholder="Password ..." required>
+                        <label>Berita Lokasi</label>
+                        <input type="text" class="form-control" name="berita_lokasi" placeholder="Lokasi ..." required>
+                    </div>
+
+                    <div class="form-grup">
+                        <label>Berita Jam</label>
+                        <input type="text" class="form-control" name="berita_jam" placeholder="Jam ..." required>
+                    </div>
+
+                    <div class="form-grup">
+                        <label>Catatan</label>
+                        <input type="text" class="form-control" name="berita_dll" placeholder="Catatan ..." required>
                     </div>
 
                     <div class="modal-footer">
