@@ -297,7 +297,7 @@
                             <div class="collapse" id="photo_video">
                                 <ul class="nav nav-collapse">
                                     <li>
-                                        <a href="/cont_keluar">
+                                        <a href="/foto_video">
                                             <span class="sub-item">Detail Foto & Video</span>
                                         </a>
                                     </li>

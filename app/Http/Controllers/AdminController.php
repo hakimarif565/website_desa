@@ -6,6 +6,7 @@ use App\Models\Berita;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Ecommerce;
+use App\Models\Foto_Video;
 use App\Models\Pelaku_Usaha;
 use App\Models\Produk_Layanan;
 use App\Models\ProdukEcommerce;
@@ -413,5 +414,77 @@ class AdminController extends Controller
         ]);
 
         return redirect('/produk_ecommerce')->with('success', 'Data Berhasil disimpan');
+    }
+
+    /* Produk Layanan */
+
+    public function foto_video()
+    {
+        $produk = Foto_Video::all();
+        // return view('admin.content_market.content_market', compact('content_market'));
+        return view('admin/foto_video/index', ['data' => $produk]);
+    }
+
+    public function foto_video_add(Request $request)
+    {
+        // dd();
+        $id = Foto_Video::orderByRaw('item_id DESC')
+            ->orderBy('item_id', 'DESC')
+            ->first();
+        if ($id == NULL) {
+            $id = 1;
+        } else {
+            $id = $id->item_id + 1;
+        }
+
+        $validate = $request->validate([
+            'item_name' => 'required',
+            'item_deskripsi' => 'required',
+            'item_harga' => 'required',
+            'item_dll' => 'required',
+        ]);
+
+
+        if (!$validate) {
+            return redirect('/produk')->with('error', 'Data Gagal disimpan');
+        }
+
+        $data = $request->all();
+        // dd($data);
+        Produk_Layanan::create([
+            'item_id' => $id,
+            'item_name' => $data['item_name'],
+            'item_deskripsi' => $data['item_deskripsi'],
+            'item_harga' => $data['item_harga'],
+            'item_dll' => $data['item_dll'],
+            'usaha_id' => 1,
+        ]);
+        return redirect('/foto_video')->with('success', 'Data Berhasil disimpan');
+    }
+
+    public function foto_video_edit(Request $request, $id)
+    {
+        $data = $request->all();
+        $produk = Produk_Layanan::find($data['id']);
+
+        Produk_Layanan::where('item_id', $data['id'])
+            ->update([
+                'item_id' => $id,
+                'item_name' => $data['item_name'],
+                'item_deskripsi' => $data['item_deskripsi'],
+                'item_harga' => $data['item_harga'],
+                'item_dll' => $data['item_dll'],
+                'usaha_id' => 1,
+            ]);
+
+        return $this->foto_video();
+    }
+
+    public function foto_video_destroy(Request $request, $id)
+    {
+        $produk = Produk_Layanan::find($request->id);
+        $produk->delete();
+
+        return redirect('/produk')->with('success', 'Data Berhasil diubah');
     }
 }

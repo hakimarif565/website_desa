@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Desa;
+use App\Models\Foto_Video;
 use App\Models\Pelaku_Usaha;
 use Illuminate\Http\Request;
 
@@ -12,7 +13,8 @@ class FrontController extends Controller
     {
         // dd('a');
         $data_desa  = Desa::first();
-        return view('index', ['data' => $data_desa]);
+        $foto_video  = Foto_Video::all();
+        return view('index', ['data' => $data_desa, 'foto_video' => $foto_video]);
     }
     public function katalog_dinamo()
     {

@@ -76,4 +76,10 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/add_produk_ecommerce', [AdminController::class, 'add_produk_ecommerce']);
     Route::post('/edit_produk_ecommerce/{id}', [AdminController::class, 'edit_produk_ecommerce']);
     Route::get('/delete_produk_ecommerce/{id}', [AdminController::class, 'produk_ecommerce_destroy']);
+
+    /* Foto & Video */
+    Route::get('/foto_video', [AdminController::class, 'foto_video']);
+    Route::post('/add_foto_video', [AdminController::class, 'foto_video_add']);
+    Route::post('/edit_foto_video/{id}', [AdminController::class, 'foto_video_edit']);
+    Route::get('/delete_foto_video/{id}', [AdminController::class, 'foto_video_destroy']);
 });

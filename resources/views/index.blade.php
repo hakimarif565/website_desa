@@ -335,15 +335,23 @@
           <h2>Foto & Video</h2>
           <p>Kegiatan dan Event Kampung Dinamo Ngagel Rejo RW.6</p>
         </div>
-
         <div class="row mt-4">
-          <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-            <div class="icon-box">
-              <div class="icon"><img height="200" width="200" src="{{ asset('img/event/event1.jpg') }}" /></i></div>
-              <h4><a>Kegiatan & Event</a></h4>
+          <?php $i = 1 ?>
+            @foreach($foto_video as $f)
+            <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+              <div class="icon-box">
+                <div class="icon"><img height="200" width="200" src="{{ url('/img/event/'.$f->foto) }}" /></i></div>
+                <h4><a>Kegiatan & Event</a></h4>
+              </div>
             </div>
-          </div>
-          <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
+            @if($i == 4)
+              </div>
+            <div class="row mt-4">
+            @endif
+            <?php $i++; ?>
+         
+          @endforeach
+          <!-- <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
             <div class="icon-box">
               <div class="icon"><img height="200" width="200" src="{{ asset('img/event/event2.jpg') }}" /></i></div>
               <h4><a>Kegiatan & Event</a></h4>
@@ -386,7 +394,7 @@
                 <div class="icon"><img height="200" width="200" src="{{ asset('img/event/event8.jpg') }}" /></i></div>
                 <h4><a>Kegiatan & Event</a></h4>
               </div>
-            </div>
+            </div> -->
           </div>
         <div class="row mt-4 col-12">
             <div class="media container-fluid">
