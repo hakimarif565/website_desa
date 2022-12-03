@@ -107,12 +107,20 @@
         <div class="section-title">
           <h2>Sejarah</h2>
         </div>
-        <div class="row content">
-            <div class="col-lg-12">
-                <p>{{$data->desa_sejarah}}</p>
-                <a href="#" class="btn-learn-more">Baca Selengkapnya</a>
+        @if (empty($data->desa_sejarah))
+            <div class="row content">
+                <div class="col-lg-12">
+                    <p>Sejarah</p>
+                </div>
             </div>
-        </div>
+        @else
+            <div class="row content">
+                <div class="col-lg-12">
+                    <p>{{$data->desa_sejarah}}</p>
+                    <a href="#" class="btn-learn-more">Baca Selengkapnya</a>
+                </div>
+            </div>
+        @endif
       </div>
     </section><!-- End About Us Section -->
 
@@ -132,25 +140,67 @@
             </div>
 
             <div class="accordion-list">
-              <ul>
-                <li>
-                  <a data-bs-toggle="collapse" class="collapse" data-bs-target="#accordion-list-1"> VISI<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-                  <div id="accordion-list-1" class="collapse show" data-bs-parent=".accordion-list">
-                    <p>
-                    {{$data->desa_visi}}
-                    </p>
-                  </div>
-                </li>
+                @if (empty($data->desa_visi))
+                    <ul>
+                        <li>
+                        <a data-bs-toggle="collapse" class="collapse" data-bs-target="#accordion-list-1"> VISI<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                        <div id="accordion-list-1" class="collapse show" data-bs-parent=".accordion-list">
+                            <p>
+                            Visi
+                            </p>
+                        </div>
+                        </li>
 
-                <li>
-                  <a data-bs-toggle="collapse" data-bs-target="#accordion-list-2" class="collapsed">MISI <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-                  <div id="accordion-list-2" class="collapse" data-bs-parent=".accordion-list">
-                    <p>
-                    {{$data->desa_misi}}
-                    </p>
-                  </div>
-                </li>
-              </ul>
+                        <li>
+                        <a data-bs-toggle="collapse" data-bs-target="#accordion-list-2" class="collapsed">MISI <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                        <div id="accordion-list-2" class="collapse" data-bs-parent=".accordion-list">
+                            <p>
+                            Misi
+                            </p>
+                        </div>
+                        </li>
+                    </ul>
+                @elseif (empty($data->desa_misi))
+                    <ul>
+                        <li>
+                        <a data-bs-toggle="collapse" class="collapse" data-bs-target="#accordion-list-1"> VISI<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                        <div id="accordion-list-1" class="collapse show" data-bs-parent=".accordion-list">
+                            <p>
+                            Visi
+                            </p>
+                        </div>
+                        </li>
+
+                        <li>
+                        <a data-bs-toggle="collapse" data-bs-target="#accordion-list-2" class="collapsed">MISI <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                        <div id="accordion-list-2" class="collapse" data-bs-parent=".accordion-list">
+                            <p>
+                            Misi
+                            </p>
+                        </div>
+                        </li>
+                    </ul>
+                @else
+                    <ul>
+                        <li>
+                        <a data-bs-toggle="collapse" class="collapse" data-bs-target="#accordion-list-1"> VISI<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                        <div id="accordion-list-1" class="collapse show" data-bs-parent=".accordion-list">
+                            <p>
+                            {{$data->desa_visi}}
+                            </p>
+                        </div>
+                        </li>
+
+                        <li>
+                        <a data-bs-toggle="collapse" data-bs-target="#accordion-list-2" class="collapsed">MISI <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                        <div id="accordion-list-2" class="collapse" data-bs-parent=".accordion-list">
+                            <p>
+                            {{$data->desa_misi}}
+                            </p>
+                        </div>
+                        </li>
+                    </ul>
+                @endif
             </div>
           </div>
 
@@ -349,7 +399,7 @@
             <div class="row mt-4">
             @endif
             <?php $i++; ?>
-         
+
           @endforeach
           <!-- <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
             <div class="icon-box">
