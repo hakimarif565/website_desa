@@ -74,6 +74,7 @@
         <div class="container">
             <div id="code_prod_complex">
                 <div class="row">
+                    @forelse ($datas as $data)
                     <div class="col-md-4">
                         <figure class="card card-product">
                             <div class="img-wrap padding-y"><img src="https://via.placeholder.com/176" alt=""></div>
@@ -88,127 +89,9 @@
                             </div>
                         </figure>
                     </div>
-
-                    <div class="col-md-4">
-                        <figure class="card card-product">
-                            <div class="img-wrap padding-y"><img src="https://via.placeholder.com/176" alt=""></div>
-                            <figcaption class="info-wrap">
-                                <h4 class="title"><a href=#>Nama Jasa & Layanan</a></h4>
-                            </figcaption>
-                            <div class="bottom-wrap">
-                                <a href="" class="btn btn-sm btn-success float-right"><i class="fa fa-cart-arrow-down"></i> Buy Now</a>
-                                <div class="price-wrap h5">
-                                    <span class="price"> Harga </span>
-                                </div>
-                            </div>
-                        </figure>
-                    </div>
-
-                    <div class="col-md-4">
-                        <figure class="card card-product">
-                            <div class="img-wrap padding-y"><img src="https://via.placeholder.com/176" alt=""></div>
-                            <figcaption class="info-wrap">
-                                <h4 class="title"><a href=#>Nama Jasa & Layanan</a></h4>
-                            </figcaption>
-                            <div class="bottom-wrap">
-                                <a href="" class="btn btn-sm btn-success float-right"><i class="fa fa-cart-arrow-down"></i> Buy Now</a>
-                                <div class="price-wrap h5">
-                                    <span class="price"> Harga </span>
-                                </div>
-                            </div>
-                        </figure>
-                    </div>
-
-                    <div class="col-md-4">
-                        <figure class="card card-product">
-                            <div class="img-wrap padding-y"><img src="https://via.placeholder.com/176" alt=""></div>
-                            <figcaption class="info-wrap">
-                                <h4 class="title"><a href=#>Nama Jasa & Layanan</a></h4>
-                            </figcaption>
-                            <div class="bottom-wrap">
-                                <a href="" class="btn btn-sm btn-success float-right"><i class="fa fa-cart-arrow-down"></i> Buy Now</a>
-                                <div class="price-wrap h5">
-                                    <span class="price"> Harga </span>
-                                </div>
-                            </div>
-                        </figure>
-                    </div>
-
-                    <div class="col-md-4">
-                        <figure class="card card-product">
-                            <div class="img-wrap padding-y"><img src="https://via.placeholder.com/176" alt=""></div>
-                            <figcaption class="info-wrap">
-                                <h4 class="title"><a href=#>Nama Jasa & Layanan</a></h4>
-                            </figcaption>
-                            <div class="bottom-wrap">
-                                <a href="" class="btn btn-sm btn-success float-right"><i class="fa fa-cart-arrow-down"></i> Buy Now</a>
-                                <div class="price-wrap h5">
-                                    <span class="price"> Harga </span>
-                                </div>
-                            </div>
-                        </figure>
-                    </div>
-
-                    <div class="col-md-4">
-                        <figure class="card card-product">
-                            <div class="img-wrap padding-y"><img src="https://via.placeholder.com/176" alt=""></div>
-                            <figcaption class="info-wrap">
-                                <h4 class="title"><a href=#>Nama Jasa & Layanan</a></h4>
-                            </figcaption>
-                            <div class="bottom-wrap">
-                                <a href="" class="btn btn-sm btn-success float-right"><i class="fa fa-cart-arrow-down"></i> Buy Now</a>
-                                <div class="price-wrap h5">
-                                    <span class="price"> Harga </span>
-                                </div>
-                            </div>
-                        </figure>
-                    </div>
-
-                    <div class="col-md-4">
-                        <figure class="card card-product">
-                            <div class="img-wrap padding-y"><img src="https://via.placeholder.com/176" alt=""></div>
-                            <figcaption class="info-wrap">
-                                <h4 class="title"><a href=#>Nama Jasa & Layanan</a></h4>
-                            </figcaption>
-                            <div class="bottom-wrap">
-                                <a href="" class="btn btn-sm btn-success float-right"><i class="fa fa-cart-arrow-down"></i> Buy Now</a>
-                                <div class="price-wrap h5">
-                                    <span class="price"> Harga </span>
-                                </div>
-                            </div>
-                        </figure>
-                    </div>
-
-                    <div class="col-md-4">
-                        <figure class="card card-product">
-                            <div class="img-wrap padding-y"><img src="https://via.placeholder.com/176" alt=""></div>
-                            <figcaption class="info-wrap">
-                                <h4 class="title"><a href=#>Nama Jasa & Layanan</a></h4>
-                            </figcaption>
-                            <div class="bottom-wrap">
-                                <a href="" class="btn btn-sm btn-success float-right"><i class="fa fa-cart-arrow-down"></i> Buy Now</a>
-                                <div class="price-wrap h5">
-                                    <span class="price"> Harga </span>
-                                </div>
-                            </div>
-                        </figure>
-                    </div>
-
-                    <div class="col-md-4">
-                        <figure class="card card-product">
-                            <div class="img-wrap padding-y"><img src="https://via.placeholder.com/176" alt=""></div>
-                            <figcaption class="info-wrap">
-                                <h4 class="title"><a href=#>Nama Jasa & Layanan</a></h4>
-                            </figcaption>
-                            <div class="bottom-wrap">
-                                <a href="" class="btn btn-sm btn-success float-right"><i class="fa fa-cart-arrow-down"></i> Buy Now</a>
-                                <div class="price-wrap h5">
-                                    <span class="price"> Harga </span>
-                                </div>
-                            </div>
-                        </figure>
-                    </div>
-
+                    @empty
+                        <p>No Products found in Bratang Market</p>
+                    @endforelse
                 </div>
             </div>
         </div>

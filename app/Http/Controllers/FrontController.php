@@ -20,25 +20,25 @@ class FrontController extends Controller
     {
         // dd('a');
         $items  = Pelaku_Usaha::all();
-        return view('katalog_dinamo', ['data' => $items]);
+        return view('katalog_dinamo', ['datas' => $items]);
     }
     public function katalog_layanan()
     {
         // dd('a');
         $items  = Pelaku_Usaha::all();
-        return view('katalog_layanan', ['data' => $items]);
+        return view('katalog_layanan', ['datas' => $items]);
     }
     public function katalog_umkm()
     {
         // dd('a');
         $items  = Pelaku_Usaha::all();
-        return view('katalog_umkm', ['data' => $items]);
+        return view('katalog_umkm', ['datas' => $items]);
     }
     public function katalog_market()
     {
         // dd('a');
         $items  = Pelaku_Usaha::all();
-        return view('katalog_bratang_market', ['data' => $items]);
+        return view('katalog_bratang_market', ['datas' => $items]);
     }
 
     public function item_dinamo($slug)
