@@ -299,7 +299,7 @@
           <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="400">
             <div class="icon-box">
               <div class="icon"><img height="200" width="200" src="{{ asset('img/market/bratang_market_logo.jpg') }}" /></div>
-              <h4><a href="/bratang_market">Bratang Market</a></h4>
+              <h4><a href="/market">Bratang Market</a></h4>
               <p>Market Barang Unik dan Menarik Hanya di Kampung Wisata Dinamo</p>
             </div>
           </div>
@@ -690,7 +690,7 @@
               <li><i class="bx bx-chevron-right"></i> <a href="/dinamo">Servis Dinamo</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="/layanan">Layanan Masyarakat</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="/umkm">UMKM</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="/bratang_market">Bratang Market</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/market">Bratang Market</a></li>
             </ul>
           </div>
 

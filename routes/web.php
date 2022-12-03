@@ -19,9 +19,13 @@ use Illuminate\Auth\AuthenticationException;
 
 Route::get('/', [FrontController::class, 'index']);
 Route::get('/dinamo', [FrontController::class, 'katalog_dinamo']);
+Route::get('/dinamo/{slug}', [FrontController::class, 'item_dinamo']);
 Route::get('/layanan', [FrontController::class, 'katalog_layanan']);
+Route::get('/layanan/{slug}', [FrontController::class, 'item_layanan']);
 Route::get('/umkm', [FrontController::class, 'katalog_umkm']);
-Route::get('/bratang_market', [FrontController::class, 'katalog_market']);
+Route::get('/umkm/{slug}', [FrontController::class, 'item_umkm']);
+Route::get('/market', [FrontController::class, 'katalog_market']);
+Route::get('/market/{slug}', [FrontController::class, 'item_market']);
 
 //login register
 Route::get('login', array('as' => 'login', function () {

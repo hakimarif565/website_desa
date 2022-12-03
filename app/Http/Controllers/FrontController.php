@@ -19,25 +19,54 @@ class FrontController extends Controller
     public function katalog_dinamo()
     {
         // dd('a');
-        $dinamos  = Pelaku_Usaha::all();
-        return view('katalog_dinamo', ['data' => $dinamos]);
+        $items  = Pelaku_Usaha::all();
+        return view('katalog_dinamo', ['data' => $items]);
     }
     public function katalog_layanan()
     {
         // dd('a');
-        $dinamos  = Pelaku_Usaha::all();
-        return view('katalog_layanan', ['data' => $dinamos]);
+        $items  = Pelaku_Usaha::all();
+        return view('katalog_layanan', ['data' => $items]);
     }
     public function katalog_umkm()
     {
         // dd('a');
-        $dinamos  = Pelaku_Usaha::all();
-        return view('katalog_umkm', ['data' => $dinamos]);
+        $items  = Pelaku_Usaha::all();
+        return view('katalog_umkm', ['data' => $items]);
     }
     public function katalog_market()
     {
         // dd('a');
-        $dinamos  = Pelaku_Usaha::all();
-        return view('katalog_bratang_market', ['data' => $dinamos]);
+        $items  = Pelaku_Usaha::all();
+        return view('katalog_bratang_market', ['data' => $items]);
+    }
+
+    public function item_dinamo($slug)
+    {
+        $item  = Pelaku_Usaha::where(['usaha_tipe'=='Dinamo'])
+                ->where(['usaha_id'==$slug])
+                ->first();
+        return view('katalog_dinamo', ['data' => $item]);
+    }
+    public function item_layanan($slug)
+    {
+        $item  = Pelaku_Usaha::where(['usaha_tipe'=='Layanan'])
+                ->where(['usaha_id'==$slug])
+                ->first();
+        return view('katalog_layanan', ['data' => $item]);
+    }
+    public function item_umkm($slug)
+    {
+        $item  = Pelaku_Usaha::where(['usaha_tipe'=='UMKM'])
+                ->where(['usaha_id'==$slug])
+                ->first();
+        return view('katalog_umkm', ['data' => $item]);
+    }
+    public function item_market($slug)
+    {
+        $item  = Pelaku_Usaha::where(['usaha_tipe'=='Bratang Market'])
+                ->where(['usaha_id'==$slug])
+                ->first();
+        return view('katalog_bratang_market', ['data' => $item]);
     }
 }

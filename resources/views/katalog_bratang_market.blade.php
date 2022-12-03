@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Inner Page</title>
+  <title>Bratang Market</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -63,19 +63,155 @@
 
         <ol>
           <li><a href="/">Home</a></li>
-          <li>Dinamo</li>
+          <li>Market</li>
         </ol>
-        <h2>Servis Dinamo</h2>
+        <h2>Bratang Market</h2>
 
       </div>
     </section><!-- End Breadcrumbs -->
 
-    <section class="inner-page">
-      <div class="container">
-        <p>
-          Example inner page template
-        </p>
-      </div>
+    <section class="section-content inner-page bg padding-y">
+        <div class="container">
+            <div id="code_prod_complex">
+                <div class="row">
+                    <div class="col-md-4">
+                        <figure class="card card-product">
+                            <div class="img-wrap padding-y"><img src="https://via.placeholder.com/176" alt=""></div>
+                            <figcaption class="info-wrap">
+                                <h4 class="title"><a href=#>Nama Jasa & Layanan</a></h4>
+                            </figcaption>
+                            <div class="bottom-wrap">
+                                <a href="" class="btn btn-sm btn-success float-right"><i class="fa fa-cart-arrow-down"></i> Buy Now</a>
+                                <div class="price-wrap h5">
+                                    <span class="price"> Harga </span>
+                                </div>
+                            </div>
+                        </figure>
+                    </div>
+
+                    <div class="col-md-4">
+                        <figure class="card card-product">
+                            <div class="img-wrap padding-y"><img src="https://via.placeholder.com/176" alt=""></div>
+                            <figcaption class="info-wrap">
+                                <h4 class="title"><a href=#>Nama Jasa & Layanan</a></h4>
+                            </figcaption>
+                            <div class="bottom-wrap">
+                                <a href="" class="btn btn-sm btn-success float-right"><i class="fa fa-cart-arrow-down"></i> Buy Now</a>
+                                <div class="price-wrap h5">
+                                    <span class="price"> Harga </span>
+                                </div>
+                            </div>
+                        </figure>
+                    </div>
+
+                    <div class="col-md-4">
+                        <figure class="card card-product">
+                            <div class="img-wrap padding-y"><img src="https://via.placeholder.com/176" alt=""></div>
+                            <figcaption class="info-wrap">
+                                <h4 class="title"><a href=#>Nama Jasa & Layanan</a></h4>
+                            </figcaption>
+                            <div class="bottom-wrap">
+                                <a href="" class="btn btn-sm btn-success float-right"><i class="fa fa-cart-arrow-down"></i> Buy Now</a>
+                                <div class="price-wrap h5">
+                                    <span class="price"> Harga </span>
+                                </div>
+                            </div>
+                        </figure>
+                    </div>
+
+                    <div class="col-md-4">
+                        <figure class="card card-product">
+                            <div class="img-wrap padding-y"><img src="https://via.placeholder.com/176" alt=""></div>
+                            <figcaption class="info-wrap">
+                                <h4 class="title"><a href=#>Nama Jasa & Layanan</a></h4>
+                            </figcaption>
+                            <div class="bottom-wrap">
+                                <a href="" class="btn btn-sm btn-success float-right"><i class="fa fa-cart-arrow-down"></i> Buy Now</a>
+                                <div class="price-wrap h5">
+                                    <span class="price"> Harga </span>
+                                </div>
+                            </div>
+                        </figure>
+                    </div>
+
+                    <div class="col-md-4">
+                        <figure class="card card-product">
+                            <div class="img-wrap padding-y"><img src="https://via.placeholder.com/176" alt=""></div>
+                            <figcaption class="info-wrap">
+                                <h4 class="title"><a href=#>Nama Jasa & Layanan</a></h4>
+                            </figcaption>
+                            <div class="bottom-wrap">
+                                <a href="" class="btn btn-sm btn-success float-right"><i class="fa fa-cart-arrow-down"></i> Buy Now</a>
+                                <div class="price-wrap h5">
+                                    <span class="price"> Harga </span>
+                                </div>
+                            </div>
+                        </figure>
+                    </div>
+
+                    <div class="col-md-4">
+                        <figure class="card card-product">
+                            <div class="img-wrap padding-y"><img src="https://via.placeholder.com/176" alt=""></div>
+                            <figcaption class="info-wrap">
+                                <h4 class="title"><a href=#>Nama Jasa & Layanan</a></h4>
+                            </figcaption>
+                            <div class="bottom-wrap">
+                                <a href="" class="btn btn-sm btn-success float-right"><i class="fa fa-cart-arrow-down"></i> Buy Now</a>
+                                <div class="price-wrap h5">
+                                    <span class="price"> Harga </span>
+                                </div>
+                            </div>
+                        </figure>
+                    </div>
+
+                    <div class="col-md-4">
+                        <figure class="card card-product">
+                            <div class="img-wrap padding-y"><img src="https://via.placeholder.com/176" alt=""></div>
+                            <figcaption class="info-wrap">
+                                <h4 class="title"><a href=#>Nama Jasa & Layanan</a></h4>
+                            </figcaption>
+                            <div class="bottom-wrap">
+                                <a href="" class="btn btn-sm btn-success float-right"><i class="fa fa-cart-arrow-down"></i> Buy Now</a>
+                                <div class="price-wrap h5">
+                                    <span class="price"> Harga </span>
+                                </div>
+                            </div>
+                        </figure>
+                    </div>
+
+                    <div class="col-md-4">
+                        <figure class="card card-product">
+                            <div class="img-wrap padding-y"><img src="https://via.placeholder.com/176" alt=""></div>
+                            <figcaption class="info-wrap">
+                                <h4 class="title"><a href=#>Nama Jasa & Layanan</a></h4>
+                            </figcaption>
+                            <div class="bottom-wrap">
+                                <a href="" class="btn btn-sm btn-success float-right"><i class="fa fa-cart-arrow-down"></i> Buy Now</a>
+                                <div class="price-wrap h5">
+                                    <span class="price"> Harga </span>
+                                </div>
+                            </div>
+                        </figure>
+                    </div>
+
+                    <div class="col-md-4">
+                        <figure class="card card-product">
+                            <div class="img-wrap padding-y"><img src="https://via.placeholder.com/176" alt=""></div>
+                            <figcaption class="info-wrap">
+                                <h4 class="title"><a href=#>Nama Jasa & Layanan</a></h4>
+                            </figcaption>
+                            <div class="bottom-wrap">
+                                <a href="" class="btn btn-sm btn-success float-right"><i class="fa fa-cart-arrow-down"></i> Buy Now</a>
+                                <div class="price-wrap h5">
+                                    <span class="price"> Harga </span>
+                                </div>
+                            </div>
+                        </figure>
+                    </div>
+
+                </div>
+            </div>
+        </div>
     </section>
 
   </main><!-- End #main -->
@@ -115,21 +251,21 @@
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Tentang Kami</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#tentang">Sejarah</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#layanan">Layanan & UMKM</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#dokumentasi">Foto & Video</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#kontak">Kontak</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/#">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/#tentang">Sejarah</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/#layanan">Layanan & UMKM</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/#dokumentasi">Foto & Video</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/#kontak">Kontak</a></li>
             </ul>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Produk dan Layanan</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Servis Dinamo</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Layanan Masyarakat</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">UMKM</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Bratang Market</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/dinamo">Servis Dinamo</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/layanan">Layanan Masyarakat</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/umkm">UMKM</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/market">Bratang Market</a></li>
             </ul>
           </div>
 
@@ -138,7 +274,7 @@
             <p>Temukan Kampung Dinamo Surabaya pada Sosial Media Dibawah Ini</p>
             <div class="social-links mt-3">
               <a href="https://www.instagram.com/kknngagelrejo/" target="_blank" class="instagram"><i class="bx bxl-instagram"></i></a>
-              <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+              <a href="#" class="whatsapp"><i class="bx bxl-whatsapp"></i></a>
             </div>
           </div>
 
