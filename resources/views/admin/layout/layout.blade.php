@@ -212,7 +212,7 @@
                             <div class="collapse" id="base">
                                 <ul class="nav nav-collapse">
                                     <li>
-                                        <a href="#">
+                                        <a href="/desa">
                                             <span class="sub-item">Detail Desa</span>
                                         </a>
                                     </li>
@@ -233,7 +233,7 @@
                         <li class="nav-item">
                             <a data-toggle="collapse" href="#eco">
                                 <i class="fas fa-store-alt"></i>
-                                <p>Market & E-Commerce</p>
+                                <p>Layanan & E-Commerce</p>
                             </a>
                             <div class="collapse" id="eco">
                                 <ul class="nav nav-collapse">
@@ -254,7 +254,7 @@
                                 </ul>
                             </div>
                         </li>
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a data-toggle="collapse" href="#dinamo">
                                 <i class="fas fa-store"></i>
                                 <p>Service Dinamo</p>
@@ -273,7 +273,7 @@
                                     </li>
                                 </ul>
                             </div>
-                        </li>
+                        </li> -->
                         <li class="nav-item">
                             <a data-toggle="collapse" href="#book_keluar">
                                 <i class="fas fa-star"></i>
@@ -304,7 +304,7 @@
                                 </ul>
                             </div>
                         </li>
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a data-toggle="collapse" href="#contact">
                                 <i class="fas fa-book"></i>
                                 <p>Kontak</p>
@@ -318,44 +318,8 @@
                                     </li>
                                 </ul>
                             </div>
-                        </li>
-                        <li class="nav-section">
-                            <span class="sidebar-mini-icon">
-                                <i class="fa fa-ellipsis-h"></i>
-                            </span>
-                            <h4 class="text-section">Laporan</h4>
-                        </li>
-
-                        <li class="nav-item">
-                            <a data-toggle="collapse" href="#laporan">
-                                <i class="fas fa-file-alt"></i>
-                                <p>Administrasi & Laporan</p>
-                            </a>
-                            <div class="collapse" id="laporan">
-                                <ul class="nav nav-collapse">
-                                    <li>
-                                        <a href="#">
-                                            <span class="sub-item">Laporan Berita Desa</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <span class="sub-item">Laporan Order Dinamo</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <span class="sub-item">Laporan Keuangan Desa</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <span class="sub-item">Laporan Pengguna Website</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
+                        </li> -->
+                        
                     </ul>
                 </div>
             </div>

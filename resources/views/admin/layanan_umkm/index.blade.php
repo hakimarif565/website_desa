@@ -135,7 +135,7 @@
                     <div class="form-group">
                         <label>Tipe Usahak</label>
                         <select class="form-control" name="usaha_tipe" id="item_id" required>
-                            <option value="" hidden="">--Pilih Usaha--</option>
+                            <option hidden="">--Pilih Usaha--</option>
                             <option>Dinamo</option>
                             <option>UMKM</option>
                             <option>Layanan Masyarakat</option>
