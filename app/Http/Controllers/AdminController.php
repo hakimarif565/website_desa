@@ -607,7 +607,7 @@ class AdminController extends Controller
         {
             $produk = Desa::all();
             // return view('admin.content_market.content_market', compact('content_market'));
-            return view('admin/foto_video/index', ['data' => $produk]);
+            return view('admin/master/desa', ['data' => $produk]);
         }
     
         public function desa_edit(Request $request, $id)
