@@ -5,7 +5,7 @@
     <div class="content">
         <div class="page-inner">
             <div class="page-header">
-                <h4 class="page-title">Data Produk Layanan UMKM</h4>
+                <h4 class="page-title">Data Foto & Video Kegiatan</h4>
                 <ul class="breadcrumbs">
                     <li class="nav-home">
                         <a href="/dashboard">
@@ -22,7 +22,7 @@
                         <i class="flaticon-right-arrow"></i>
                     </li>
                     <li class="nav-item">
-                        <a href="#">Produk</a>
+                        <a href="#">Foto & Video</a>
                     </li>
                 </ul>
             </div>
@@ -32,7 +32,7 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="d-flex align-items-center">
-                                <h4 class="card-title">Data Produk</h4>
+                                <h4 class="card-title">Data Foto & Video</h4>
                                 <!-- <button class="btn btn-primary btn-round ml-auto" data-toggle="modal" data-target="#modalAddProduk">
                                     <i class="fa fa-plus"></i>
                                     Create
@@ -47,7 +47,7 @@
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th>Nama Produk</th>
+                                            <th></th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -55,7 +55,7 @@
                                         @foreach ($data as $foto_video)
                                         <tr>
                                             <td>{{$i++}}</td>
-                                            <td>{{$foto_video->dokumentasi_id}}</td>
+                                            <td>{{$foto_video->foto}}</td>
                                             <!-- <td>{{$foto_video->item_deskripsi}}</td>
                                             <td>{{$foto_video->item_harga}}</td>
                                             <td>{{$foto_video->item_dll}}</td> -->
@@ -128,7 +128,7 @@
 
 @foreach($data as $g)
 
-<div class="modal fade" id="modalEditProduk{{$g->item_id}}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+<div class="modal fade" id="modalEditfoto_video{{$g->dokumentasi_id}}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
@@ -137,27 +137,14 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="/edit_produk/{{$g->item_id}}" method="POST" enctype="multipart/form-data">
+            <form action="/edit_foto_video/{{$g->dokumentasi_id}}" method="POST" enctype="multipart/form-data">
                 @csrf
-                <input type="hidden" value="{{$g->item_id}}" name="id" required>
+                <input type="hidden" value="{{$g->dokumentasi_id}}" name="id" required>
                 <div class="modal-body">
                     <div class="form-grup">
-                        <label>Nama Produk</label>
-                        <input type="text" class="form-control" name="item_name" value="{{$g->item_name}}" placeholder="Nama Produk ..." required>
-                    </div>
-                    <div class="form-grup">
-                        <label>Deskripsi</label>
-                        <input type="text" class="form-control" name="item_deskripsi" value="{{$g->item_deskripsi}}" placeholder="Deskripsi ..." required>
-                    </div>
-
-                    <div class="form-grup">
-                        <label>Harga</label>
-                        <input type="text" class="form-control" name="item_harga" value="{{$g->item_harga}}" placeholder="Harga ..." required>
-                    </div>
-
-                    <div class="form-grup">
-                        <label>Etc</label>
-                        <input type="text" class="form-control" name="item_dll" value="{{$g->item_dll}}" placeholder="Etc ..." required>
+                        <label>Foto</label><br>
+                        <img src="{{ url('/img/event/'.$g->foto) }}" width="200px" height="200px" alt="">
+                        <input type="file" name="foto" src="{{ url('/img/event/'.$g->foto) }}">
                     </div>
 
                     <div class="modal-footer">

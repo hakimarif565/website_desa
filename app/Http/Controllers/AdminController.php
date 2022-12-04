@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Berita;
+use App\Models\Desa;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Ecommerce;
@@ -466,18 +467,33 @@ class AdminController extends Controller
     public function foto_video_edit(Request $request, $id)
     {
         $data = $request->all();
-        $produk = Produk_Layanan::find($data['id']);
+        // dd($data);
+        $foto_video = Foto_Video::find($data['id']);
+        // dd($data);
+        if ($foto_video) {
+            if (isset($data['foto'])) {
+                $file = $request->file('foto');
+                $nama_ = $foto_video->foto;
 
-        Produk_Layanan::where('item_id', $data['id'])
-            ->update([
-                'item_id' => $id,
-                'item_name' => $data['item_name'],
-                'item_deskripsi' => $data['item_deskripsi'],
-                'item_harga' => $data['item_harga'],
-                'item_dll' => $data['item_dll'],
-                'usaha_id' => 1,
-            ]);
+                /* cek file jika ada */
+                /* ganti nama file */
+                $nama_file = $nama_;
 
+                /* isi dengan nama folder tempat kemana file diupload */
+                $tujuan_upload = 'img/event/';
+                if(!empty($foto_video->foto))
+                {
+                    unlink('img/event/'.$foto_video->foto);
+                }
+                /* upload file */
+                $file->move($tujuan_upload, $nama_file);
+                Foto_Video::where('dokumentasi_id', $data['id'])
+                ->update([
+                    'foto' => $nama_file,
+                ]);
+               
+            }
+        }
         return $this->foto_video();
     }
 
@@ -585,4 +601,31 @@ class AdminController extends Controller
 
         return redirect('/rekomendasi')->with('success', 'Data Berhasil diubah');
     }
+        /* Produk Layanan */
+
+        public function desa()
+        {
+            $produk = Desa::all();
+            // return view('admin.content_market.content_market', compact('content_market'));
+            return view('admin/master/desa', ['data' => $produk]);
+        }
+    
+        public function desa_edit(Request $request, $id)
+        {
+            $data = $request->all();
+            $desa = Desa::find($data['id']);
+            if ($desa) {
+                    Desa::where('desa_id', $data['id'])
+                    ->update([
+                        'desa_sejarah' => $data['desa_sejarah'],
+                        'desa_visi' => $data['desa_visi'],
+                        'desa_misi' => $data['desa_misi'],
+                        'desa_nama' => $data['desa_nama'],
+                        'desa_alamat' => $data['desa_alamat'],
+                        'desa_telp' => $data['desa_telp'],
+                    ]);
+            }
+            return $this->desa();
+        }
+    
 }

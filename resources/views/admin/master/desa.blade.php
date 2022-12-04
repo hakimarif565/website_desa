@@ -33,10 +33,7 @@
                         <div class="card-header">
                             <div class="d-flex align-items-center">
                                 <h4 class="card-title">Data Profil Desa</h4>
-                                <button class="btn btn-primary btn-round ml-auto" data-toggle="modal" data-target="#modalAddUser">
-                                    <i class="fa fa-plus"></i>
-                                    Create
-                                </button>
+                                
                             </div>
                         </div>
                         <div class="card-body">
@@ -49,31 +46,36 @@
                                             <th>No</th>
                                             <th>Nama Desa</th>
                                             <th>Alamat</th>
+                                            <th>No Telp</th>
                                             <th>Visi</th>
                                             <th>Misi</th>
+                                            <th>Sejarah</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-
+                                    <?php $i = 1 ?>
+                                        @foreach ($data as $desa)
                                         <tr>
-                                            <td>1</td>
-                                            <td>Desa Dinamo</td>
-                                            <td>Ngagel Rejo</td>
-                                            <td>Visi</td>
-                                            <td>Misi</td>
+                                            <td>{{$i++}}</td>
+                                            <td>{{$desa->desa_nama}}</td>
+                                            <td>{{$desa->desa_alamat}}</td>
+                                            <td>{{$desa->desa_telp}}</td>
+                                            <td>{{$desa->desa_visi}}</td>
+                                            <td>{{$desa->desa_misi}}</td>
+                                            <td>{{$desa->desa_sejarah}}</td>
                                             <td>
                                                 <div>
 
                                                     @csrf
                                                     @method('DELETE')
-                                                    <!-- <a href="#modalEditUser{{$user_data->user_id}}"  data-toggle="modal" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i>Edit</a> -->
-                                                    <a href="#modalEditUser{{$user_data->user_id}}" data-toggle="modal" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i>Edit</a>
-                                                    <a href="#modalHapusUser{{$user_data->user_id}}" data-toggle="modal" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i>Hapus</a>
+                                                    <a href="#modalEditDesa{{$desa->desa_id}}" data-toggle="modal" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i>Edit</a>
+                                                    
                                                     <!-- </form> -->
                                                 </div>
                                             </td>
                                         </tr>
+                                        @endforeach
 
                                     </tbody>
                                 </table>
@@ -130,7 +132,7 @@
         </div>
     </div>
 </div>
-
+--
 
 //hapus data
 
@@ -167,9 +169,9 @@
 @endforeach
 
 //edit 
-
+-->
 @foreach($data as $g)
-<div class="modal fade" id="modalEditUser{{$g->user_id}}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+<div class="modal fade" id="modalEditDesa{{$g->desa_id}}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
@@ -178,27 +180,33 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="/user_edit/{id}" method="POST" enctype="multipart/form-data">
+            <form action="/desa_edit/{id}" method="POST" enctype="multipart/form-data">
                 @csrf
-                <input type="hidden" value="{{$g->user_id}}" name="id" required>
+                <input type="hidden" value="{{$g->desa_id}}" name="id" required>
                 <div class="modal-body">
                     <div class="form-grup">
-                        <label>Nama Lengkap</label>
-                        <input type="text" value="{{$g->user_name}}" class="form-control" name="full_name" placeholder="Nama Lengkap ..." required>
+                        <label>Nama Desa</label>
+                        <input type="text" value="{{$g->desa_nama}}" class="form-control" name="desa_nama" placeholder="Nama Lengkap ..." required>
                     </div>
                     <div class="form-grup">
-                        <label>Username</label>
-                        <input type="text" class="form-control" value="{{$g->username}}" name="username" placeholder="Username ..." required>
+                        <label>Alamat</label>
+                        <input type="text" value="{{$g->desa_alamat}}" class="form-control" name="desa_alamat" placeholder="Nama Lengkap ..." required>
                     </div>
-
                     <div class="form-grup">
-                        <label>Email</label>
-                        <input type="email" class="form-control" value="{{$g->email}}" name="email" placeholder="Email ..." required>
+                        <label>No Telp</label>
+                        <input type="text" value="{{$g->desa_telp}}" class="form-control" name="desa_telp" placeholder="Nama Lengkap ..." required>
                     </div>
-
                     <div class="form-grup">
-                        <label>Password</label>
-                        <input type="password" class="form-control" value="" name="password" placeholder="isi jika ganti password ...">
+                        <label>Visi</label>
+                        <input type="text" value="{{$g->desa_visi}}" class="form-control" name="desa_visi" placeholder="Nama Lengkap ..." required>
+                    </div>
+                    <div class="form-grup">
+                        <label>Misi</label>
+                        <input type="text" value="{{$g->desa_misi}}" class="form-control" name="desa_misi" placeholder="Nama Lengkap ..." required>
+                    </div>
+                    <div class="form-grup">
+                        <label>Sejarah</label>
+                        <textarea class="form-control"  name="desa_sejarah" id="" cols="10" rows="5">{{$g->desa_sejarah}}</textarea>
                     </div>
 
                     <div class="modal-footer">
