@@ -50,27 +50,31 @@ class FrontController extends Controller
         $item  = Pelaku_Usaha::where('usaha_tipe', "Dinamo")
                     ->where('usaha_id', $slug)
                     ->first();
-        return view('item_details', ['data' => $item]);
+        $tipe = $item->usaha_tipe;
+        return view('item_details', ['data' => $item, 'tipe'=> $tipe]);
     }
     public function item_layanan($slug)
     {
-        $item  = Pelaku_Usaha::where('usaha_tipe', "Dinamo")
+        $item  = Pelaku_Usaha::where('usaha_tipe', "Layanan Masyarakat")
                     ->where('usaha_id', $slug)
                     ->first();
-        return view('item_details', ['data' => $item]);
+        $tipe = $item->usaha_tipe;
+        return view('item_details', ['data' => $item, 'tipe'=>$tipe]);
     }
     public function item_umkm($slug)
     {
-        $item  = Pelaku_Usaha::where('usaha_tipe', "Dinamo")
+        $item  = Pelaku_Usaha::where('usaha_tipe', "Umkm")
                     ->where('usaha_id', $slug)
                     ->first();
-        return view('item_details', ['data' => $item]);
+        $tipe = $item->usaha_tipe;
+        return view('item_details', ['data' => $item, 'tipe'=>$tipe]);
     }
     public function item_market($slug)
     {
-        $item  = Pelaku_Usaha::where('usaha_tipe', "Dinamo")
+        $item  = Pelaku_Usaha::where('usaha_tipe', "Bratang Market")
                     ->where('usaha_id', $slug)
                     ->first();
-        return view('item_details', ['data' => $item]);
+        $tipe = $item->usaha_tipe;
+        return view('item_details', ['data' => $item, 'tipe'=>$tipe]);
     }
 }
