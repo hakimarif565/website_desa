@@ -78,7 +78,7 @@
                             @if ($data->usaha_img == NULL)
                                 <div class="d-flex justify-content-center img-wrap padding-y"><img height="200" width="200" src="{{ asset('img/rekomendasi/data1.jpg') }}" class="img-fluid" alt=""></div>
                             @else
-                                <div class="d-flex justify-content-center img-wrap padding-y"><img src="{{ $data->usaha_img }}" alt=""></div>
+                                <div class="d-flex justify-content-center img-wrap padding-y"><img src="{{ url('data_file/'.$data->usaha_img) }}" alt=""></div>
                             @endif
                             <figcaption class="d-flex info-wrap">
                                 <h4 class="title"><a href=#>{{ $data->usaha_nama }}</a></h4>

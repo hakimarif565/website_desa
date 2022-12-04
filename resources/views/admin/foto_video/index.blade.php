@@ -33,10 +33,12 @@
                         <div class="card-header">
                             <div class="d-flex align-items-center">
                                 <h4 class="card-title">Data Foto & Video</h4>
-                                <!-- <button class="btn btn-primary btn-round ml-auto" data-toggle="modal" data-target="#modalAddProduk">
+                                @if($jumlah < 8)
+                                 <button class="btn btn-primary btn-round ml-auto" data-toggle="modal" data-target="#modalAddProduk">
                                     <i class="fa fa-plus"></i>
                                     Create
-                                </button> -->
+                                </button>
+                                @endif
                             </div>
                         </div>
                         <div class="card-body">
@@ -92,27 +94,12 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="/add_produk" method="POST" enctype="multipart/form-data">
+            <form action="/add_foto_video" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="modal-body">
                     <div class="form-grup">
-                        <label>Nama Produk</label>
-                        <input type="text" class="form-control" name="item_name" placeholder="Nama Produk ..." required>
-                    </div>
-
-                    <div class="form-grup">
-                        <label>Deskripsi</label>
-                        <input type="text" class="form-control" name="item_deskripsi" placeholder="Deskripsi ..." required>
-                    </div>
-
-                    <div class="form-grup">
-                        <label>Harga</label>
-                        <input type="text" class="form-control" name="item_harga" placeholder="Harga ..." required>
-                    </div>
-
-                    <div class="form-grup">
-                        <label>Etc</label>
-                        <input type="text" class="form-control" name="item_dll" placeholder="Etc ..." required>
+                        <label>Foto</label><br>
+                        <input type="file" name="foto">
                     </div>
 
                     <div class="modal-footer">

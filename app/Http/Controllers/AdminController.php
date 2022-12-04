@@ -422,44 +422,51 @@ class AdminController extends Controller
 
     public function foto_video()
     {
-        $produk = Foto_Video::all();
-        // return view('admin.content_market.content_market', compact('content_market'));
-        return view('admin/foto_video/index', ['data' => $produk]);
+        $foto_video = Foto_Video::all();
+        $jumlah = count($foto_video);
+        return view('admin/foto_video/index', ['data' => $foto_video, 'jumlah' => $jumlah]);
     }
 
     public function foto_video_add(Request $request)
     {
         // dd();
-        $id = Foto_Video::orderByRaw('item_id DESC')
-            ->orderBy('item_id', 'DESC')
+        $id = Foto_Video::orderByRaw('dokumentasi_id DESC')
+            ->orderBy('dokumentasi_id', 'DESC')
             ->first();
         if ($id == NULL) {
             $id = 1;
         } else {
-            $id = $id->item_id + 1;
+            $id = $id->dokumentasi_id + 1;
         }
 
         $validate = $request->validate([
-            'item_name' => 'required',
-            'item_deskripsi' => 'required',
-            'item_harga' => 'required',
-            'item_dll' => 'required',
+            'foto' => 'required',
         ]);
 
 
         if (!$validate) {
-            return redirect('/produk')->with('error', 'Data Gagal disimpan');
+            return redirect('/foto_video')->with('error', 'Data Gagal disimpan');
         }
 
         $data = $request->all();
+        if (isset($data['foto'])) {
+            $file = $request->file('foto');
+
+            /* ganti nama file */
+            $nama_file = "event$id.jpg";
+
+            /* isi dengan nama folder tempat kemana file diupload */
+            $tujuan_upload = 'img/event';
+
+            /* upload file */
+            $file->move($tujuan_upload, $nama_file);
+        }
         // dd($data);
-        Produk_Layanan::create([
-            'item_id' => $id,
-            'item_name' => $data['item_name'],
-            'item_deskripsi' => $data['item_deskripsi'],
-            'item_harga' => $data['item_harga'],
-            'item_dll' => $data['item_dll'],
-            'usaha_id' => 1,
+        Foto_Video::create([
+            'dokumentasi_id' => $id,
+            'desa_id' => 1,
+            'berita_id' => 1,
+            'foto' => $nama_file,
         ]);
         return redirect('/foto_video')->with('success', 'Data Berhasil disimpan');
     }
