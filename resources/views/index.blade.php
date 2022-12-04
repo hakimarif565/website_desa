@@ -139,7 +139,7 @@
               </p>
             </div>
 
-            <div class="accordion-list">
+            <div class="accordion-list container">
                 @if (empty($data->desa_visi))
                     <ul>
                         <li>
@@ -204,7 +204,7 @@
             </div>
           </div>
 
-          <div class="col-lg-5 align-items-stretch order-1 order-lg-2 img" data-aos="zoom-in" data-aos-delay="150"><img src="{{ asset('img/desa/tugu.png')}}" /> </div>
+          <div class="col-lg-5 align-items-center align-items-stretch order-1 order-lg-2 img" data-aos="zoom-in" data-aos-delay="150"><img width="400" height="350" src="{{ asset('img/desa/tugu.png')}}" sizes="(max-width: 640px) 400px, 800px" /></div>
         </div>
 
       </div>
@@ -216,7 +216,7 @@
 
         <div class="row">
           <div class="col-lg-6 d-flex align-items-center" data-aos="fade-right" data-aos-delay="100">
-          <img width="500" height="400" src="{{ asset('img/desa/produk_layanan.jpg')}}" />
+          <img width="400" height="400" src="{{ asset('img/desa/produk_layanan.jpg')}}" />
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left" data-aos-delay="100">
             <h3>Produk & Layanan UMKM Desa Kampung Dinamo</h3>
@@ -255,7 +255,6 @@
               </div>
 
             </div>
-
           </div>
         </div>
 
@@ -283,8 +282,8 @@
           <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
             <div class="icon-box">
             <div class="icon"> <img height="200" width="200" src="{{ asset('img/layanan/layanan_masyarakat_logo.jpg') }}" />  </div>
-              <h4><a href="/layanan">Layanan Masyarakat</a></h4>
-              <p>Layanan Ke-Masyarakatan Sekitar</p>
+              <h4><a href="/layanan">Layanan & Sarana</a></h4>
+              <p>Layanan Masyarakat dan Sarana Prasarana Kampung Wisata Dinamo Surabaya</p>
             </div>
           </div>
 
@@ -292,7 +291,7 @@
             <div class="icon-box">
               <div class="icon"><img height="200" width="200" src="{{ asset('img/umkm/umkm_logo.jpg') }}" /> </div>
               <h4><a href="/umkm">UMKM</a></h4>
-              <p>UMKM Berkembang Oleh Organisasi dan Individu Terbaik</p>
+              <p>UMKM Berkembang Oleh Organisasi dan Individu Terbaik Di-Kampung Wisata Dinamo Surabaya</p>
             </div>
           </div>
 
@@ -300,7 +299,7 @@
             <div class="icon-box">
               <div class="icon"><img height="200" width="200" src="{{ asset('img/market/bratang_market_logo.jpg') }}" /></div>
               <h4><a href="/market">Bratang Market</a></h4>
-              <p>Market Barang Unik dan Menarik Hanya di Kampung Wisata Dinamo</p>
+              <p>Market Barang Unik dan Menarik Hanya di Kampung Wisata Dinamo Surabaya</p>
             </div>
           </div>
 
