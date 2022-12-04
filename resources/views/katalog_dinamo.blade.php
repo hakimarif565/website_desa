@@ -75,7 +75,7 @@
                     @forelse ($datas as $data)
                     <div class="col-md-4">
                         <figure class="card card-product">
-                            @if ($data->usaha_img == NULL)
+                            @if ($data->usaha_img == NULL || $data->usaha_img == '')
                                 <div class="d-flex justify-content-center img-wrap padding-y"><img height="200" width="200" src="{{ asset('img/rekomendasi/data1.jpg') }}" class="img-fluid" alt=""></div>
                             @else
                                 <div class="d-flex justify-content-center img-wrap padding-y"><img height="200" width="200" src="{{ url('data_file/'.$data->usaha_img) }}" alt=""></div>

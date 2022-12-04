@@ -47,30 +47,30 @@ class FrontController extends Controller
 
     public function item_dinamo($slug)
     {
-        $item  = Pelaku_Usaha::where(['usaha_tipe'=='Dinamo'])
-                ->where(['usaha_id'==$slug])
-                ->first();
-        return view('katalog_dinamo', ['data' => $item]);
+        $item  = Pelaku_Usaha::where('usaha_tipe', "Dinamo")
+                    ->where('usaha_id', $slug)
+                    ->first();
+        return view('item_details', ['data' => $item]);
     }
     public function item_layanan($slug)
     {
-        $item  = Pelaku_Usaha::where(['usaha_tipe'=='Layanan'])
-                ->where(['usaha_id'==$slug])
-                ->first();
-        return view('katalog_layanan', ['data' => $item]);
+        $item  = Pelaku_Usaha::where('usaha_tipe', "Dinamo")
+                    ->where('usaha_id', $slug)
+                    ->first();
+        return view('item_details', ['data' => $item]);
     }
     public function item_umkm($slug)
     {
-        $item  = Pelaku_Usaha::where(['usaha_tipe'=='UMKM'])
-                ->where(['usaha_id'==$slug])
-                ->first();
-        return view('katalog_umkm', ['data' => $item]);
+        $item  = Pelaku_Usaha::where('usaha_tipe', "Dinamo")
+                    ->where('usaha_id', $slug)
+                    ->first();
+        return view('item_details', ['data' => $item]);
     }
     public function item_market($slug)
     {
-        $item  = Pelaku_Usaha::where(['usaha_tipe'=='Bratang Market'])
-                ->where(['usaha_id'==$slug])
-                ->first();
-        return view('katalog_bratang_market', ['data' => $item]);
+        $item  = Pelaku_Usaha::where('usaha_tipe', "Dinamo")
+                    ->where('usaha_id', $slug)
+                    ->first();
+        return view('item_details', ['data' => $item]);
     }
 }

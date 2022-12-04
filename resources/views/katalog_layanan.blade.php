@@ -77,16 +77,16 @@
                     @forelse ($datas as $data)
                     <div class="col-md-4">
                         <figure class="card card-product">
-                            @if ($data->usaha_img == NULL)
+                            @if ($data->usaha_img == NULL || $data->usaha_img == '')
                                 <div class="d-flex justify-content-center img-wrap padding-y"><img height="200" width="200" src="{{ asset('img/rekomendasi/data1.jpg') }}" class="img-fluid" alt=""></div>
                             @else
                                 <div class="d-flex justify-content-center img-wrap padding-y"><img height="200" width="200" src="{{ url('data_file/'.$data->usaha_img) }}" alt=""></div>
                             @endif
                             <figcaption class="d-flex info-wrap">
-                                <h4 class="title"><a href="/produk_layanan/{{ $data->usaha_id }}">{{ $data->usaha_nama }}</a></h4>
+                                <h4 class="title"><a href="/layanan/{{ $data->usaha_id }}">{{ $data->usaha_nama }}</a></h4>
                             </figcaption>
                             <div class="d-flex bottom-wrap">
-                                <a href="/produk_layanan/{{ $data->usaha_id }}" class="btn btn-sm btn-success float-right"><i class="fa fa-cart-arrow-down"></i>{{ Str::title($data->usaha_tipe) }}</a>
+                                <a href="/layanan/{{ $data->usaha_id }}" class="btn btn-sm btn-success float-right"><i class="fa fa-cart-arrow-down"></i>{{ Str::title($data->usaha_tipe) }}</a>
                             </div>
                         </figure>
                     </div>
