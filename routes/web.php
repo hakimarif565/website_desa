@@ -86,4 +86,10 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/add_foto_video', [AdminController::class, 'foto_video_add']);
     Route::post('/edit_foto_video/{id}', [AdminController::class, 'foto_video_edit']);
     Route::get('/delete_foto_video/{id}', [AdminController::class, 'foto_video_destroy']);
+
+    /*Rekomendasi */
+    Route::get('/rekomendasi', [AdminController::class, 'rekomen']);
+    Route::post('/add_rekomendasi', [AdminController::class, 'rekomen_add']);
+    Route::post('/edit_rekomendasi/{id}', [AdminController::class, 'rekomen_edit']);
+    Route::get('/delete_rekomendasi/{id}', [AdminController::class, 'rekomen_destroy']);
 });

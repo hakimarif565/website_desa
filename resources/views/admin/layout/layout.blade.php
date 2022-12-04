@@ -275,14 +275,14 @@
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a data-toggle="collapse" href="#book_keluar">
+                            <a data-toggle="collapse" href="#rekomendasi">
                                 <i class="fas fa-star"></i>
                                 <p>Rekomendasi</p>
                             </a>
-                            <div class="collapse" id="book_keluar">
+                            <div class="collapse" id="rekomendasi">
                                 <ul class="nav nav-collapse">
                                     <li>
-                                        <a href="/booking_keluar">
+                                        <a href="/rekomendasi">
                                             <span class="sub-item">Detail Rekomendasi</span>
                                         </a>
                                     </li>
