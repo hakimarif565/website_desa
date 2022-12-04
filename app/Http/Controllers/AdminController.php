@@ -11,6 +11,7 @@ use App\Models\Foto_Video;
 use App\Models\Pelaku_Usaha;
 use App\Models\Produk_Layanan;
 use App\Models\ProdukEcommerce;
+use App\Models\Rekomendasi;
 use Hash;
 use Illuminate\Support\Facades\Auth;
 
@@ -504,30 +505,125 @@ class AdminController extends Controller
         return redirect('/produk')->with('success', 'Data Berhasil diubah');
     }
 
-    /* Produk Layanan */
-
-    public function desa()
+    public function rekomen()
     {
-        $produk = Desa::all();
+        $rekomendasi = Rekomendasi::all();
         // return view('admin.content_market.content_market', compact('content_market'));
-        return view('admin/foto_video/index', ['data' => $produk]);
+        return view('admin/rekomendasi/index', ['data' => $rekomendasi]);
     }
 
-    public function desa_edit(Request $request, $id)
+    public function rekomen_add(Request $request)
+    {
+        // dd();
+        $data = $request->all();
+        // dd($data);
+        $id = Rekomendasi::orderByRaw('rekomendasi_id DESC')
+            ->orderBy('rekomendasi_id', 'DESC')
+            ->first();
+        if ($id == NULL) {
+            $id = 1;
+        } else {
+            $id = $id->rekomendasi_id + 1;
+        }
+
+        $validate = $request->validate([
+            'rekomendasi_name' => 'required',
+            'rekomendasi_subname' => 'required',
+            'rekomendasi_deskripsi' => 'required',
+            'rekomendasi_img' => 'required',
+        ]);
+
+
+        $file = $request->file('rekomendasi_img');
+
+        /* ganti nama file */
+        $nama_file = time() . "_" . $file->getClientOriginalName();
+
+        /* isi dengan nama folder tempat kemana file diupload */
+        $tujuan_upload = 'data_file';
+
+        /* upload file */
+        $file->move($tujuan_upload, $nama_file);
+
+
+        if (!$validate) {
+            return redirect('/rekomendasi')->with('error', 'Data Gagal disimpan');
+        }
+        // dd($data);
+        Rekomendasi::create([
+            'rekomendasi_id' => $id,
+            'rekomendasi_name' => $data['rekomendasi_name'],
+            'rekomendasi_subname' => $data['rekomendasi_subname'],
+            'usaha_id' => Auth::id(),
+            'rekomendasi_deskripsi' => $data['rekomendasi_deskripsi'],
+            'rekomendasi_img' => $nama_file,
+        ]);
+        return redirect('/rekomendasi')->with('success', 'Data Berhasil disimpan');
+    }
+
+    public function rekomen_edit(Request $request, $id)
     {
         $data = $request->all();
-        $desa = Desa::find($data['id']);
-        if ($desa) {
-                Desa::where('desa_id', $data['id'])
+        $rekomendasi = Rekomendasi::find($data['id']);
+        // dd($data);
+        if ($rekomendasi) {
+            if (isset($data['rekomendasi_img'])) {
+                $file = $request->file('rekomendasi_img');
+
+                /* ganti nama file */
+                $nama_file = time() . "_" . $file->getClientOriginalName();
+
+                /* isi dengan nama folder tempat kemana file diupload */
+                $tujuan_upload = 'data_file';
+
+                /* upload file */
+                $file->move($tujuan_upload, $nama_file);
+            }
+
+
+            Rekomendasi::where('rekomendasi_id', $data['id'])
                 ->update([
-                    'desa_sejarah' => $data['desa_sejarah'],
-                    'desa_visi' => $data['desa_visi'],
-                    'desa_misi' => $data['desa_misi'],
-                    'desa_nama' => $data['desa_nama'],
-                    'desa_alamat' => $data['desa_alamat'],
-                    'desa_telp' => $data['desa_telp'],
+                    'rekomendasi_id' => $id,
+                    'rekomendasi_name' => $data['rekomendasi_name'],
+                    'rekomendasi_subname' => $data['rekomendasi_subname'],
+                    'usaha_id' => Auth::id(),
+                    'rekomendasi_deskripsi' => $data['rekomendasi_deskripsi'],
+                    'rekomendasi_img' => isset($data['rekomendasi_img']) ? $nama_file : $rekomendasi->rekomendasi_img,
                 ]);
         }
-        return $this->desa();
+        return $this->rekomen();
     }
+
+    public function rekomen_destroy(Request $request, $id)
+    {
+        $rekomendasi = Rekomendasi::find($request->id);
+        $rekomendasi->delete();
+
+        return redirect('/rekomendasi')->with('success', 'Data Berhasil diubah');
+    }
+        /* Produk Layanan */
+
+        public function desa()
+        {
+            $produk = Desa::all();
+            // return view('admin.content_market.content_market', compact('content_market'));
+            return view('admin/foto_video/index', ['data' => $produk]);
+        }
+    
+        public function desa_edit(Request $request, $id)
+        {
+            $data = $request->all();
+            $desa = Desa::find($data['id']);
+            if ($desa) {
+                    Desa::where('desa_id', $data['id'])
+                    ->update([
+                        'desa_sejarah' => $data['desa_sejarah'],
+                        'desa_visi' => $data['desa_visi'],
+                        'desa_misi' => $data['desa_misi'],
+                        'desa_nama' => $data['desa_nama'],
+                        'desa_alamat' => $data['desa_alamat'],
+                        'desa_telp' => $data['desa_telp'],
+                    ]);
+            }
+            return $this->desa();
 }

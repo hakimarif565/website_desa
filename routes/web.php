@@ -87,7 +87,13 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/edit_foto_video/{id}', [AdminController::class, 'foto_video_edit']);
     Route::get('/delete_foto_video/{id}', [AdminController::class, 'foto_video_destroy']);
 
-    /* Desa */
-    Route::get('/desa', [AdminController::class, 'desa']);
-    Route::post('/desa_edit/{id}', [AdminController::class, 'desa_edit']);
+    /*Rekomendasi */
+    Route::get('/rekomendasi', [AdminController::class, 'rekomen']);
+    Route::post('/add_rekomendasi', [AdminController::class, 'rekomen_add']);
+    Route::post('/edit_rekomendasi/{id}', [AdminController::class, 'rekomen_edit']);
+    Route::get('/delete_rekomendasi/{id}', [AdminController::class, 'rekomen_destroy']);
+
+     /* Desa */
+     Route::get('/desa', [AdminController::class, 'desa']);
+     Route::post('/desa_edit/{id}', [AdminController::class, 'desa_edit']);
 });
