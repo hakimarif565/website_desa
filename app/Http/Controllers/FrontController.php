@@ -19,25 +19,29 @@ class FrontController extends Controller
     public function katalog_dinamo()
     {
         // dd('a');
-        $items  = Pelaku_Usaha::all();
+        $items  = Pelaku_Usaha::where('usaha_tipe', 'Dinamo')
+                    ->simplePaginate(9);
         return view('katalog_dinamo', ['datas' => $items]);
     }
     public function katalog_layanan()
     {
         // dd('a');
-        $items  = Pelaku_Usaha::all();
+        $items  = Pelaku_Usaha::where('usaha_tipe', 'Layanan Masyarakat')
+                    ->simplePaginate(9);
         return view('katalog_layanan', ['datas' => $items]);
     }
     public function katalog_umkm()
     {
         // dd('a');
-        $items  = Pelaku_Usaha::all();
+        $items  = Pelaku_Usaha::where('usaha_tipe', 'UMKM')
+                    ->simplePaginate(9);
         return view('katalog_umkm', ['datas' => $items]);
     }
     public function katalog_market()
     {
         // dd('a');
-        $items  = Pelaku_Usaha::all();
+        $items  = Pelaku_Usaha::where('usaha_tipe', 'Bratang Market')
+                    ->simplePaginate(9);
         return view('katalog_bratang_market', ['datas' => $items]);
     }
 
