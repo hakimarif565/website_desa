@@ -138,14 +138,14 @@
 </div>
 
 
-{{-- //hapus data user --}}
+{{-- //hapus data berita --}}
 
 @foreach($data as $g)
 <div class="modal fade" id="modalHapus{{$g->berita_id}}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Hapus User</h5>
+                <h5 class="modal-title" id="exampleModalLongTitle">Hapus Data</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -187,7 +187,7 @@
                 @csrf
                 <input type="hidden" value="{{$g->berita_id}}" name="id" required>
                 <div class="modal-body">
-                <div class="form-grup">
+                    <div class="form-grup">
                         <label>Nama Berita</label>
                         <input type="text" class="form-control" name="berita_name" value="{{ $g->berita_name }}" placeholder="Nama Lengkap ..." required>
                     </div>
