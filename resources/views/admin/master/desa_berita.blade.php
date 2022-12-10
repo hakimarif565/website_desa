@@ -52,6 +52,10 @@
                                             <th>Lokasi</th>
                                             <th>Jam</th>
                                             <th>Catatan</th>
+                                            <th>Foto 1</th>
+                                            <th>Foto 2</th>
+                                            <th>Foto 3</th>
+                                            <th>Video</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -65,6 +69,10 @@
                                             <td>{{ $berita->berita_lokasi }}</td>
                                             <td>{{ $berita->berita_jam }}</td>
                                             <td>{{ $berita->berita_dll }}</td>
+                                            <td>{{ $berita->berita_foto }}</td>
+                                            <td>{{ $berita->berita_foto2 }}</td>
+                                            <td>{{ $berita->berita_foto3 }}</td>
+                                            <td>{{ $berita->berita_video }}</td>
                                             <td>
                                                 <div>
                                                     @csrf
@@ -126,6 +134,22 @@
                         <label>Catatan</label>
                         <input type="text" class="form-control" name="berita_dll" placeholder="Catatan ..." required>
                     </div>
+                    <div class="form-grup">
+                        <label>Foto 1</label><br>
+                        <input type="file" name="berita_foto">
+                    </div>
+                    <div class="form-grup">
+                        <label>Foto 2</label><br>
+                        <input type="file" name="berita_foto2">
+                    </div>
+                    <div class="form-grup">
+                        <label>Foto 2</label><br>
+                        <input type="file" name="berita_foto3">
+                    </div>
+                    <div class="form-grup">
+                        <label>Link Video</label>
+                        <input type="text" class="form-control" name="berita_video" placeholder="Link Video ..." required>
+                    </div>
 
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-undo"></i>Close</button>
@@ -172,6 +196,7 @@
 
 @endforeach
 
+// edit data
 
 @foreach($data as $g)
 <div class="modal fade" id="modalEdit{{$g->berita_id}}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
@@ -209,6 +234,29 @@
                     <div class="form-grup">
                         <label>Catatan</label>
                         <input type="text" class="form-control" name="berita_dll" value="{{$g->berita_dll}}" placeholder="Catatan ..." required>
+                    </div>
+
+                    <div class="form-grup">
+                        <label>Foto 1</label><br>
+                        <img src="{{ url('/data_file/'.$g->berita_foto) }}" width="200px" height="200px" alt="">
+                        <input type="file" name="usaha_img" src="{{ url('/data_file/'.$g->berita_foto) }}">
+                    </div>
+
+                    <div class="form-grup">
+                        <label>Foto 2</label><br>
+                        <img src="{{ url('/data_file/'.$g->berita_foto2) }}" width="200px" height="200px" alt="">
+                        <input type="file" name="usaha_img" src="{{ url('/data_file/'.$g->berita_foto2) }}">
+                    </div>
+
+                    <div class="form-grup">
+                        <label>Foto 3</label><br>
+                        <img src="{{ url('/data_file/'.$g->berita_foto) }}" width="200px" height="200px" alt="">
+                        <input type="file" name="usaha_img" src="{{ url('/data_file/'.$g->berita_foto3) }}">
+                    </div>
+
+                    <div class="form-grup">
+                        <label>Link Video</label>
+                        <input type="text" class="form-control" name="berita_video" value="{{$g->berita_video}}" placeholder="Link Video ..." required>
                     </div>
 
                     <div class="modal-footer">
