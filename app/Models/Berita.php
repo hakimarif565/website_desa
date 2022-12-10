@@ -20,5 +20,9 @@ class Berita extends Model
         'berita_lokasi',
         'berita_jam',
         'berita_dll',
+        'berita_foto',
+        'berita_foto2',
+        'berita_foto3',
+        'berita_video',
     ];
 }
