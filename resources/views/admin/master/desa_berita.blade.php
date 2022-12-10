@@ -69,9 +69,9 @@
                                             <td>{{ $berita->berita_lokasi }}</td>
                                             <td>{{ $berita->berita_jam }}</td>
                                             <td>{{ $berita->berita_dll }}</td>
-                                            <td><img width="150px" src="{{ url('/data_file/'.$berita->berita_foto) }}"></td>
-                                            <td><img width="150px" src="{{ url('/data_file/'.$berita->berita_foto2) }}"></td>
-                                            <td><img width="150px" src="{{ url('/data_file/'.$berita->berita_foto3) }}"></td>
+                                            <td>@if($berita->berita_foto)<img width="150px" src="{{ url('/data_file/'.$berita->berita_foto) }}">@endif</td>
+                                            <td>@if($berita->berita_foto2)<img width="150px" src="{{ url('/data_file/'.$berita->berita_foto2) }}">@endif</td>
+                                            <td>@if($berita->berita_foto3)<img width="150px" src="{{ url('/data_file/'.$berita->berita_foto3) }}">@endif</td>
                                             <td>{{ $berita->berita_video }}</td>
                                             <td>
                                                 <div>
@@ -127,7 +127,7 @@
 
                     <div class="form-grup">
                         <label>Berita Jam</label>
-                        <input type="text" class="form-control" name="berita_jam" placeholder="Jam ..." required>
+                        <input type="time" class="form-control" name="berita_jam" placeholder="Jam ..." required>
                     </div>
 
                     <div class="form-grup">

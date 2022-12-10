@@ -159,7 +159,7 @@ class AdminController extends Controller
         }
 
         $data = $request->all();
-
+        // dd($data);
         $berita_foto = $request->file('berita_foto');
         $berita_foto2 = $request->file('berita_foto2');
         $berita_foto3 = $request->file('berita_foto3');
@@ -197,13 +197,15 @@ class AdminController extends Controller
 
 
         // dd($data);
+        $jam = !empty($data['berita_jam']) ? $data['berita_jam'] : '';
+        // dd($jam);
         Berita::create([
             'berita_id' => $id,
             'berita_name' => $data['berita_name'],
             'berita_deskripsi' => $data['berita_deskripsi'],
             'user_id' => Auth::id(),
             'berita_lokasi' => $data['berita_lokasi'],
-            'berita_jam' => $data['berita_jam'],
+            'berita_jam' => $jam,
             'berita_dll' => $data['berita_dll'],
             'berita_foto' => isset($nama_file) ? $nama_file : '',
             'berita_foto2' => isset($nama_file_) ? $nama_file_ : '',
