@@ -159,6 +159,43 @@ class AdminController extends Controller
         }
 
         $data = $request->all();
+
+        $berita_foto = $request->file('berita_foto');
+        $berita_foto2 = $request->file('berita_foto2');
+        $berita_foto3 = $request->file('berita_foto3');
+
+        if (isset($berita_foto)) {
+           /* ganti nama file */
+            $nama_file = time() . "_" . $berita_foto->getClientOriginalName();
+
+            /* isi dengan nama folder tempat kemana file diupload */
+            $tujuan_upload = 'data_file';
+
+            /* upload file */
+            $berita_foto->move($tujuan_upload, $nama_file);
+        }
+        if (isset($berita_foto2)) {
+            /* ganti nama file */
+             $nama_file = time() . "_" . $berita_foto2->getClientOriginalName();
+ 
+             /* isi dengan nama folder tempat kemana file diupload */
+             $tujuan_upload = 'data_file';
+ 
+             /* upload file */
+             $berita_foto2->move($tujuan_upload, $nama_file);
+         }
+         if (isset($berita_foto3)) {
+            /* ganti nama file */
+             $nama_file = time() . "_" . $berita_foto3->getClientOriginalName();
+ 
+             /* isi dengan nama folder tempat kemana file diupload */
+             $tujuan_upload = 'data_file';
+ 
+             /* upload file */
+             $berita_foto3->move($tujuan_upload, $nama_file);
+         }
+        
+
         // dd($data);
         Berita::create([
             'berita_id' => $id,
@@ -168,6 +205,9 @@ class AdminController extends Controller
             'berita_lokasi' => $data['berita_lokasi'],
             'berita_jam' => $data['berita_jam'],
             'berita_dll' => $data['berita_dll'],
+            'berita_foto' => isset($berita_foto) ? $berita_foto : '',
+            'berita_foto2' => isset($berita_foto2) ? $berita_foto2 : '',
+            'berita_foto3' => isset($berita_foto3) ? $berita_foto3 : '',
         ]);
         return redirect('/berita')->with('success', 'Data Berhasil disimpan');
     }

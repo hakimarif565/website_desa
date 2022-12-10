@@ -126,6 +126,18 @@
                         <label>Catatan</label>
                         <input type="text" class="form-control" name="berita_dll" placeholder="Catatan ..." required>
                     </div>
+                    <div class="form-grup">
+                        <label>Foto 1</label><br>
+                        <input type="file" name="berita_foto">
+                    </div>
+                    <div class="form-grup">
+                        <label>Foto 2</label><br>
+                        <input type="file" name="berita_foto2">
+                    </div>
+                    <div class="form-grup">
+                        <label>Foto 3</label><br>
+                        <input type="file" name="berita_foto3">
+                    </div>
 
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-undo"></i>Close</button>
