@@ -55,7 +55,7 @@
                     </div>
                     <div class="form-action mb-3 float-right">
                         <button type="submit" class="btn btn-primary btn-rounded">Login</button>
-                        <a href="/register" class="btn btn-secondary btn-rounded">Register</a>
+                        <!-- <a href="/register" class="btn btn-secondary btn-rounded">Register</a> -->
                     </div>
                 </div>
             </form>
