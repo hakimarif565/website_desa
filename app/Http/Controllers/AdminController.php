@@ -165,7 +165,7 @@ class AdminController extends Controller
         $berita_foto3 = $request->file('berita_foto3');
 
         if (isset($berita_foto)) {
-           /* ganti nama file */
+            /* ganti nama file */
             $nama_file = time() . "_" . $berita_foto->getClientOriginalName();
 
             /* isi dengan nama folder tempat kemana file diupload */
@@ -176,25 +176,25 @@ class AdminController extends Controller
         }
         if (isset($berita_foto2)) {
             /* ganti nama file */
-             $nama_file = time() . "_" . $berita_foto2->getClientOriginalName();
- 
-             /* isi dengan nama folder tempat kemana file diupload */
-             $tujuan_upload = 'data_file';
- 
-             /* upload file */
-             $berita_foto2->move($tujuan_upload, $nama_file);
-         }
-         if (isset($berita_foto3)) {
+            $nama_file_ = time() . "_" . $berita_foto2->getClientOriginalName();
+
+            /* isi dengan nama folder tempat kemana file diupload */
+            $tujuan_upload = 'data_file';
+
+            /* upload file */
+            $berita_foto2->move($tujuan_upload, $nama_file_);
+        }
+        if (isset($berita_foto3)) {
             /* ganti nama file */
-             $nama_file = time() . "_" . $berita_foto3->getClientOriginalName();
- 
-             /* isi dengan nama folder tempat kemana file diupload */
-             $tujuan_upload = 'data_file';
- 
-             /* upload file */
-             $berita_foto3->move($tujuan_upload, $nama_file);
-         }
-        
+            $nama_file_1 = time() . "_" . $berita_foto3->getClientOriginalName();
+
+            /* isi dengan nama folder tempat kemana file diupload */
+            $tujuan_upload = 'data_file';
+
+            /* upload file */
+            $berita_foto3->move($tujuan_upload, $nama_file_1);
+        }
+
 
         // dd($data);
         Berita::create([
@@ -205,9 +205,10 @@ class AdminController extends Controller
             'berita_lokasi' => $data['berita_lokasi'],
             'berita_jam' => $data['berita_jam'],
             'berita_dll' => $data['berita_dll'],
-            'berita_foto' => isset($berita_foto) ? $berita_foto : '',
-            'berita_foto2' => isset($berita_foto2) ? $berita_foto2 : '',
-            'berita_foto3' => isset($berita_foto3) ? $berita_foto3 : '',
+            'berita_foto' => isset($nama_file) ? $nama_file : '',
+            'berita_foto2' => isset($nama_file_) ? $nama_file_ : '',
+            'berita_foto3' => isset($nama_file_1) ? $nama_file_1 : '',
+            'berita_video' => $data['berita_video'],
         ]);
         return redirect('/berita')->with('success', 'Data Berhasil disimpan');
     }
@@ -217,6 +218,20 @@ class AdminController extends Controller
         $berita = Berita::find($data['id']);
         // dd($data);
         if ($berita) {
+            if (isset($data['rekomendasi_img'])) {
+                $file = $request->file('rekomendasi_img');
+
+                /* ganti nama file */
+                $nama_file = time() . "_" . $file->getClientOriginalName();
+
+                /* isi dengan nama folder tempat kemana file diupload */
+                $tujuan_upload = 'data_file';
+
+                /* upload file */
+                $file->move($tujuan_upload, $nama_file);
+            }
+
+
             Berita::where('berita_id', $berita->berita_id)
                 ->update([
                     'berita_name' => $data['berita_name'],
@@ -225,9 +240,14 @@ class AdminController extends Controller
                     'berita_lokasi' => $data['berita_lokasi'],
                     'berita_jam' => $data['berita_jam'],
                     'berita_dll' => $data['berita_dll'],
+                    'berita_foto' => isset($data['berita_foto']) ? $nama_file : $berita->berita_foto,
+                    'berita_foto2' => isset($data['berita_foto2']) ? $nama_file : $berita->berita_foto2,
+                    'berita_foto3' => isset($data['berita_foto3']) ? $nama_file : $berita->berita_foto3,
+                    'berita_video' => $data['berita_video'],
                 ]);
+
+            return redirect('/berita')->with('success', 'Data Berhasil diubah');
         }
-        return redirect('/berita')->with('success', 'Data Berhasil diubah');
     }
 
     public function berita_destroy(Request $request)

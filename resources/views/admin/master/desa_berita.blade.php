@@ -69,9 +69,9 @@
                                             <td>{{ $berita->berita_lokasi }}</td>
                                             <td>{{ $berita->berita_jam }}</td>
                                             <td>{{ $berita->berita_dll }}</td>
-                                            <td>{{ $berita->berita_foto }}</td>
-                                            <td>{{ $berita->berita_foto2 }}</td>
-                                            <td>{{ $berita->berita_foto3 }}</td>
+                                            <td><img width="150px" src="{{ url('/data_file/'.$berita->berita_foto) }}"></td>
+                                            <td><img width="150px" src="{{ url('/data_file/'.$berita->berita_foto2) }}"></td>
+                                            <td><img width="150px" src="{{ url('/data_file/'.$berita->berita_foto3) }}"></td>
                                             <td>{{ $berita->berita_video }}</td>
                                             <td>
                                                 <div>
