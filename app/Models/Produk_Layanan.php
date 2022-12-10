@@ -19,5 +19,9 @@ class Produk_Layanan extends Model
         'item_deskripsi',
         'item_harga',
         'item_dll',
+        'item_img',
+        'item_img2',
+        'item_img3',
+        'item_video',
     ];
 }

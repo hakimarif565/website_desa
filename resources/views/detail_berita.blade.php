@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Detail {{ $data->usaha_nama }}</title>
+  <title>Profil & Berita Desa</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -65,9 +65,9 @@
 
         <ol>
           <li><a href="/">Home</a></li>
-          <li>{{ $data->usaha_nama }}</li>
+          <li>Desa & Berita</li>
         </ol>
-        <h2>{{ $data->usaha_nama }}</h2>
+        <h2>Detail Artikel</h2>
 
       </div>
     </section><!-- End Breadcrumbs -->
@@ -78,22 +78,22 @@
 
         <div class="row gy-4">
 
-          <div class="col-lg-8">
+          <div class="col-lg-6">
             <div class="portfolio-details-slider swiper">
               <div class="swiper-wrapper align-items-center">
-                @if (empty($data->usaha_img))
+                @if (empty($data->berita_foto))
                     <div class="swiper-slide">
-                        <img width="500" height="500" src="{{ asset('img/empty.jpg') }}" alt="">
+                        <img width="400" height="300" src="{{ asset('img/empty.jpg') }}" alt="">
                     </div>
                 @else
                     <div class="swiper-slide">
-                        <img width="500" height="500" src="{{ asset('img/dinamo/'.$data->usaha_img) }}" alt="">
+                        <img width="400" height="300" src="{{ asset('img/dinamo/'.$data->berita_foto) }}" alt="">
                     </div>
                     <div class="swiper-slide">
-                        <img width="500" height="500" src="{{ asset('img/dinamo/'.$data->usaha_img2) }}" alt="">
+                        <img width="400" height="300" src="{{ asset('img/dinamo/'.$data->berita_foto2) }}" alt="">
                     </div>
                     <div class="swiper-slide">
-                        <img width="500" height="500" src="{{ asset('img/dinamo/'.$data->usaha_img3) }}" alt="">
+                        <img width="400" height="300" src="{{ asset('img/dinamo/'.$data->berita_foto3) }}" alt="">
                     </div>
                 @endif
 
@@ -102,69 +102,41 @@
             </div>
           </div>
 
-          <div class="col-lg-4">
+          <div class="col-lg-6">
             <div class="portfolio-info">
-              <h3>Detail Informasi</h3>
+              <h3>Detail Acara</h3>
               <ul>
-                <li><strong>Nama</strong>: {{ $data->usaha_nama }}</li>
-                <li><strong>ID</strong>: {{ $data->usaha_id }}</li>
-                <li><strong>Alamat</strong>: {{ $data->usaha_alamat }}</li>
-                <li><strong>Tipe</strong>: {{ $data->usaha_tipe }}</li>
-                <li><strong>Telp.</strong>: {{ $data->usaha_telp }}</li>
+                <li><strong>Acara</strong>: {{ $data->berita_name }}</li>
+                <li><strong>Lokasi</strong>: {{ $data->berita_lokasi }}</li>
+                <li><strong>Jam</strong>: {{ $data->berita_jam }}</li>
               </ul>
             </div>
             <div class="portfolio-description">
-              <h2>Deskripsi</h2>
+              <h2>Catatan</h2>
               <p>
-                    {{ $data->usaha_deskripsi }}
+                    {{ $data->berita_dll }}
               </p>
             </div>
           </div>
 
           <div class="col-lg-12">
             <div class="portfolio-description">
-              <h2>Informasi Tambahan</h2>
+              <h2>Deskripsi Acara</h2>
               <p>
-                    {{ $data->usaha_sejarah }}
+                    {{ $data->berita_deskripsi }}
               </p>
             </div>
-            <div class="portfolio-info">
-                @if ($data->usaha_tipe == "Dinamo")
-                    <h3>Detail Lain</h3>
-                    <ul>
-                        <li><strong>Marketplace</strong>: <a>www.example.com</a></li>
-                        <li><strong>Harga</strong>: <a>www.example.com</a></li>
-                        <li><strong>Video</strong>: <a>www.example.com</a></li>
-                    </ul>
-                @elseif ($data->usaha_tipe == "Umkm")
-                    <h3>Detail Lain</h3>
-                    <ul>
-                        <li><strong>Category</strong>: Web design</li>
-                        <li><strong>Client</strong>: ASU Company</li>
-                        <li><strong>Project date</strong>: 01 March, 2020</li>
-                        <li><strong>Project URL</strong>: <a href="#">www.example.com</a></li>
-                    </ul>
-                @elseif ($data->usaha_tipe == "Layanan Masyarakat")
-                    <h3>Detail Lain</h3>
-                    <ul>
-                        <li><strong>Category</strong>: Web design</li>
-                        <li><strong>Client</strong>: ASU Company</li>
-                        <li><strong>Project date</strong>: 01 March, 2020</li>
-                        <li><strong>Project URL</strong>: <a href="#">www.example.com</a></li>
-                    </ul>
-                @elseif ($data->usaha_tipe == "Bratang Market")
-                    <h3>Detail Lain</h3>
-                    <ul>
-                        <li><strong>Category</strong>: Web design</li>
-                        <li><strong>Client</strong>: ASU Company</li>
-                        <li><strong>Project date</strong>: 01 March, 2020</li>
-                        <li><strong>Project URL</strong>: <a href="#">www.example.com</a></li>
-                    </ul>
-                @endif
-              </div>
           </div>
-
-
+          <div class="mt-4 col-lg-12">
+            <div class="portfolio-description">
+              <h2>Video Acara</h2>
+              <p>
+                <div class="d-flex justify-content-center justify-content-lg-start">
+                    <a href="{{ $data->berita_video }}" class="glightbox btn-watch-video"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
+                </div>
+              </p>
+            </div>
+          </div>
         </div>
 
       </div>
@@ -176,65 +148,61 @@
   <footer id="footer">
 
     <div class="footer-newsletter">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-6">
-            <h4>Join Our Newsletter</h4>
-            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Subscribe">
-            </form>
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-6">
+              <h4>Kampung Wisata Dinamo Surabaya</h4>
+              <p>Ngagel Rejo Surabaya, Indonesia</p>
+              {{-- <form action="" method="post">
+                <input type="email" name="email"><input type="submit" value="Subscribe">
+              </form> --}}
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
     <div class="footer-top">
       <div class="container">
         <div class="row">
 
           <div class="col-lg-3 col-md-6 footer-contact">
-            <h3>Arsha</h3>
+            <h3>Kampung Dinamo</h3>
             <p>
-              A108 Adam Street <br>
-              New York, NY 535022<br>
-              United States <br><br>
-              <strong>Phone:</strong> +1 5589 55488 55<br>
-              <strong>Email:</strong> info@example.com<br>
+              Ngagel Rejo RW.6 - 11 <br>
+              Surabaya, Jawa Timur<br>
+              Indonesia<br><br>
+              <strong>Telpon:</strong> +62 5589 55488 55<br>
+              <strong>Email :</strong> info@example.com<br>
             </p>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Useful Links</h4>
+            <h4>Tentang Kami</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/#">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/#tentang">Sejarah</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/#layanan">Layanan & UMKM</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/#dokumentasi">Foto & Video</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/#kontak">Kontak</a></li>
             </ul>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Our Services</h4>
+            <h4>Produk dan Layanan</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/dinamo">Servis Dinamo</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/layanan">Layanan Masyarakat</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/umkm">UMKM</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/market">Bratang Market</a></li>
             </ul>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Our Social Networks</h4>
-            <p>Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p>
+            <h4>Sosial Media</h4>
+            <p>Temukan Kampung Dinamo Surabaya pada Sosial Media Dibawah Ini</p>
             <div class="social-links mt-3">
-              <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-              <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+              <a href="https://www.instagram.com/kknngagelrejo/" target="_blank" class="instagram"><i class="bx bxl-instagram"></i></a>
               <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-              <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-              <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
             </div>
           </div>
 

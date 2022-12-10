@@ -65,9 +65,14 @@
           <h1>Kampung Wisata Dinamo</h1>
           <h2>Ngagel Rejo Surabaya</h2>
           <div class="d-flex justify-content-center justify-content-lg-start">
-            <a href="#about" class="btn-get-started scrollto">Sejarah</a>
-            <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox btn-watch-video"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
-          </div>
+            @if (empty($data->desa_nama))
+                <a href="#" class="btn-get-started scrollto">Sejarah</a>
+                <a href="#" class="glightbox btn-watch-video"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
+            @else
+                <a href="/profile_desa/{{ $data->desa_nama }}" class="btn-get-started scrollto">Sejarah</a>
+                <a href="{{ $data->video_link }}" class="glightbox btn-watch-video"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
+            @endif
+            </div>
         </div>
         <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
           <img src="{{ asset('img/desa/icon_desa.png') }}" class="img-fluid" alt="">
@@ -117,7 +122,7 @@
             <div class="row content">
                 <div class="col-lg-12">
                     <p>{{$data->desa_sejarah}}</p>
-                    <a href="#" class="btn-learn-more">Baca Selengkapnya</a>
+                    <a href="/profile_desa/{{ $data->desa_nama }}" class="btn-learn-more">Baca Selengkapnya</a>
                 </div>
             </div>
         @endif
@@ -319,57 +324,18 @@
         </div>
 
         <div class="row">
-
-          <div class="col-lg-6">
-            <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="100">
-              <div class="pic"><img height="200" width="200" src="{{ asset('img/rekomendasi/data1.jpg') }}" class="img-fluid" alt=""></div>
-              <div class="member-info">
-                <h4>Ferdi Sambo</h4>
-                <span>Chief Executive Officer</span>
-                <p>Explicabo voluptatem mollitia et repellat qui dolorum quasi</p>
-                {{-- <div class="social">
-                  <a href=""><i class="ri-twitter-fill"></i></a>
-                  <a href=""><i class="ri-facebook-fill"></i></a>
-                  <a href=""><i class="ri-instagram-fill"></i></a>
-                  <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
-                </div> --}}
-              </div>
+            @foreach($rekomendasi as $rec)
+                <div class="col-lg-6">
+                <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="100">
+                <div class="pic"><img height="200" width="200" src="{{ asset('img/rekomendasi/'.$rec->rekomendasi_foto) }}" class="img-fluid" alt=""></div>
+                <div class="member-info">
+                    <h4>{{ $rec->rekomendasi_name }}</h4>
+                    <span>{{ $rec->rekomendasi_subname }}</span>
+                    <p>{{ $rec->rekomendasi_deskripsi }}</p>
+                </div>
+                </div>
             </div>
-          </div>
-
-          <div class="col-lg-6 mt-4 mt-lg-0">
-            <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="200">
-              <div class="pic"><img height="200" width="200" src="{{ asset('img/rekomendasi/data2.jpg') }}" class="img-fluid" alt=""></div>
-              <div class="member-info">
-                <h4>Brigadir J</h4>
-                <span>Product Manager</span>
-                <p>Aut maiores voluptates amet et quis praesentium qui senda para</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-6 mt-4">
-            <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="300">
-              <div class="pic"><img height="200" width="200" src="{{ asset('img/rekomendasi/data3.jpg') }}" class="img-fluid" alt=""></div>
-              <div class="member-info">
-                <h4>Vio</h4>
-                <span>CTO</span>
-                <p>Quisquam facilis cum velit laborum corrupti fuga rerum quia</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-6 mt-4">
-            <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="400">
-              <div class="pic"><img height="200" width="200" src="{{ asset('img/rekomendasi/data4.jpg') }}" class="img-fluid" alt=""></div>
-              <div class="member-info">
-                <h4>Mbah</h4>
-                <span>Accountant</span>
-                <p>Dolorum tempora officiis odit laborum officiis et et accusamus</p>
-              </div>
-            </div>
-          </div>
-
+          @endforeach
         </div>
 
       </div>
@@ -378,81 +344,28 @@
 
     <!-- ======= Dokumentasi Section ======= -->
     <section id="dokumentasi" class="services section-bg">
-      <div class="container" data-aos="fade-up">
+      <div class="container">
 
         <div class="section-title">
-          <h2>Foto & Video</h2>
-          <p>Kegiatan dan Event Kampung Dinamo Ngagel Rejo RW.6</p>
+          <h2>Berita & Acara</h2>
+          <p>Kegiatan dan Acara Kampung Dinamo Ngagel Rejo RW.6</p>
         </div>
         <div class="row mt-4">
           <?php $i = 1 ?>
-            @foreach($foto_video as $f)
-            <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+            @foreach($berita as $f)
+            <div class="col-xl-3 col-md-6 d-flex align-items-stretch">
               <div class="icon-box">
-                <div class="icon"><img height="200" width="200" src="{{ url('/img/event/'.$f->foto) }}" /></i></div>
-                <h4><a>Kegiatan & Event</a></h4>
+                <div class="icon"><img height="200" width="200" src="{{ url('/img/event/'.$f->berita_foto) }}" /></i></div>
+                <h4><a href="/berita/{{ $f->berita_id }}">{{ $f->berita_name }}</a></h4>
               </div>
             </div>
             @if($i == 4)
               </div>
-            <div class="row mt-4">
+              <div class="row mt-4">
+              <?php $i == 0 ?>
             @endif
             <?php $i++; ?>
-
           @endforeach
-          <!-- <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
-            <div class="icon-box">
-              <div class="icon"><img height="200" width="200" src="{{ asset('img/event/event2.jpg') }}" /></i></div>
-              <h4><a>Kegiatan & Event</a></h4>
-            </div>
-          </div>
-          <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="300">
-            <div class="icon-box">
-              <div class="icon"><img height="200" width="200" src="{{ asset('img/event/event3.jpg') }}" /></div>
-              <h4><a>Kegiatan & Event</a></h4>
-            </div>
-          </div>
-          <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0">
-            <div class="icon-box">
-              <div class="icon"><img height="200" width="200" src="{{ asset('img/event/event4.jpg') }}" /></div>
-              <h4><a>Kegiatan & Event</a></h4>
-            </div>
-          </div>
-        </div>
-        <div class="row mt-4">
-            <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-              <div class="icon-box">
-                <div class="icon"><img height="200" width="200" src="{{ asset('img/event/event5.jpg') }}" /></i></div>
-                <h4><a>Kegiatan & Event</a></h4>
-              </div>
-            </div>
-            <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
-              <div class="icon-box">
-                <div class="icon"><img height="200" width="200" src="{{ asset('img/event/event6.jpg') }}" /></i></div>
-                <h4><a>Kegiatan & Event</a></h4>
-              </div>
-            </div>
-            <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="300">
-              <div class="icon-box">
-                <div class="icon"><img height="200" width="200" src="{{ asset('img/event/event7.jpg') }}" /></i></div>
-                <h4><a>Kegiatan & Event</a></h4>
-              </div>
-            </div>
-            <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0">
-              <div class="icon-box">
-                <div class="icon"><img height="200" width="200" src="{{ asset('img/event/event8.jpg') }}" /></i></div>
-                <h4><a>Kegiatan & Event</a></h4>
-              </div>
-            </div> -->
-          </div>
-        <div class="row mt-4 col-12">
-            <div class="media container-fluid">
-                <div class="media-body col-12 form-group">
-                    <iframe width="1115" height="500" src="https://www.youtube.com/embed/-kk1NamDYzw" frameborder="0" allowfullscreen>
-                    </iframe>
-                </div>
-            </div>
-        </div>
       </div>
     </section><!-- End Dokumentasi Section -->
 

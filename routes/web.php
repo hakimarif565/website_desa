@@ -18,6 +18,8 @@ use Illuminate\Auth\AuthenticationException;
 */
 
 Route::get('/', [FrontController::class, 'index']);
+Route::get('/profile_desa/{slug}', [FrontController::class, 'desa']);
+Route::get('/berita/{slug}', [FrontController::class, 'berita']);
 Route::get('/dinamo', [FrontController::class, 'katalog_dinamo']);
 Route::get('/dinamo/{slug}', [FrontController::class, 'item_dinamo']);
 Route::get('/layanan', [FrontController::class, 'katalog_layanan']);
