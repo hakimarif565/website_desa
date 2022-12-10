@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Profil & Berita Desa</title>
+  <title>Detail {{ $data->usaha_nama }}</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -65,82 +65,83 @@
 
         <ol>
           <li><a href="/">Home</a></li>
-          <li>Desa & Berita</li>
+          <li>{{ $data->usaha_nama }}</li>
         </ol>
-        <h2>Detail Artikel</h2>
+        <h2>{{ $data->usaha_nama }}</h2>
 
       </div>
     </section><!-- End Breadcrumbs -->
 
     <!-- ======= Portfolio Details Section ======= -->
     <section id="portfolio-details" class="portfolio-details">
-      <div class="container">
+        <div class="container">
 
-        <div class="row gy-4">
+          <div class="row gy-4">
 
-          <div class="col-lg-6">
-            <div class="portfolio-details-slider swiper">
-              <div class="swiper-wrapper align-items-center">
-                @if (empty($data->berita_foto))
-                    <div class="swiper-slide">
-                        <img width="500" height="500" src="{{ asset('img/empty.jpg') }}" alt="">
-                    </div>
-                @else
-                    <div class="swiper-slide">
-                        <img width="500" height="500" src="{{ asset('img/berita/'.$data->berita_foto) }}" alt="">
-                    </div>
-                    <div class="swiper-slide">
-                        <img width="500" height="500" src="{{ asset('img/berita/'.$data->berita_foto2) }}" alt="">
-                    </div>
-                    <div class="swiper-slide">
-                        <img width="500" height="500" src="{{ asset('img/berita/'.$data->berita_foto3) }}" alt="">
-                    </div>
-                @endif
+            <div class="col-lg-6">
+              <div class="portfolio-details-slider swiper">
+                <div class="swiper-wrapper align-items-center">
+                  @if (empty($data->usaha_img))
+                      <div class="swiper-slide">
+                          <img width="500" height="500" src="{{ asset('img/empty.jpg') }}" alt="">
+                      </div>
+                  @else
+                      <div class="swiper-slide">
+                          <img width="500" height="500" src="{{ asset('img/dinamo/'.$data->usaha_img) }}" alt="">
+                      </div>
+                      <div class="swiper-slide">
+                          <img width="500" height="500" src="{{ asset('img/dinamo/'.$data->usaha_img2) }}" alt="">
+                      </div>
+                      <div class="swiper-slide">
+                          <img width="500" height="500" src="{{ asset('img/dinamo/'.$data->usaha_img3) }}" alt="">
+                      </div>
+                  @endif
 
-              </div>
-              <div class="swiper-pagination"></div>
-            </div>
-          </div>
-
-          <div class="col-lg-6">
-            <div class="portfolio-info">
-              <h3>Detail Berita</h3>
-              <ul>
-                <li><strong>Acara</strong>: {{ $data->berita_name }}</li>
-                <li><strong>Lokasi</strong>: {{ $data->berita_lokasi }}</li>
-                <li><strong>Jam</strong>: {{ $data->berita_jam }}</li>
-              </ul>
-            </div>
-            <div class="portfolio-description">
-              <h2>Catatan</h2>
-              <p>
-                    {{ $data->berita_dll }}
-              </p>
-            </div>
-          </div>
-
-          <div class="col-lg-12">
-            <div class="portfolio-description">
-              <h2>Deskripsi Acara</h2>
-              <p>
-                    {{ $data->berita_deskripsi }}
-              </p>
-            </div>
-          </div>
-          <div class="mt-4 col-lg-12">
-            <div class="portfolio-description">
-              <h2>Video Acara</h2>
-              <p>
-                <div class="d-flex justify-content-center justify-content-lg-start">
-                    <a href="{{ $data->berita_video }}" class="glightbox btn-watch-video"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
                 </div>
-              </p>
+                <div class="swiper-pagination"></div>
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <div class="portfolio-info">
+                <h3>Detail Barang</h3>
+                <ul>
+                  <li><strong>Nama Barang</strong>: {{ $data->usaha_nama }}</li>
+                  <li><strong>ID Barang</strong>: {{ $data->usaha_id }}</li>
+                  <li><strong>Alamat Penjual</strong>: {{ $data->usaha_alamat }}</li>
+                  <li><strong>Telp.</strong>: {{ $data->usaha_telp }}</li>
+                  <li><strong>Mulai dari</strong>: Rp.{{ $data->usaha_harga }}</li>
+                  <li><strong>Tipe</strong>: {{ $data->usaha_tipe }}</li>
+                </ul>
+              </div>
+              <div class="portfolio-description">
+                <h2>Sejarah Barang</h2>
+                <p>
+                      {{ $data->usaha_sejarah }}
+                </p>
+            </div>
+            </div>
+
+            <div class="col-lg-12">
+              <div class="portfolio-description">
+                <h2>Deskripsi Barang</h2>
+                <p>
+                      {{ $data->usaha_deskripsi }}
+                </p>
+              </div>
+              <div class="portfolio-info">
+                  <h3>Lainnya</h3>
+                  <ul>
+                      @foreach ($markets as $market)
+                          <li><strong>Marketplace</strong>: <a>{{ $market->produk_ecommerce_link }}</a></li>
+                      @endforeach
+                      <li><strong>Video</strong>: <a>{{ $data->usaha_video }}</a></li>
+                  </ul>
+                </div>
             </div>
           </div>
         </div>
-
-      </div>
-    </section><!-- End Portfolio Details Section -->
+      </section><!-- End Portfolio Details Section -->
 
   </main><!-- End #main -->
 

@@ -323,7 +323,7 @@
           <p>Dibawah ini adalah rekomendasi dari user</p>
         </div>
 
-        <div class="row">
+        <div class="row justify-content-center">
             @foreach($rekomendasi as $rec)
                 <div class="col-lg-6">
                 <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="100">
@@ -350,7 +350,7 @@
           <h2>Berita & Acara</h2>
           <p>Kegiatan dan Acara Kampung Dinamo Ngagel Rejo RW.6</p>
         </div>
-        <div class="row mt-4">
+        <div class="row align-content-center justify-content-center mt-4">
           <?php $i = 1 ?>
             @foreach($berita as $f)
             <div class="col-xl-3 col-md-6 d-flex align-items-stretch">

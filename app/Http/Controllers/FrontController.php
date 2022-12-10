@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Berita;
 use App\Models\Desa;
+use App\Models\Ecommerce;
 use App\Models\Foto_Video;
 use App\Models\Pelaku_Usaha;
 use App\Models\Produk_Layanan;
@@ -70,43 +71,35 @@ class FrontController extends Controller
         $item  = Pelaku_Usaha::where('usaha_tipe', "Dinamo")
                     ->where('usaha_id', $slug)
                     ->first();
-        $tipe = $item->usaha_tipe;
-        $detail = Produk_Layanan::where('usaha_id', $item->usaha_id)
-                    ->first();
-        return view('item_details', ['data' => $item, 'tipe'=> $tipe, 'detail' =>$detail]);
+        $marketplaces = ProdukEcommerce::where('usaha_id', $item->usaha_id)
+                    ->get();
+        return view('item_dinamo', ['data' => $item, 'markets'=>$marketplaces]);
     }
     public function item_layanan($slug)
     {
         $item  = Pelaku_Usaha::where('usaha_tipe', "Layanan Masyarakat")
                     ->where('usaha_id', $slug)
                     ->first();
-        $tipe = $item->usaha_tipe;
-        $detail = Produk_Layanan::where('usaha_id', $item->usaha_id)
-                    ->first();
-        return view('item_details', ['data' => $item, 'tipe'=> $tipe, 'detail' => $detail]);
+        $marketplaces = ProdukEcommerce::where('usaha_id', $item->usaha_id)
+                    ->get();
+        return view('item_layanan', ['data' => $item, 'markets'=>$marketplaces]);
     }
     public function item_umkm($slug)
     {
-        $item  = Pelaku_Usaha::where('usaha_tipe', "Umkm")
+        $item  = Pelaku_Usaha::where('usaha_tipe', "UMKM")
                     ->where('usaha_id', $slug)
                     ->first();
-        $tipe = $item->usaha_tipe;
-        $detail = Produk_Layanan::where('usaha_id', $item->usaha_id)
-                    ->first();
-        $markets = ProdukEcommerce::where('item_id', $detail->item_id)
+        $marketplaces = ProdukEcommerce::where('usaha_id', $item->usaha_id)
                     ->get();
-        return view('item_details', ['data' => $item, 'tipe'=>$tipe, 'detail' =>$detail, 'markets' => $markets]);
+        return view('item_umkm', ['data' => $item, 'markets'=>$marketplaces]);
     }
     public function item_market($slug)
     {
         $item  = Pelaku_Usaha::where('usaha_tipe', "Bratang Market")
                     ->where('usaha_id', $slug)
                     ->first();
-        $tipe = $item->usaha_tipe;
-        $detail = Produk_Layanan::where('usaha_id', $item->usaha_id)
-                    ->first();
-        $markets = ProdukEcommerce::where('item_id', $detail->item_id)
+        $marketplaces = ProdukEcommerce::where('usaha_id', $item->usaha_id)
                     ->get();
-        return view('item_details', ['data' => $item, 'tipe'=>$tipe, 'detail' =>$detail, 'markets' => $markets]);
+        return view('item_market', ['data' => $item, 'markets'=>$marketplaces]);
     }
 }

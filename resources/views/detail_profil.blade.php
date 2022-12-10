@@ -81,19 +81,16 @@
             <div class="col-lg-6">
                 <div class="portfolio-details-slider swiper">
                   <div class="swiper-wrapper align-items-center">
-                    @if (empty($data->berita_foto))
+                    @if (empty($data->desa_foto))
                         <div class="swiper-slide">
-                            <img width="400" height="300" src="{{ asset('img/empty.jpg') }}" alt="">
+                            <img width="500" height="500" src="{{ asset('img/empty.jpg') }}" alt="">
                         </div>
                     @else
                         <div class="swiper-slide">
-                            <img width="400" height="300" src="{{ asset('img/dinamo/'.$data->desa_foto) }}" alt="">
+                            <img width="500" height="500" src="{{ asset('img/dinamo/'.$data->desa_foto) }}" alt="">
                         </div>
                         <div class="swiper-slide">
-                            <img width="400" height="300" src="{{ asset('img/dinamo/'.$data->desa_foto2) }}" alt="">
-                        </div>
-                        <div class="swiper-slide">
-                            <img width="400" height="300" src="{{ asset('img/dinamo/'.$data->desa_foto3) }}" alt="">
+                            <img width="500" height="500" src="{{ asset('img/dinamo/'.$data->desa_foto2) }}" alt="">
                         </div>
                     @endif
 
@@ -112,20 +109,22 @@
                     <li><strong>IG Desa</strong>: </li>
                   </ul>
                 </div>
+                <div class="portfolio-description">
+                    <h2>Visi</h2>
+                    <p>
+                          {{ $data->desa_visi }}
+                    </p>
+                    <h2>Misi</h2>
+                    <p>
+                          {{ $data->desa_misi }}
+                    </p>
+                </div>
               </div>
               <div class="col-lg-12">
                 <div class="portfolio-description">
                   <h2>Sejarah</h2>
                   <p>
                         {{ $data->desa_sejarah }}
-                  </p>
-                  <h2>Visi</h2>
-                  <p>
-                        {{ $data->desa_visi }}
-                  </p>
-                  <h2>Misi</h2>
-                  <p>
-                        {{ $data->desa_misi }}
                   </p>
                   <h2>Video Desa</h2>
                   <p>
