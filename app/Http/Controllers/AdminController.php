@@ -528,17 +528,15 @@ class AdminController extends Controller
 
                 /* isi dengan nama folder tempat kemana file diupload */
                 $tujuan_upload = 'img/event/';
-                if(!empty($foto_video->foto))
-                {
-                    unlink('img/event/'.$foto_video->foto);
+                if (!empty($foto_video->foto)) {
+                    unlink('img/event/' . $foto_video->foto);
                 }
                 /* upload file */
                 $file->move($tujuan_upload, $nama_file);
                 Foto_Video::where('dokumentasi_id', $data['id'])
-                ->update([
-                    'foto' => $nama_file,
-                ]);
-               
+                    ->update([
+                        'foto' => $nama_file,
+                    ]);
             }
         }
         return $this->foto_video();
@@ -648,31 +646,30 @@ class AdminController extends Controller
 
         return redirect('/rekomendasi')->with('success', 'Data Berhasil diubah');
     }
-        /* Produk Layanan */
+    /* Produk Layanan */
 
-        public function desa()
-        {
-            $produk = Desa::all();
-            // return view('admin.content_market.content_market', compact('content_market'));
-            return view('admin/master/desa', ['data' => $produk]);
+    public function desa()
+    {
+        $produk = Desa::all();
+        // return view('admin.content_market.content_market', compact('content_market'));
+        return view('admin/master/desa', ['data' => $produk]);
+    }
+
+    public function desa_edit(Request $request, $id)
+    {
+        $data = $request->all();
+        $desa = Desa::find($data['id']);
+        if ($desa) {
+            Desa::where('desa_id', $data['id'])
+                ->update([
+                    'desa_sejarah' => $data['desa_sejarah'],
+                    'desa_visi' => $data['desa_visi'],
+                    'desa_misi' => $data['desa_misi'],
+                    'desa_nama' => $data['desa_nama'],
+                    'desa_alamat' => $data['desa_alamat'],
+                    'desa_telp' => $data['desa_telp'],
+                ]);
         }
-    
-        public function desa_edit(Request $request, $id)
-        {
-            $data = $request->all();
-            $desa = Desa::find($data['id']);
-            if ($desa) {
-                    Desa::where('desa_id', $data['id'])
-                    ->update([
-                        'desa_sejarah' => $data['desa_sejarah'],
-                        'desa_visi' => $data['desa_visi'],
-                        'desa_misi' => $data['desa_misi'],
-                        'desa_nama' => $data['desa_nama'],
-                        'desa_alamat' => $data['desa_alamat'],
-                        'desa_telp' => $data['desa_telp'],
-                    ]);
-            }
-            return $this->desa();
-        }
-    
+        return $this->desa();
+    }
 }

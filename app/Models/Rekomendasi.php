@@ -14,7 +14,7 @@ class Rekomendasi extends Model
 
     protected $fillable = [
         'rekomendasi_id',
-        'usaha_id',
+        'user_id',
         'rekomendasi_name',
         'rekomendasi_subname',
         'rekomendasi_deskripsi',

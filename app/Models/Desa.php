@@ -20,5 +20,9 @@ class Desa extends Model
         'desa_nama',
         'desa_alamat',
         'desa_telp',
+        'desa_ig',
+        'video_link',
+        'desa_foto',
+        'desa_foto2',
     ];
 }

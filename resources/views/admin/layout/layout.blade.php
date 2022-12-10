@@ -37,12 +37,12 @@
         <!--
 			Tip 1: You can change the background color of the main header using: data-background-color="blue | purple | light-blue | green | orange | red"
 		-->
-        <div class="main-header" data-background-color="red">
+        <div class="main-header" data-background-color="purple">
             <!-- Logo Header -->
             <div class="logo-header">
 
                 <a href="index.html" class="logo">
-                    <img src="../assets/img/logoazzara.svg" alt="navbar brand" class="navbar-brand">
+                    <img src="../assets/img/b.webp" width="120px" height="50px" alt="navbar brand" class="navbar-brand">
                 </a>
                 <button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon">
@@ -319,7 +319,7 @@
                                 </ul>
                             </div>
                         </li> -->
-                        
+
                     </ul>
                 </div>
             </div>
