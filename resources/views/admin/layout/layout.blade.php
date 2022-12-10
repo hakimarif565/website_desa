@@ -37,12 +37,12 @@
         <!--
 			Tip 1: You can change the background color of the main header using: data-background-color="blue | purple | light-blue | green | orange | red"
 		-->
-        <div class="main-header" data-background-color="purple">
+        <div class="main-header" data-background-color="blue">
             <!-- Logo Header -->
             <div class="logo-header">
 
                 <a href="index.html" class="logo">
-                    <img src="../assets/img/b.webp" width="120px" height="50px" alt="navbar brand" class="navbar-brand">
+                    <img src="../assets/img/logoazzara.svg" alt="navbar brand" class="navbar-brand">
                 </a>
                 <button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon">
@@ -63,7 +63,7 @@
 
                 <div class="container-fluid">
                     <ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
-                        <li class="nav-item dropdown hidden-caret">
+                        <!-- <li class="nav-item dropdown hidden-caret">
                             <a class="nav-link dropdown-toggle" href="#" id="notifDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fa fa-bell"></i>
                                 <span class="notification">+</span>
@@ -117,7 +117,7 @@
                                     </div>
                                 </li>
                             </ul>
-                        </li>
+                        </li> -->
                         <li class="nav-item dropdown hidden-caret">
                             <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
                                 <div class="avatar-sm">
