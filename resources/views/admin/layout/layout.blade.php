@@ -289,7 +289,7 @@
                                 </ul>
                             </div>
                         </li>
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a data-toggle="collapse" href="#photo_video">
                                 <i class="fab fa-youtube-square"></i>
                                 <p>Foto & Video Desa</p>
@@ -303,7 +303,7 @@
                                     </li>
                                 </ul>
                             </div>
-                        </li>
+                        </li> -->
                         <!-- <li class="nav-item">
                             <a data-toggle="collapse" href="#contact">
                                 <i class="fas fa-book"></i>
