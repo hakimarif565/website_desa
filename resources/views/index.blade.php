@@ -48,7 +48,7 @@
           <li><a class="nav-link scrollto" href="#rekomendasi">Rekomendasi</a></li>
           <li><a class="nav-link scrollto" href="#dokumentasi">Foto & Video</a></li>
           <li><a class="nav-link scrollto" href="#kontak">Kontak</a></li>
-          <li><a class="getstarted" href="/login">Login</a></li>
+          <!-- <li><a class="getstarted" href="/login">Login</a></li> -->
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
