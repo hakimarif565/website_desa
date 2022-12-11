@@ -87,13 +87,13 @@
                     </div>
                 @else
                     <div class="swiper-slide">
-                        <img width="500" height="500" src="{{ asset('img/berita/'.$data->berita_foto) }}" alt="">
+                        <img width="500" height="500" src="{{ asset('/data_file/'.$data->berita_foto) }}" alt="">
                     </div>
                     <div class="swiper-slide">
-                        <img width="500" height="500" src="{{ asset('img/berita/'.$data->berita_foto2) }}" alt="">
+                        <img width="500" height="500" src="{{ asset('/data_file/'.$data->berita_foto2) }}" alt="">
                     </div>
                     <div class="swiper-slide">
-                        <img width="500" height="500" src="{{ asset('img/berita/'.$data->berita_foto3) }}" alt="">
+                        <img width="500" height="500" src="{{ asset('/data_file/'.$data->berita_foto3) }}" alt="">
                     </div>
                 @endif
 

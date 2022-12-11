@@ -20,7 +20,11 @@ class AdminController extends Controller
 {
     public function home(User $user)
     {
-        return view('admin/dashboard/dashboard');
+        $umkm = Pelaku_Usaha::where('usaha_tipe','UMKM')->count();
+        $dinamo = Pelaku_Usaha::where('usaha_tipe','Dinamo')->count();
+        $layanan_masyarakat = Pelaku_Usaha::where('usaha_tipe','Layanan Masyarakat')->count();
+        $baratang_market = Pelaku_Usaha::where('usaha_tipe','Bratang Market')->count();
+        return view('admin/dashboard/dashboard',['umkm' => $umkm, 'dinamo' => $dinamo, 'layanan_masyarakat' => $layanan_masyarakat, 'bratang_market' => $baratang_market]);
     }
     public function user()
     {
@@ -407,7 +411,7 @@ class AdminController extends Controller
             'item_deskripsi' => $data['item_deskripsi'],
             'item_harga' => $data['item_harga'],
             'item_dll' => $data['item_dll'],
-            'usaha_id' => $data['usaha_id'],
+            'usaha_id' => $data['item'],
         ]);
         return redirect('/produk')->with('success', 'Data Berhasil disimpan');
     }

@@ -28,7 +28,7 @@
                                 <div class="col col-stats ml-3 ml-sm-0">
                                     <div class="numbers">
                                         <p class="card-category">Dinamo</p>
-                                        <h4 class="card-title">1,294</h4>
+                                        <h4 class="card-title">{{$dinamo}}</h4>
                                     </div>
                                 </div>
                             </div>
@@ -47,7 +47,7 @@
                                 <div class="col col-stats ml-3 ml-sm-0">
                                     <div class="numbers">
                                         <p class="card-category">UMKM</p>
-                                        <h4 class="card-title">1303</h4>
+                                        <h4 class="card-title">{{$umkm}}</h4>
                                     </div>
                                 </div>
                             </div>
@@ -65,8 +65,8 @@
                                 </div>
                                 <div class="col col-stats ml-3 ml-sm-0">
                                     <div class="numbers">
-                                        <p class="card-category">Layanan UMKM</p>
-                                        <h4 class="card-title">$ 1,345</h4>
+                                        <p class="card-category">Layanan Masyarakat</p>
+                                        <h4 class="card-title">{{$layanan_masyarakat}}</h4>
                                     </div>
                                 </div>
                             </div>
@@ -85,7 +85,7 @@
                                 <div class="col col-stats ml-3 ml-sm-0">
                                     <div class="numbers">
                                         <p class="card-category">Bratang Market</p>
-                                        <h4 class="card-title">576</h4>
+                                        <h4 class="card-title">{{$bratang_market}}</h4>
                                     </div>
                                 </div>
                             </div>

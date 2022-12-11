@@ -355,7 +355,7 @@
             @foreach($berita as $f)
             <div class="col-xl-3 col-md-6 d-flex align-items-stretch">
               <div class="icon-box">
-                <div class="icon"><img height="200" width="200" src="{{ url('/img/event/'.$f->berita_foto) }}" /></i></div>
+                <div class="icon"><img height="200" width="200" src="{{ url('/data_file/'.$f->berita_foto) }}" /></i></div>
                 <h4><a href="/berita/{{ $f->berita_id }}">{{ $f->berita_name }}</a></h4>
               </div>
             </div>
