@@ -46,7 +46,7 @@
           <li><a class="nav-link scrollto" href="#tentang">Tentang Kampung Dinamo</a></li>
           <li><a class="nav-link scrollto" href="#layanan">Layanan & UMKM</a></li>
           <li><a class="nav-link scrollto" href="#rekomendasi">Rekomendasi</a></li>
-          <li><a class="nav-link scrollto" href="#dokumentasi">Foto & Video</a></li>
+          <li><a class="nav-link scrollto" href="/#dokumentasi">Berita</a></li>
           <li><a class="nav-link scrollto" href="#kontak">Kontak</a></li>
           <!-- <li><a class="getstarted" href="/login">Login</a></li> -->
         </ul>
@@ -209,7 +209,7 @@
             </div>
           </div>
 
-          <div class="col-lg-5 align-items-center align-items-stretch order-1 order-lg-2 img" data-aos="zoom-in" data-aos-delay="150"><img width="400" height="350" src="{{ asset('img/desa/tugu.png')}}" sizes="(max-width: 640px) 400px, 800px" /></div>
+          <div class="col-lg-5 align-items-center align-items-stretch order-1 order-lg-2 img" data-aos="zoom-in" data-aos-delay="150"><img width="400" height="350" src="{{ url('data_file/gapura.png')}}" sizes="(max-width: 640px) 400px, 800px" /></div>
         </div>
 
       </div>
