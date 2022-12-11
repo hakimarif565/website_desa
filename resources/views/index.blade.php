@@ -48,7 +48,7 @@
           <li><a class="nav-link scrollto" href="#rekomendasi">Rekomendasi</a></li>
           <li><a class="nav-link scrollto" href="#dokumentasi">Foto & Video</a></li>
           <li><a class="nav-link scrollto" href="#kontak">Kontak</a></li>
-          <li><a class="getstarted" href="/login">Login</a></li>
+          <!-- <li><a class="getstarted" href="/login">Login</a></li> -->
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -355,7 +355,7 @@
             @foreach($berita as $f)
             <div class="col-xl-3 col-md-6 d-flex align-items-stretch">
               <div class="icon-box">
-                <div class="icon"><img height="200" width="200" src="{{ url('/img/event/'.$f->berita_foto) }}" /></i></div>
+                <div class="icon"><img height="200" width="200" src="{{ url('/data_file/'.$f->berita_foto) }}" /></i></div>
                 <h4><a href="/berita/{{ $f->berita_id }}">{{ $f->berita_name }}</a></h4>
               </div>
             </div>

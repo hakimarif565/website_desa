@@ -49,7 +49,7 @@
           <li><a class="nav-link scrollto" href="/#rekomendasi">Rekomendasi</a></li>
           <li><a class="nav-link scrollto" href="/#dokumentasi">Foto & Video</a></li>
           <li><a class="nav-link scrollto" href="/#kontak">Kontak</a></li>
-          <li><a class="getstarted" href="/login">Login</a></li>
+          <!-- <li><a class="getstarted" href="/login">Login</a></li> -->
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -87,13 +87,13 @@
                     </div>
                 @else
                     <div class="swiper-slide">
-                        <img width="500" height="500" src="{{ asset('img/berita/'.$data->berita_foto) }}" alt="">
+                        <img width="500" height="500" src="{{ asset('/data_file/'.$data->berita_foto) }}" alt="">
                     </div>
                     <div class="swiper-slide">
-                        <img width="500" height="500" src="{{ asset('img/berita/'.$data->berita_foto2) }}" alt="">
+                        <img width="500" height="500" src="{{ asset('/data_file/'.$data->berita_foto2) }}" alt="">
                     </div>
                     <div class="swiper-slide">
-                        <img width="500" height="500" src="{{ asset('img/berita/'.$data->berita_foto3) }}" alt="">
+                        <img width="500" height="500" src="{{ asset('/data_file/'.$data->berita_foto3) }}" alt="">
                     </div>
                 @endif
 
