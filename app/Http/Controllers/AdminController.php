@@ -411,7 +411,7 @@ class AdminController extends Controller
             'item_deskripsi' => $data['item_deskripsi'],
             'item_harga' => $data['item_harga'],
             'item_dll' => $data['item_dll'],
-            'usaha_id' => $data['item'],
+            'usaha_id' => $data['item_id'],
         ]);
         return redirect('/produk')->with('success', 'Data Berhasil disimpan');
     }
