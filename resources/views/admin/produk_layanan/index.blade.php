@@ -100,6 +100,15 @@
             <form action="/add_produk" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="modal-body">
+                    <div class="form-group">
+                        <label>Nama Usaha</label>
+                        <select class="form-control" name="usaha_id" id="usaha_id" required>
+                            <option value="" hidden="">--Pilih Produk--</option>
+                            @foreach($pelaku_usaha as $d)
+                            <option value="{{ $d->usaha_id }}">{{ $d->usaha_nama }}</option>
+                            @endforeach
+                        </select>
+                    </div>
                     <div class="form-grup">
                         <label>Nama Produk</label>
                         <input type="text" class="form-control" name="item_name" placeholder="Nama Produk ..." required>
@@ -146,6 +155,15 @@
                 @csrf
                 <input type="hidden" value="{{$g->item_id}}" name="id" required>
                 <div class="modal-body">
+                    <div class="form-group">
+                        <label>Nama Usaha</label>
+                        <select class="form-control" name="usaha_id" id="usaha_id" required>
+                            <option value="" hidden="">--Pilih Produk--</option>
+                            @foreach($pelaku_usaha as $d)
+                            <option value="{{ $d->usaha_id }}">{{ $d->usaha_nama }}</option>
+                            @endforeach
+                        </select>
+                    </div>
                     <div class="form-grup">
                         <label>Nama Produk</label>
                         <input type="text" class="form-control" name="item_name" value="{{$g->item_name}}" placeholder="Nama Produk ..." required>

@@ -370,8 +370,9 @@ class AdminController extends Controller
     public function produk()
     {
         $produk = Produk_Layanan::all();
+        $usaha = Pelaku_Usaha::all();
         // return view('admin.content_market.content_market', compact('content_market'));
-        return view('admin/produk_layanan/index', ['data' => $produk]);
+        return view('admin/produk_layanan/index', ['data' => $produk, 'pelaku_usaha' => $usaha]);
     }
 
     public function produk_add(Request $request)
@@ -406,7 +407,7 @@ class AdminController extends Controller
             'item_deskripsi' => $data['item_deskripsi'],
             'item_harga' => $data['item_harga'],
             'item_dll' => $data['item_dll'],
-            'usaha_id' => 1,
+            'usaha_id' => $data['usaha_id'],
         ]);
         return redirect('/produk')->with('success', 'Data Berhasil disimpan');
     }
