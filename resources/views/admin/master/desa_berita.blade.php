@@ -126,8 +126,8 @@
                     </div>
 
                     <div class="form-grup">
-                        <label>Berita Jam</label>
-                        <input type="time" class="form-control" name="berita_jam" placeholder="Jam ..." required>
+                        <label>Waktu Berita</label>
+                        <input type="datetime-local" class="form-control" name="berita_jam" placeholder="Jam ..." required>
                     </div>
 
                     <div class="form-grup">

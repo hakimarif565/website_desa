@@ -20,11 +20,11 @@ class AdminController extends Controller
 {
     public function home(User $user)
     {
-        $umkm = Pelaku_Usaha::where('usaha_tipe','UMKM')->count();
-        $dinamo = Pelaku_Usaha::where('usaha_tipe','Dinamo')->count();
-        $layanan_masyarakat = Pelaku_Usaha::where('usaha_tipe','Layanan Masyarakat')->count();
-        $baratang_market = Pelaku_Usaha::where('usaha_tipe','Bratang Market')->count();
-        return view('admin/dashboard/dashboard',['umkm' => $umkm, 'dinamo' => $dinamo, 'layanan_masyarakat' => $layanan_masyarakat, 'bratang_market' => $baratang_market]);
+        $umkm = Pelaku_Usaha::where('usaha_tipe', 'UMKM')->count();
+        $dinamo = Pelaku_Usaha::where('usaha_tipe', 'Dinamo')->count();
+        $layanan_masyarakat = Pelaku_Usaha::where('usaha_tipe', 'Layanan Masyarakat')->count();
+        $baratang_market = Pelaku_Usaha::where('usaha_tipe', 'Bratang Market')->count();
+        return view('admin/dashboard/dashboard', ['umkm' => $umkm, 'dinamo' => $dinamo, 'layanan_masyarakat' => $layanan_masyarakat, 'bratang_market' => $baratang_market]);
     }
     public function user()
     {
