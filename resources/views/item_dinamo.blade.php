@@ -104,29 +104,26 @@
 
           <div class="col-lg-6">
             <div class="portfolio-info">
-              <h3>Detail Usaha</h3>
+              <h3>Detail Produk</h3>
               <ul>
                 <li><strong>Nama Pengusaha</strong>: {{ $data->usaha_nama }}</li>
-                <li><strong>ID Produk & Layanan</strong>: {{ $data->usaha_id }}</li>
+                <li><strong>Nama Produk</strong>: {{ $data->item_name }}</li>
+                <li><strong>ID Produk</strong>: {{ $data->item_id }}</li>
                 <li><strong>Alamat</strong>: {{ $data->usaha_alamat }}</li>
                 <li><strong>Telp.</strong>: {{ $data->usaha_telp }}</li>
-                <li><strong>Mulai dari</strong>: Rp.{{ $data->usaha_harga }}</li>
-                <li><strong>Tipe</strong>: {{ $data->usaha_tipe }}</li>
+                <li><strong>Mulai dari</strong>: Rp.{{ $data->item_harga }}</li>
+                <li><strong>Catatan</strong>: {{ $data->item_dll }}</li>
+                <li><strong>Tag</strong>: ({{ $data->usaha_tipe }})</li>
+                <li><strong>Motto</strong>: ({{ $data->usaha_deskripsi }})</li>
               </ul>
-            </div>
-            <div class="portfolio-description">
-              <h2>Sejarah Usaha</h2>
-              <p>
-                    {{ $data->usaha_sejarah }}
-              </p>
             </div>
           </div>
 
           <div class="col-lg-12">
             <div class="portfolio-description">
-              <h2>Deskripsi Usaha</h2>
+              <h2>Deskripsi Produk</h2>
               <p>
-                    {{ $data->usaha_deskripsi }}
+                    {{ $data->item_deskripsi }}
               </p>
             </div>
             <div class="portfolio-info">

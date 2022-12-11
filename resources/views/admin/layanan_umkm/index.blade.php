@@ -5,7 +5,7 @@
     <div class="content">
         <div class="page-inner">
             <div class="page-header">
-                <h4 class="page-title">Data Layanan UMKM</h4>
+                <h4 class="page-title">Data Sarana dan Pengusaha</h4>
                 <ul class="breadcrumbs">
                     <li class="nav-home">
                         <a href="/dashboard">
@@ -22,7 +22,7 @@
                         <i class="flaticon-right-arrow"></i>
                     </li>
                     <li class="nav-item">
-                        <a href="#"> Layanan UMKM</a>
+                        <a href="#"> Sarana dan Usaha</a>
                     </li>
                 </ul>
             </div>
@@ -32,7 +32,7 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="d-flex align-items-center">
-                                <h4 class="card-title">Data Layanan UMKM</h4>
+                                <h4 class="card-title">Data Sarana & Pengusaha</h4>
                                 <button class="btn btn-primary btn-round ml-auto" data-toggle="modal" data-target="#modalAddPelakuUsaha">
                                     <i class="fa fa-plus"></i>
                                     Create
@@ -47,13 +47,13 @@
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th>Nama Pelaku Usaha</th>
-                                            <th>Alamat Pelaku Usaha</th>
-                                            <th>Telp Pelaku Usaha</th>
-                                            <th>Deskripsi Pelaku Usaha</th>
-                                            <th>Sejarah Pelaku Usaha</th>
-                                            <th>Tipe Usaha</th>
-                                            <th>Image Pelaku Usaha</th>
+                                            <th>Nama Sarana / Pengusaha</th>
+                                            <th>Alamat</th>
+                                            <th>Telp.</th>
+                                            <th>Deskripsi</th>
+                                            <th>Sejarah</th>
+                                            <th>Kode Tipe</th>
+                                            <th>Image</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>

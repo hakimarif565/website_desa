@@ -81,10 +81,10 @@
                                 <div class="d-flex justify-content-center img-wrap padding-y"><img height="200" width="200" src="{{ url('data_file/'.$data->usaha_img) }}" alt=""></div>
                             @endif
                             <figcaption class="d-flex info-wrap">
-                                <h4 class="title"><a href="/dinamo/{{ $data->usaha_id }}">{{ $data->usaha_nama }}</a></h4>
+                                <h4 class="title"><a href="/dinamo/{{ $data->item_id }}">{{ $data->item_name }}</a></h4>
                             </figcaption>
                             <div class="d-flex bottom-wrap">
-                                <a href="/dinamo/{{ $data->usaha_id }}" class="btn btn-sm btn-success float-right"><i class="fa fa-cart-arrow-down"></i>{{ Str::title($data->usaha_tipe) }}</a>
+                                <a href="/dinamo/{{ $data->item_id }}" class="btn btn-sm btn-success float-right"><i class="fa fa-cart-arrow-down"></i>{{ Str::title($data->usaha_nama) }}</a>
                             </div>
                         </figure>
                     </div>
