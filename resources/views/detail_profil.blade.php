@@ -47,7 +47,7 @@
           <li><a class="nav-link scrollto" href="/#tentang">Tentang Kampung Dinamo</a></li>
           <li><a class="nav-link scrollto" href="/#layanan">Layanan & UMKM</a></li>
           <li><a class="nav-link scrollto" href="/#rekomendasi">Rekomendasi</a></li>
-          <li><a class="nav-link scrollto" href="/#dokumentasi">Foto & Video</a></li>
+          <li><a class="nav-link scrollto" href="/#dokumentasi">Berita</a></li>
           <li><a class="nav-link scrollto" href="/#kontak">Kontak</a></li>
           <!-- <li><a class="getstarted" href="/login">Login</a></li> -->
         </ul>
@@ -87,10 +87,10 @@
                         </div>
                     @else
                         <div class="swiper-slide">
-                            <img width="500" height="500" src="{{ asset('img/dinamo/'.$data->desa_foto) }}" alt="">
+                            <img width="500" height="500" src="{{ asset('data_file/'.$data->desa_foto) }}" alt="">
                         </div>
                         <div class="swiper-slide">
-                            <img width="500" height="500" src="{{ asset('img/dinamo/'.$data->desa_foto2) }}" alt="">
+                            <img width="500" height="500" src="{{ asset('data_file/'.$data->desa_foto2) }}" alt="">
                         </div>
                     @endif
 

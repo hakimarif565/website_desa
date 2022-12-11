@@ -208,6 +208,14 @@
                         <label>Sejarah</label>
                         <textarea class="form-control"  name="desa_sejarah" id="" cols="10" rows="5">{{$g->desa_sejarah}}</textarea>
                     </div>
+                    <div class="form-grup">
+                        <label>Foto 1</label><br>
+                        <input type="file" name="desa_foto">
+                    </div>
+                    <div class="form-grup">
+                        <label>Foto 2</label><br>
+                        <input type="file" name="desa_foto2">
+                    </div>
 
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-undo"></i>Close</button>

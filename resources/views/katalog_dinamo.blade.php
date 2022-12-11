@@ -44,7 +44,7 @@
           <li><a class="nav-link scrollto" href="/#tentang">Tentang Kampung Dinamo</a></li>
           <li><a class="nav-link scrollto" href="/#layanan">Layanan & UMKM</a></li>
           <li><a class="nav-link scrollto" href="/#rekomendasi">Rekomendasi</a></li>
-          <li><a class="nav-link scrollto" href="/#dokumentasi">Foto & Video</a></li>
+          <li><a class="nav-link scrollto" href="/#dokumentasi">Berita</a></li>
           <li><a class="nav-link scrollto" href="/#kontak">Kontak</a></li>
           <!-- <li><a class="getstarted" href="/login">Login</a></li> -->
         </ul>
