@@ -87,10 +87,10 @@
                         </div>
                     @else
                         <div class="swiper-slide">
-                            <img width="500" height="500" src="{{ asset('img/dinamo/'.$data->desa_foto) }}" alt="">
+                            <img width="500" height="500" src="{{ asset('data_file/'.$data->desa_foto) }}" alt="">
                         </div>
                         <div class="swiper-slide">
-                            <img width="500" height="500" src="{{ asset('img/dinamo/'.$data->desa_foto2) }}" alt="">
+                            <img width="500" height="500" src="{{ asset('data_file/'.$data->desa_foto2) }}" alt="">
                         </div>
                     @endif
 

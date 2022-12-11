@@ -686,6 +686,28 @@ class AdminController extends Controller
     {
         $data = $request->all();
         $desa = Desa::find($data['id']);
+        $desa_foto = $request->file('desa_foto');
+        $desa_foto2 = $request->file('desa_foto2');
+        if (isset($desa_foto)) {
+            /* ganti nama file */
+            $nama_file = time() . "_" . $desa_foto->getClientOriginalName();
+
+            /* isi dengan nama folder tempat kemana file diupload */
+            $tujuan_upload = 'data_file';
+
+            /* upload file */
+            $desa_foto->move($tujuan_upload, $nama_file);
+        }
+        if (isset($desa_foto2)) {
+            /* ganti nama file */
+            $nama_file_ = time() . "_" . $desa_foto2->getClientOriginalName();
+
+            /* isi dengan nama folder tempat kemana file diupload */
+            $tujuan_upload = 'data_file';
+
+            /* upload file */
+            $desa_foto2->move($tujuan_upload, $nama_file_);
+        }
         if ($desa) {
             Desa::where('desa_id', $data['id'])
                 ->update([
@@ -695,6 +717,8 @@ class AdminController extends Controller
                     'desa_nama' => $data['desa_nama'],
                     'desa_alamat' => $data['desa_alamat'],
                     'desa_telp' => $data['desa_telp'],
+                    'desa_foto' => $desa_foto,
+                    'desa_foto2' => $desa_foto2,
                 ]);
         }
         return $this->desa();
