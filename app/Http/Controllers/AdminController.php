@@ -463,9 +463,7 @@ class AdminController extends Controller
 
         // dd($id);
         $validate = $request->validate([
-            'produk_ecommerce_link1' => 'required',
-            'produk_ecommerce_link2' => 'required',
-            'produk_ecommerce_link3' => 'required',
+            'produk_ecommerce_link' => 'required',
         ]);
 
 
@@ -477,9 +475,8 @@ class AdminController extends Controller
         ProdukEcommerce::create([
             'item_id' => $data['item_id'],
             'ecommerce_id' =>  $data['ecommerce_id'],
-            'produk_ecommerce_link1' => $data['produk_ecommerce_link1'],
-            'produk_ecommerce_link2' => $data['produk_ecommerce_link2'],
-            'produk_ecommerce_link3' => $data['produk_ecommerce_link3'],
+            'produk_ecommerce_link' => $data['produk_ecommerce_link'],
+
         ]);
 
         return redirect('/produk_ecommerce')->with('success', 'Data Berhasil disimpan');
