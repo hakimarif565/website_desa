@@ -84,8 +84,10 @@ class FrontController extends Controller
     }
     public function item_layanan($slug)
     {
-        $detail  = Produk_Layanan::where('usaha_id', $slug)
-            ->first();
+        $detail = DB::table('produk_layanan')
+        ->where('produk_layanan.item_id', '=', $slug)
+        ->join('usaha_layanan', 'produk_layanan.usaha_id', '=', 'usaha_layanan.usaha_id')// joining the contacts table , where user_id and contact_user_id are same
+        ->first();
         $markets = DB::table('produk_ecommerce')
             ->where('produk_ecommerce.item_id', '=', $detail->item_id)
             ->get();
@@ -93,8 +95,10 @@ class FrontController extends Controller
     }
     public function item_umkm($slug)
     {
-        $detail  = Produk_Layanan::where('usaha_id', $slug)
-            ->first();
+        $detail = DB::table('produk_layanan')
+        ->where('produk_layanan.item_id', '=', $slug)
+        ->join('usaha_layanan', 'produk_layanan.usaha_id', '=', 'usaha_layanan.usaha_id')// joining the contacts table , where user_id and contact_user_id are same
+        ->first();
         $markets = DB::table('produk_ecommerce')
             ->where('produk_ecommerce.item_id', '=', $detail->item_id)
             ->get();
@@ -102,7 +106,9 @@ class FrontController extends Controller
     }
     public function item_market($slug)
     {
-        $detail  = Produk_Layanan::where('usaha_id', $slug)
+        $detail = DB::table('produk_layanan')
+            ->where('produk_layanan.item_id', '=', $slug)
+            ->join('usaha_layanan', 'produk_layanan.usaha_id', '=', 'usaha_layanan.usaha_id')// joining the contacts table , where user_id and contact_user_id are same
             ->first();
         $markets = DB::table('produk_ecommerce')
             ->where('produk_ecommerce.item_id', '=', $detail->item_id)

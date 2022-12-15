@@ -411,7 +411,7 @@ class AdminController extends Controller
             'item_deskripsi' => $data['item_deskripsi'],
             'item_harga' => $data['item_harga'],
             'item_dll' => $data['item_dll'],
-            'usaha_id' => $data['item_id'],
+            'usaha_id' => $data['usaha_id'],
         ]);
         return redirect('/produk')->with('success', 'Data Berhasil disimpan');
     }
@@ -420,7 +420,7 @@ class AdminController extends Controller
     {
         $data = $request->all();
         $produk = Produk_Layanan::find($data['id']);
-
+        // dd($data);
         Produk_Layanan::where('item_id', $data['id'])
             ->update([
                 'item_id' => $id,
@@ -428,7 +428,7 @@ class AdminController extends Controller
                 'item_deskripsi' => $data['item_deskripsi'],
                 'item_harga' => $data['item_harga'],
                 'item_dll' => $data['item_dll'],
-                'usaha_id' => 1,
+                'usaha_id' => $data['usaha_id'],
             ]);
 
         return $this->produk();
@@ -463,9 +463,7 @@ class AdminController extends Controller
 
         // dd($id);
         $validate = $request->validate([
-            'produk_ecommerce_link1' => 'required',
-            'produk_ecommerce_link2' => 'required',
-            'produk_ecommerce_link3' => 'required',
+            'produk_ecommerce_link' => 'required',
         ]);
 
 
@@ -477,9 +475,7 @@ class AdminController extends Controller
         ProdukEcommerce::create([
             'item_id' => $data['item_id'],
             'ecommerce_id' =>  $data['ecommerce_id'],
-            'produk_ecommerce_link1' => $data['produk_ecommerce_link1'],
-            'produk_ecommerce_link2' => $data['produk_ecommerce_link2'],
-            'produk_ecommerce_link3' => $data['produk_ecommerce_link3'],
+            'produk_ecommerce_link' => $data['produk_ecommerce_link'],
         ]);
 
         return redirect('/produk_ecommerce')->with('success', 'Data Berhasil disimpan');

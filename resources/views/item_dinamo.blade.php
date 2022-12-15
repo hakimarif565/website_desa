@@ -81,22 +81,33 @@
           <div class="col-lg-6">
             <div class="portfolio-details-slider swiper">
               <div class="swiper-wrapper align-items-center">
-                @if (empty($data->usaha_img))
+                   @if (isset($data->usaha_img))
+                    <div class="swiper-slide">
+                        <img width="500" height="500" src="{{ asset('data_file/'.$data->usaha_img) }}" alt="">
+                    </div>
+                    @else
                     <div class="swiper-slide">
                         <img width="500" height="500" src="{{ asset('img/empty.jpg') }}" alt="">
                     </div>
-                @else
+                    @endif
+                    @if (isset($data->usaha_img2))
                     <div class="swiper-slide">
-                        <img width="500" height="500" src="{{ asset('img/dinamo/'.$data->usaha_img) }}" alt="">
+                        <img width="500" height="500" src="{{ asset('data_file/'.$data->usaha_img2) }}" alt="">
                     </div>
+                    @else
                     <div class="swiper-slide">
-                        <img width="500" height="500" src="{{ asset('img/dinamo/'.$data->usaha_img2) }}" alt="">
+                        <img width="500" height="500" src="{{ asset('img/empty.jpg') }}" alt="">
                     </div>
+                    @endif
+                    @if (isset($data->usaha_img3))
                     <div class="swiper-slide">
-                        <img width="500" height="500" src="{{ asset('img/dinamo/'.$data->usaha_img3) }}" alt="">
+                        <img width="500" height="500" src="{{ asset('data_file/'.$data->usaha_img3) }}" alt="">
                     </div>
-                @endif
-
+                    @else
+                    <div class="swiper-slide">
+                        <img width="500" height="500" src="{{ asset('img/empty.jpg') }}" alt="">
+                    </div>
+                    @endif
               </div>
               <div class="swiper-pagination"></div>
             </div>

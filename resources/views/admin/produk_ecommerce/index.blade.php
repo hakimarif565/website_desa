@@ -48,9 +48,7 @@
                                         <tr>
                                             <th>No</th>
                                             <th>Nama Produk</th>
-                                            <th>Produk 1</th>
-                                            <th>Produk 2</th>
-                                            <th>Produk 3</th>
+                                            <th>Link Produk </th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -60,16 +58,13 @@
                                         <tr>
                                             <td>{{$i++}}</td>
                                             <td>{{$produk_ecommerce->item_name}}</td>
-                                            <td>{{$produk_ecommerce->produk_ecommerce_link1}}</td>
-                                            <td>{{$produk_ecommerce->produk_ecommerce_link2}}</td>
-                                            <td>{{$produk_ecommerce->produk_ecommerce_link3}}</td>
+                                            <td>{{$produk_ecommerce->produk_ecommerce_link}}</td>
                                             <td>
                                                 <div>
                                                     @csrf
                                                     @method('DELETE')
                                                     <a href="#" data-toggle="modal" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i>Edit</a>
                                                     <a href="#" data-toggle="modal" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i>Hapus</a>
-                                                    <!-- </form> -->
                                                 </div>
                                             </td>
                                         </tr>
@@ -123,18 +118,9 @@
 
                     <div class="form-grup">
                         <label>Link 1</label>
-                        <input type="text" class="form-control" name="produk_ecommerce_link1" placeholder="Link1 ..." required>
+                        <input type="text" class="form-control" name="produk_ecommerce_link" placeholder="Link1 ..." required>
                     </div>
 
-                    <div class="form-grup">
-                        <label>Link 2</label>
-                        <input type="text" class="form-control" name="produk_ecommerce_link2" placeholder="Link2 ..." required>
-                    </div>
-
-                    <div class="form-grup">
-                        <label>Link 3</label>
-                        <input type="text" class="form-control" name="produk_ecommerce_link3" placeholder="Link3 ..." required>
-                    </div>
 
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-undo"></i>Close</button>
