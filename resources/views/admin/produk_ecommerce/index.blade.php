@@ -49,7 +49,6 @@
                                             <th>No</th>
                                             <th>Nama Produk</th>
                                             <th>Link Produk</th>
-
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -64,9 +63,8 @@
                                                 <div>
                                                     @csrf
                                                     @method('DELETE')
-                                                    <a href="#" data-toggle="modal" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i>Edit</a>
-                                                    <a href="#" data-toggle="modal" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i>Hapus</a>
-                                                    <!-- </form> -->
+                                                    <a href="#modalEditProduk{{$produk_ecommerce->item_id}}" data-toggle="modal" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i>Edit</a>
+                                                    <a href="#modalHapusProduk{{$produk_ecommerce->item_id}}" data-toggle="modal" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i>Hapus</a>
                                                 </div>
                                             </td>
                                         </tr>
@@ -119,8 +117,8 @@
                     </div>
 
                     <div class="form-grup">
-                        <label>Link Ecommerce</label>
-                        <input type="text" class="form-control" name="produk_ecommerce_link" placeholder="Link Ecommerce..." required>
+                        <label>Link 1</label>
+                        <input type="text" class="form-control" name="produk_ecommerce_link" placeholder="Link Produk ..." required>
                     </div>
 
 
@@ -134,7 +132,7 @@
     </div>
 </div>
 
-<!-- 
+
 @foreach($data as $g)
 
 <div class="modal fade" id="modalEditProduk{{$g->item_id}}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
@@ -146,7 +144,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="/edit_produk/{{$g->item_id}}" method="POST" enctype="multipart/form-data">
+            <form action="/edit_produk_ecommerce/{id}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <input type="hidden" value="{{$g->item_id}}" name="id" required>
                 <div class="modal-body">
@@ -154,19 +152,10 @@
                         <label>Nama Produk</label>
                         <input type="text" class="form-control" name="item_name" value="{{$g->item_name}}" placeholder="Nama Produk ..." required>
                     </div>
-                    <div class="form-grup">
-                        <label>Deskripsi</label>
-                        <input type="text" class="form-control" name="item_deskripsi" value="{{$g->item_deskripsi}}" placeholder="Deskripsi ..." required>
-                    </div>
 
                     <div class="form-grup">
-                        <label>Harga</label>
-                        <input type="text" class="form-control" name="item_harga" value="{{$g->item_harga}}" placeholder="Harga ..." required>
-                    </div>
-
-                    <div class="form-grup">
-                        <label>Etc</label>
-                        <input type="text" class="form-control" name="item_dll" value="{{$g->item_dll}}" placeholder="Etc ..." required>
+                        <label>Link Produk</label>
+                        <input type="text" class="form-control" name="produk_ecommerce_link" value="{{$g->produk_ecommerce_link}}" placeholder="Link Produk ..." required>
                     </div>
 
                     <div class="modal-footer">
@@ -191,7 +180,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form method="GET" enctype="multipart/form-data" action="/delete_produk/{id}">
+            <form method="GET" enctype="multipart/form-data" action="/delete_produk_ecommerce/{id}">
                 @csrf
                 <div class="modal-body">
 
@@ -211,7 +200,7 @@
     </div>
 </div>
 
-@endforeach -->
+@endforeach
 
 
 <script src="/assets/js/core/jquery.3.2.1.min.js"></script>

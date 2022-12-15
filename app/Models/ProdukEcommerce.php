@@ -15,8 +15,6 @@ class ProdukEcommerce extends Model
     protected $fillable = [
         'item_id',
         'ecommerce_id',
-        'produk_ecommerce_link1',
-        'produk_ecommerce_link2',
-        'produk_ecommerce_link3',
+        'produk_ecommerce_link',
     ];
 }

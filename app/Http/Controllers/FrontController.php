@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use App\Models\Berita;
 use App\Models\Desa;
 use App\Models\Ecommerce;
@@ -39,67 +40,79 @@ class FrontController extends Controller
 
     public function katalog_dinamo()
     {
-        // dd('a');
-        $items  = Pelaku_Usaha::where('usaha_tipe', 'Dinamo')
-                    ->simplePaginate(9);
-        return view('katalog_dinamo', ['datas' => $items]);
+        $products = DB::table('usaha_layanan')
+            ->join('produk_layanan', 'usaha_layanan.usaha_id', '=', 'produk_layanan.usaha_id')// joining the contacts table , where user_id and contact_user_id are same
+            ->where('usaha_layanan.usaha_tipe', '=', 'Dinamo')
+            ->simplePaginate(9);
+        return view('katalog_dinamo', ['datas' => $products]);
     }
     public function katalog_layanan()
     {
-        // dd('a');
-        $items  = Pelaku_Usaha::where('usaha_tipe', 'Layanan Masyarakat')
-                    ->simplePaginate(9);
-        return view('katalog_layanan', ['datas' => $items]);
+        $products = DB::table('usaha_layanan')
+            ->join('produk_layanan', 'usaha_layanan.usaha_id', '=', 'produk_layanan.usaha_id')// joining the contacts table , where user_id and contact_user_id are same
+            ->where('usaha_layanan.usaha_tipe', '=', 'Layanan Masyarakat')
+            ->simplePaginate(9);
+        return view('katalog_layanan', ['datas' => $products]);
     }
     public function katalog_umkm()
     {
-        // dd('a');
-        $items  = Pelaku_Usaha::where('usaha_tipe', 'UMKM')
-                    ->simplePaginate(9);
-        return view('katalog_umkm', ['datas' => $items]);
+        $products = DB::table('usaha_layanan')
+            ->join('produk_layanan', 'usaha_layanan.usaha_id', '=', 'produk_layanan.usaha_id')// joining the contacts table , where user_id and contact_user_id are same
+            ->where('usaha_layanan.usaha_tipe', '=', 'UMKM')
+            ->simplePaginate(9);
+        return view('katalog_umkm', ['datas' => $products]);
     }
     public function katalog_market()
     {
-        // dd('a');
-        $items  = Pelaku_Usaha::where('usaha_tipe', 'Bratang Market')
-                    ->simplePaginate(9);
-        return view('katalog_bratang_market', ['datas' => $items]);
+        $products = DB::table('usaha_layanan')
+            ->join('produk_layanan', 'usaha_layanan.usaha_id', '=', 'produk_layanan.usaha_id')// joining the contacts table , where user_id and contact_user_id are same
+            ->where('usaha_layanan.usaha_tipe', '=', 'Bratang Market')
+            ->simplePaginate(9);
+        return view('katalog_bratang_market', ['datas' => $products]);
     }
 
     public function item_dinamo($slug)
     {
-        $item  = Pelaku_Usaha::where('usaha_tipe', "Dinamo")
-                    ->where('usaha_id', $slug)
-                    ->first();
-        $marketplaces = ProdukEcommerce::where('usaha_id', $item->usaha_id)
-                    ->get();
-        return view('item_dinamo', ['data' => $item, 'markets'=>$marketplaces]);
+        $detail = DB::table('produk_layanan')
+            ->where('produk_layanan.item_id', '=', $slug)
+            ->join('usaha_layanan', 'produk_layanan.usaha_id', '=', 'usaha_layanan.usaha_id')// joining the contacts table , where user_id and contact_user_id are same
+            ->first();
+        $markets = DB::table('produk_ecommerce')
+            ->where('produk_ecommerce.item_id', '=', $detail->item_id)
+            ->get();
+        return view('item_dinamo', ['data' => $detail, 'markets'=>$markets]);
     }
     public function item_layanan($slug)
     {
-        $item  = Pelaku_Usaha::where('usaha_tipe', "Layanan Masyarakat")
-                    ->where('usaha_id', $slug)
-                    ->first();
-        $marketplaces = ProdukEcommerce::where('usaha_id', $item->usaha_id)
-                    ->get();
-        return view('item_layanan', ['data' => $item, 'markets'=>$marketplaces]);
+        $detail = DB::table('produk_layanan')
+        ->where('produk_layanan.item_id', '=', $slug)
+        ->join('usaha_layanan', 'produk_layanan.usaha_id', '=', 'usaha_layanan.usaha_id')// joining the contacts table , where user_id and contact_user_id are same
+        ->first();
+        $markets = DB::table('produk_ecommerce')
+            ->where('produk_ecommerce.item_id', '=', $detail->item_id)
+            ->get();
+        return view('item_dinamo', ['data' => $detail, 'markets'=>$markets]);
     }
     public function item_umkm($slug)
     {
-        $item  = Pelaku_Usaha::where('usaha_tipe', "UMKM")
-                    ->where('usaha_id', $slug)
-                    ->first();
-        $marketplaces = ProdukEcommerce::where('usaha_id', $item->usaha_id)
-                    ->get();
-        return view('item_umkm', ['data' => $item, 'markets'=>$marketplaces]);
+        $detail = DB::table('produk_layanan')
+        ->where('produk_layanan.item_id', '=', $slug)
+        ->join('usaha_layanan', 'produk_layanan.usaha_id', '=', 'usaha_layanan.usaha_id')// joining the contacts table , where user_id and contact_user_id are same
+        ->first();
+        $markets = DB::table('produk_ecommerce')
+            ->where('produk_ecommerce.item_id', '=', $detail->item_id)
+            ->get();
+        return view('item_dinamo', ['data' => $detail, 'markets'=>$markets]);
     }
     public function item_market($slug)
     {
-        $item  = Pelaku_Usaha::where('usaha_tipe', "Bratang Market")
-                    ->where('usaha_id', $slug)
-                    ->first();
-        $marketplaces = ProdukEcommerce::where('usaha_id', $item->usaha_id)
-                    ->get();
-        return view('item_market', ['data' => $item, 'markets'=>$marketplaces]);
+        $detail = DB::table('produk_layanan')
+            ->where('produk_layanan.item_id', '=', $slug)
+            ->join('usaha_layanan', 'produk_layanan.usaha_id', '=', 'usaha_layanan.usaha_id')// joining the contacts table , where user_id and contact_user_id are same
+            ->first();
+        $markets = DB::table('produk_ecommerce')
+            ->where('produk_ecommerce.item_id', '=', $detail->item_id)
+            ->get();
+        return view('item_dinamo', ['data' => $detail, 'markets'=>$markets]);
     }
 }

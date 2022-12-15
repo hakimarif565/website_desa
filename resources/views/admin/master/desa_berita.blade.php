@@ -22,7 +22,7 @@
                         <i class="flaticon-right-arrow"></i>
                     </li>
                     <li class="nav-item">
-                        <a href="#">User</a>
+                        <a href="#">Berita Desa</a>
                     </li>
                 </ul>
             </div>
@@ -32,7 +32,7 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="d-flex align-items-center">
-                                <h4 class="card-title">Data User</h4>
+                                <h4 class="card-title">Data Berita Desa</h4>
                                 <button class="btn btn-primary btn-round ml-auto" data-toggle="modal" data-target="#modalAddBerita">
                                     <i class="fa fa-plus"></i>
                                     Tambah
@@ -103,7 +103,7 @@
         <div class="modal-content">
 
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Add User</h5>
+                <h5 class="modal-title" id="exampleModalLongTitle">Add Berita</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -169,7 +169,7 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Hapus Data</h5>
+                <h5 class="modal-title" id="exampleModalLongTitle">Hapus Berita</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -203,7 +203,7 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Edit User</h5>
+                <h5 class="modal-title" id="exampleModalLongTitle">Edit Berita</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>

@@ -33,7 +33,7 @@
                         <div class="card-header">
                             <div class="d-flex align-items-center">
                                 <h4 class="card-title">Data Profil Desa</h4>
-                                
+
                             </div>
                         </div>
                         <div class="card-body">
@@ -54,7 +54,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                    <?php $i = 1 ?>
+                                        <?php $i = 1 ?>
                                         @foreach ($data as $desa)
                                         <tr>
                                             <td>{{$i++}}</td>
@@ -70,7 +70,7 @@
                                                     @csrf
                                                     @method('DELETE')
                                                     <a href="#modalEditDesa{{$desa->desa_id}}" data-toggle="modal" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i>Edit</a>
-                                                    
+
                                                     <!-- </form> -->
                                                 </div>
                                             </td>
@@ -175,7 +175,7 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Hapus User</h5>
+                <h5 class="modal-title" id="exampleModalLongTitle">Edit Data</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -206,7 +206,7 @@
                     </div>
                     <div class="form-grup">
                         <label>Sejarah</label>
-                        <textarea class="form-control"  name="desa_sejarah" id="" cols="10" rows="5">{{$g->desa_sejarah}}</textarea>
+                        <textarea class="form-control" name="desa_sejarah" id="" cols="10" rows="5">{{$g->desa_sejarah}}</textarea>
                     </div>
                     <div class="form-grup">
                         <label>Foto 1</label><br>

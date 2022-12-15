@@ -239,10 +239,10 @@
                                 <ul class="nav nav-collapse">
                                     <li>
                                         <a href="/ecommerce">
-                                            <span class="sub-item">Detail E-Commerce</span>
+                                            <span class="sub-item">Data E-Commerce</span>
                                         </a>
                                         <a href="/pelaku_usaha">
-                                            <span class="sub-item">Detail UMKM</span>
+                                            <span class="sub-item">Data Sarana dan Pengusaha</span>
                                         </a>
                                         <a href="/produk">
                                             <span class="sub-item">Detail Produk dan Layanan</span>

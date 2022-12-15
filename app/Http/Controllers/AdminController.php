@@ -411,7 +411,7 @@ class AdminController extends Controller
             'item_deskripsi' => $data['item_deskripsi'],
             'item_harga' => $data['item_harga'],
             'item_dll' => $data['item_dll'],
-            'usaha_id' => $data['item_id'],
+            'usaha_id' => $data['usaha_id'],
         ]);
         return redirect('/produk')->with('success', 'Data Berhasil disimpan');
     }
@@ -420,7 +420,7 @@ class AdminController extends Controller
     {
         $data = $request->all();
         $produk = Produk_Layanan::find($data['id']);
-
+        // dd($data);
         Produk_Layanan::where('item_id', $data['id'])
             ->update([
                 'item_id' => $id,
@@ -428,7 +428,7 @@ class AdminController extends Controller
                 'item_deskripsi' => $data['item_deskripsi'],
                 'item_harga' => $data['item_harga'],
                 'item_dll' => $data['item_dll'],
-                'usaha_id' => 1,
+                'usaha_id' => $data['usaha_id'],
             ]);
 
         return $this->produk();
@@ -476,10 +476,32 @@ class AdminController extends Controller
             'item_id' => $data['item_id'],
             'ecommerce_id' =>  $data['ecommerce_id'],
             'produk_ecommerce_link' => $data['produk_ecommerce_link'],
-
         ]);
 
         return redirect('/produk_ecommerce')->with('success', 'Data Berhasil disimpan');
+    }
+
+    public function edit_produk_ecommerce(Request $request, $id)
+    {
+        $data = $request->all();
+        $produk = ProdukEcommerce::find($data['id']);
+        ProdukEcommerce::where('item_id', $data['id'])
+            ->update([
+                'item_id' => $id,
+                'ecommerce_id' => $data['ecommerce_id'],
+                'produk_ecommerce_link' => $data['produk_ecommerce_link'],
+
+            ]);
+
+        return $this->produk();
+    }
+
+    public function produk_ecommerce_destroy(Request $request, $id)
+    {
+        $produk = ProdukEcommerce::find($request->id);
+        $produk->delete();
+
+        return redirect('/produk_ecommerce')->with('success', 'Data Berhasil diubah');
     }
 
     /* Produk Layanan */
