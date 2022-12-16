@@ -160,7 +160,7 @@
                         <select class="form-control" name="usaha_id" id="usaha_id" required>
                             <option value="" hidden="">--Pilih Produk--</option>
                             @foreach($pelaku_usaha as $d)
-                            <option value="{{ $d->usaha_id }}">{{ $d->usaha_nama }}</option>
+                            <option value="{{ $d->usaha_id }}" {{ $d->usaha_id == $g->usaha_id ? 'selected' : '' }}>{{ $d->usaha_nama }}</option>
                             @endforeach
                         </select>
                     </div>

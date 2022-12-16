@@ -199,9 +199,16 @@
                         <textarea class="form-control" name="usaha_sejarah" placeholder="Sejarah Pelaku Usaha ...">{{$g->usaha_sejarah}}</textarea>
                     </div>
 
-                    <div class="form-grup">
-                        <label>Keahlian Pelaku Usaha</label>
-                        <input type="text" class="form-control" name="usaha_keahlian" value="{{$g->usaha_keahlian}}" placeholder="Keahlian Pelaku Usaha ..." required>
+                  
+                    <div class="form-group">
+                        <label>Tipe Usahak</label>
+                        <select class="form-control" name="usaha_tipe" id="item_id" required>
+                            <option hidden="">--Pilih Usaha--</option>
+                            <option {{ $g->usaha_tipe == 'Dinamo' ? 'selected' : '' }} >Dinamo</option>
+                            <option {{  $g->usaha_tipe == 'UMKM' ? 'selected' : '' }}>UMKM</option>
+                            <option {{  $g->usaha_tipe == 'Layanan Masyarakat' ? 'selected' : '' }}>Layanan Masyarakat</option>
+                            <option {{  $g->usaha_tipe == 'Bratang Market' ? 'selected' : '' }}>Bratang Market</option>
+                        </select>
                     </div>
                     <div class="form-grup">
                         <label>Foto</label><br>

@@ -148,9 +148,24 @@
                 @csrf
                 <input type="hidden" value="{{$g->item_id}}" name="id" required>
                 <div class="modal-body">
-                    <div class="form-grup">
+                <div class="form-group">
                         <label>Nama Produk</label>
-                        <input type="text" class="form-control" name="item_name" value="{{$g->item_name}}" placeholder="Nama Produk ..." required>
+                        <select class="form-control" name="item_id" id="item_id" disabled>
+                            <option value="" hidden="">--Pilih Produk--</option>
+                            @foreach($produk_layanan as $d)
+                            <option value="{{ $d->item_id }}" {{ $d->item_id == $g->item_id ? 'selected' : '' }}>{{ $d->item_name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Nama Ecommerce</label>
+                        <select class="form-control" name="ecommerce_id" id="ecommerce_id" required>
+                            <option value="" hidden="">--Pilih Produk--</option>
+                            @foreach($ecommerce as $d)
+                            <option value="{{ $d->ecommerce_id }}"  {{ $d->ecommerce_id == $g->ecommerce_id ? 'selected' : '' }}>{{ $d->ecommerce_name }}</option>
+                            @endforeach
+                        </select>
                     </div>
 
                     <div class="form-grup">

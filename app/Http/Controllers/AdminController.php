@@ -487,13 +487,12 @@ class AdminController extends Controller
         $produk = ProdukEcommerce::find($data['id']);
         ProdukEcommerce::where('item_id', $data['id'])
             ->update([
-                'item_id' => $id,
                 'ecommerce_id' => $data['ecommerce_id'],
                 'produk_ecommerce_link' => $data['produk_ecommerce_link'],
 
             ]);
 
-        return $this->produk();
+            return redirect('/produk_ecommerce')->with('success', 'Data Berhasil diubah');
     }
 
     public function produk_ecommerce_destroy(Request $request, $id)

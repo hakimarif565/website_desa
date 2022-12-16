@@ -210,10 +210,12 @@
                     </div>
                     <div class="form-grup">
                         <label>Foto 1</label><br>
+                        <img src="{{ url('/data_file/'.$g->desa_foto) }}" width="200px" height="200px" alt="">
                         <input type="file" name="desa_foto">
                     </div>
                     <div class="form-grup">
                         <label>Foto 2</label><br>
+                        <img src="{{ url('/data_file/'.$g->desa_foto2) }}" width="200px" height="200px" alt="">
                         <input type="file" name="desa_foto2">
                     </div>
 
