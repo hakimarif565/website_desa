@@ -3,7 +3,9 @@
 Website Desa Kampung Dinamo Surabaya
 
 ### Screenshot
-![Image text](https://www.united-internet.de/fileadmin/user_upload/Brands/Downloads/Logo_IONOS_by.jpg)
+![Website](https://user-images.githubusercontent.com/61369265/209563514-f54cf14d-ca77-4c82-9edf-8f0956580e56.jpg)
+
+
 
 ## Teknologi
 ***
@@ -26,4 +28,5 @@ www.kampungdinamosby.com
 ***
 Dibuat oleh:
 > Vio (https://github.com/viocly)
+<br> 
 > Mahfud (https://github.com/MafudNk)
