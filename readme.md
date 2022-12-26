@@ -26,7 +26,7 @@ www.kampungdinamosby.com
 
 ## Tim Kolaborasi
 ***
-Dibuat oleh:
+Tim:
 > Vio (https://github.com/viocly)
 >
 > Mahfud (https://github.com/MafudNk)
