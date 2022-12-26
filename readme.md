@@ -28,5 +28,6 @@ www.kampungdinamosby.com
 ***
 Dibuat oleh:
 > Vio (https://github.com/viocly)
-<br> 
+>
 > Mahfud (https://github.com/MafudNk)
+>
